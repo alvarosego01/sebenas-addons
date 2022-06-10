@@ -1,0 +1,32 @@
+{
+  "name": "mrbara",
+  "version": "1.0.0",
+  "prefix": {
+    "text": "mrbara",
+    "func": "mrbara_",
+    "class": "MrBara_",
+    "widget": "MrBara - "
+  },
+  "pkgname": "MrBara",
+  "description": "Greate theme for Education, University Learning websites with tons of sections and custom sections",
+  "author": {
+    "name": "ThemeAlien",
+    "website": "http://themealien.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://hoangc7@bitbucket.org/themealien/learnplus.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~0.8.2",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-text-replace": "^0.3.12",
+    "matchdep": "~0.3.0"
+  }
+}
