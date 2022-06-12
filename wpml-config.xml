@@ -4,7 +4,7 @@
 	</taxonomies>
 	<shortcodes>
 		<shortcode>
-			<tag encoding="allow_html_tags">martfury_icon_box</tag>
+			<tag encoding="allow_html_tags">sebenas_icon_box</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>title</attribute>
@@ -12,19 +12,19 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_icon_box_2</tag>
+			<tag>sebenas_icon_box_2</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">info</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_icons_list</tag>
+			<tag>sebenas_icons_list</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">icons</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_of_category</tag>
+			<tag>sebenas_products_of_category</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
@@ -34,7 +34,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_of_category_2</tag>
+			<tag>sebenas_products_of_category_2</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute>side_title</attribute>
@@ -46,7 +46,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_product_tabs</tag>
+			<tag>sebenas_product_tabs</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
@@ -54,7 +54,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_carousel</tag>
+			<tag>sebenas_products_carousel</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
@@ -62,27 +62,27 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_grid</tag>
+			<tag>sebenas_products_grid</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_list</tag>
+			<tag>sebenas_products_list</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">links_group</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_products_list_carousel</tag>
+			<tag>sebenas_products_list_carousel</tag>
 			<attributes>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_deals_of_the_day</tag>
+			<tag>sebenas_deals_of_the_day</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
@@ -90,7 +90,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_sales_countdown_timer</tag>
+			<tag>sebenas_sales_countdown_timer</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
@@ -98,45 +98,45 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_product_deals_carousel</tag>
+			<tag>sebenas_product_deals_carousel</tag>
 			<attributes>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_product_deals_grid</tag>
+			<tag>sebenas_product_deals_grid</tag>
 			<attributes>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_brands_grid</tag>
+			<tag>sebenas_brands_grid</tag>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_recently_viewed_products</tag>
+			<tag>sebenas_recently_viewed_products</tag>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_top_selling</tag>
+			<tag>sebenas_top_selling</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">links_group</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_top_selling_2</tag>
+			<tag>sebenas_top_selling_2</tag>
 			<attributes>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_category_tabs</tag>
+			<tag>sebenas_category_tabs</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute>subtitle</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_category_tab</tag>
+			<tag>sebenas_category_tab</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute>subtitle</attribute>
@@ -145,7 +145,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_category_box</tag>
+			<tag>sebenas_category_box</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute encoding="media-ids">image</attribute>
@@ -155,32 +155,32 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_banners_grid</tag>
+			<tag>sebenas_banners_grid</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">banners</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_banners_grid_2</tag>
+			<tag>sebenas_banners_grid_2</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">banners</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_button</tag>
+			<tag>sebenas_button</tag>
 			<attributes>
 				<attribute type="link" encoding="vc_link">link</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_button</tag>
+			<tag>sebenas_button</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">links_group</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_image_box</tag>
+			<tag>sebenas_image_box</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>title</attribute>
@@ -189,14 +189,14 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_single_image</tag>
+			<tag>sebenas_single_image</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute type="link" encoding="vc_link">link</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_counter</tag>
+			<tag>sebenas_counter</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute>unit_before</attribute>
@@ -205,20 +205,20 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_journey</tag>
+			<tag>sebenas_journey</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">journey</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_testimonial_slides</tag>
+			<tag>sebenas_testimonial_slides</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">setting</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_member</tag>
+			<tag>sebenas_member</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>name</attribute>
@@ -227,27 +227,27 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_process</tag>
+			<tag>sebenas_process</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">process</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag >martfury_bubbles</tag>
+			<tag >sebenas_bubbles</tag>
 			<attributes>
 				<attribute>value</attribute>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_partner</tag>
+			<tag>sebenas_partner</tag>
 			<attributes>
 				<attribute type="media-ids">images</attribute>
 				<attribute type="link">custom_links</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag encoding="allow_html_tags">martfury_newsletter</tag>
+			<tag encoding="allow_html_tags">sebenas_newsletter</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="media-ids">image</attribute>
@@ -255,30 +255,30 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_faqs</tag>
+			<tag>sebenas_faqs</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">faqs</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_images_grid</tag>
+			<tag>sebenas_images_grid</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="area" encoding="urlencoded_json">images</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_countdown</tag>
+			<tag>sebenas_countdown</tag>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_gmap</tag>
+			<tag>sebenas_gmap</tag>
 			<attributes>
 				<attribute type="area" encoding="urlencoded_json">info</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag encoding="allow_html_tags">martfury_banner_small</tag>
+			<tag encoding="allow_html_tags">sebenas_banner_small</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>title</attribute>
@@ -287,7 +287,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag encoding="allow_html_tags">martfury_banner_medium</tag>
+			<tag encoding="allow_html_tags">sebenas_banner_medium</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>title</attribute>
@@ -297,7 +297,7 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag encoding="allow_html_tags">martfury_banner_large</tag>
+			<tag encoding="allow_html_tags">sebenas_banner_large</tag>
 			<attributes>
 				<attribute type="media-ids">image</attribute>
 				<attribute>desc</attribute>
@@ -307,13 +307,13 @@
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_brand_images</tag>
+			<tag>sebenas_brand_images</tag>
 			<attributes>
 				<attribute>title</attribute>
 			</attributes>
 		</shortcode>
 		<shortcode>
-			<tag>martfury_brand_images_carousel</tag>
+			<tag>sebenas_brand_images_carousel</tag>
 			<attributes>
 				<attribute>title</attribute>
 				<attribute type="link" encoding="vc_link">view_all_link</attribute>
@@ -322,7 +322,7 @@
 	</shortcodes>
 
 	<elementor-widgets>
-		<widget name="martfury-banner-app">
+		<widget name="sebenas-banner-app">
 			<fields>
 				<field editor_type="AREA">title</field>
 				<field editor_type="AREA">description</field>
@@ -331,7 +331,7 @@
 				<field editor_type="LINK">button_link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-banner-large-2">
+		<widget name="sebenas-banner-large-2">
 			<fields>
 				<field editor_type="LINK">banner_url>url</field>
 				<field>discount_text</field>
@@ -345,7 +345,7 @@
 				<field editor_type="LINK">link_url>url</field>
 			</fields>
 		</widget>
-		<widget name="martfury-banner-large">
+		<widget name="sebenas-banner-large">
 			<fields>
 				<field editor_type="AREA">title</field>
 				<field editor_type="AREA">highlight_title</field>
@@ -356,7 +356,7 @@
 				<field editor_type="LINK">button_link>url</field>
 			</fields>
 		</widget>
-		<widget name="martfury-banner-medium">
+		<widget name="sebenas-banner-medium">
 			<fields>
 				<field editor_type="AREA">title</field>
 				<field editor_type="AREA">highlight_title</field>
@@ -365,7 +365,7 @@
 				<field editor_type="LINK">button_link>url</field>
 			</fields>
 		</widget>
-		<widget name="martfury-banner-small">
+		<widget name="sebenas-banner-small">
 			<fields>
 				<field editor_type="AREA">title</field>
 				<field editor_type="AREA">desc</field>
@@ -385,13 +385,13 @@
 				<field editor_type="AREA">title</field>
 			</fields>
 		</widget>
-		<widget name="martfury-bubbles">
+		<widget name="sebenas-bubbles">
 			<fields>
 				<field>value</field>
 				<field>title</field>
 			</fields>
 		</widget>
-		<widget name="martfury-category-box">
+		<widget name="sebenas-category-box">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -402,7 +402,7 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-category-tabs">
+		<widget name="sebenas-category-tabs">
 			<fields>
 				<field>title</field>
 				<field>subtitle</field>
@@ -419,12 +419,12 @@
 				<field>tab_title_10</field>
 			</fields>
 		</widget>
-		<widget name="martfury-counter">
+		<widget name="sebenas-counter">
 			<fields>
 				<field>title</field>
 			</fields>
 		</widget>
-		<widget name="martfury-faqs">
+		<widget name="sebenas-faqs">
 			<fields>
 				<field>title</field>
 			</fields>
@@ -441,14 +441,14 @@
 				<field editor_type="LINK">link>url</field>
 			</fields>
 		</widget>
-		<widget name="martfury-icons-list">
+		<widget name="sebenas-icons-list">
 			<fields-in-item items_of="icons">
 				<field>title</field>
 				<field editor_type="AREA">desc</field>
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-image-box">
+		<widget name="sebenas-image-box">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -460,25 +460,25 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-images-carousel">
+		<widget name="sebenas-images-carousel">
 			<fields-in-item items_of="group_setting">
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-images-grid">
+		<widget name="sebenas-images-grid">
 			<fields-in-item items_of="group_setting">
 				<field editor_type="LINK">image>url</field>
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-journey">
+		<widget name="sebenas-journey">
 			<fields-in-item items_of="settings">
 				<field>year</field>
 				<field>title</field>
 				<field editor_type="AREA">desc</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-member">
+		<widget name="sebenas-member">
 			<fields>
 				<field>name</field>
 				<field>job</field>
@@ -487,7 +487,7 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-newsletter">
+		<widget name="sebenas-newsletter">
 			<fields>
 				<field>title</field>
 				<field>desc</field>
@@ -496,7 +496,7 @@
 				<field editor_type="LINK">button_link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-post-grid">
+		<widget name="sebenas-post-grid">
 			<fields>
 				<field>title</field>
 				<field>view_all_text</field>
@@ -507,26 +507,18 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-process">
+		<widget name="sebenas-process">
 			<fields-in-item items_of="process_settings">
 				<field>title</field>
 				<field editor_type="AREA">desc</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-product-deals-carousel-2">
+		<widget name="sebenas-product-deals-carousel-2">
 			<fields>
 				<field>title</field>
 			</fields>
 		</widget>
-		<widget name="martfury-product-deals-carousel">
-			<fields>
-				<field>title</field>
-				<field>ends_in</field>
-				<field>view_all_text</field>
-				<field editor_type="LINK">view_all_link>url</field>
-			</fields>
-		</widget>
-		<widget name="martfury-product-deals-grid">
+		<widget name="sebenas-product-deals-carousel">
 			<fields>
 				<field>title</field>
 				<field>ends_in</field>
@@ -534,7 +526,15 @@
 				<field editor_type="LINK">view_all_link>url</field>
 			</fields>
 		</widget>
-		<widget name="martfury-product-tabs-carousel">
+		<widget name="sebenas-product-deals-grid">
+			<fields>
+				<field>title</field>
+				<field>ends_in</field>
+				<field>view_all_text</field>
+				<field editor_type="LINK">view_all_link>url</field>
+			</fields>
+		</widget>
+		<widget name="sebenas-product-tabs-carousel">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -545,7 +545,7 @@
 				<field>title</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-product-tabs-carousel">
+		<widget name="sebenas-product-tabs-carousel">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -556,7 +556,7 @@
 				<field>title</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-products-carousel">
+		<widget name="sebenas-products-carousel">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -568,7 +568,7 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-products-grid">
+		<widget name="sebenas-products-grid">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -580,12 +580,12 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-products-list-carousel">
+		<widget name="sebenas-products-list-carousel">
 			<fields>
 				<field>title</field>
 			</fields>
 		</widget>
-		<widget name="martfury-products-list">
+		<widget name="sebenas-products-list">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -595,7 +595,7 @@
 				<field editor_type="LINK">link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-products-of-category-2">
+		<widget name="sebenas-products-of-category-2">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">link>url</field>
@@ -614,7 +614,7 @@
 				<field>tab_title</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-products-of-category">
+		<widget name="sebenas-products-of-category">
 			<fields>
 				<field>title</field>
 				<field editor_type="LINK">c_link>url</field>
@@ -629,7 +629,7 @@
 				<field editor_type="LINK">image_link>url</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-slides">
+		<widget name="sebenas-slides">
 			<fields-in-item items_of="slides">
 				<field editor_type="AREA">subtitle</field>
 				<field editor_type="AREA">heading</field>
@@ -639,7 +639,7 @@
 				<field editor_type="AREA">price_box_text</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-testimonial-slides-2">
+		<widget name="sebenas-testimonial-slides-2">
 			<fields>
 				<field>title</field>
 			</fields>
@@ -649,7 +649,7 @@
 				<field>job</field>
 			</fields-in-item>
 		</widget>
-		<widget name="martfury-testimonial-slides">
+		<widget name="sebenas-testimonial-slides">
 			<fields>
 				<field>title</field>
 			</fields>
