@@ -23,13 +23,6 @@ if ( ! function_exists( 'sebenas_register_widgets' ) ) {
         // SI SON DE WOOCOMMERCE ENTONCES AQUI
 		if ( class_exists( 'WC_Widget' ) ) {
 
-			// require_once SEBENAS_PATH . '/inc/widgets/product-categories.php';
-
-
-
-			// register_widget( 'Martfury_Widget_Product_Categories' );
-
-
 
 		}
 	}

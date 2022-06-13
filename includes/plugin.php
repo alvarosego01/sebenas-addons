@@ -81,12 +81,12 @@ final class Plugin {
 
 		if ( $this->is_compatible() ) {
 
-
+			add_action( 'elementor/init', [ $this, 'init' ] );
 
 
 		}
 
-		$this->add_actions();
+
 	}
 
 	/**
@@ -204,7 +204,7 @@ final class Plugin {
 	 */
 	public function init() {
 
-
+		$this->add_actions();
 
 	}
 
@@ -238,50 +238,35 @@ final class Plugin {
 	 */
 	public function register_controls( $controls_manager ) {
 
-		require_once SEBENAS_PATH . '/includes/controls/controls_main.php';
-
-		sebenas_register_controls_template();
+		// require_once SEBENAS_PATH . '/includes/controls/controls_main.php';
+		// sebenas_register_controls_template($controls_manager);
 
 	}
 
 
     public function frontend_styles() {
 
-		// wp_register_style( 'frontend-style-1', plugins_url( 'assets/css/frontend-style-1.css', __FILE__ ) );
-		// wp_register_style( 'frontend-style-2', plugins_url( 'assets/css/frontend-style-2.css', __FILE__ ), [ 'external-framework' ] );
-		// wp_register_style( 'external-framework', plugins_url( 'assets/css/libs/external-framework.css', __FILE__ ) );
-
-		// wp_enqueue_style( 'frontend-style-1' );
-		// wp_enqueue_style( 'frontend-style-2' );
+		wp_register_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+	    wp_enqueue_style('sb_addons_Main.Css');
 
 	}
 
 	public function frontend_scripts() {
 
-		// wp_register_script( 'frontend-script-1', plugins_url( 'assets/js/frontend-script-1.js', __FILE__ ) );
-		// wp_register_script( 'frontend-script-2', plugins_url( 'assets/js/frontend-script-2.js', __FILE__ ), [ 'external-library' ] );
-		// wp_register_script( 'external-library', plugins_url( 'assets/js/libs/external-library.js', __FILE__ ) );
-
-		// wp_enqueue_script( 'frontend-script-1' );
-		// wp_enqueue_script( 'frontend-script-2' );
+		wp_register_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', ['jquery'], PLUGIN_VERSION, true);
+	    wp_enqueue_script('sb_addons_Main.js');
 
 	}
 
 
 	protected function add_actions() {
-		// add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'styles' ] );
-		// add_action( 'elementor/frontend/after_register_scripts', [ $this, 'scripts' ] );
+
+		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'frontend_styles' ] );
+		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'frontend_scripts' ] );
 
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories' ] );
-		add_action( 'elementor/init', [ $this, 'init' ] );
-
-		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 		add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
-
-
-
-
-
+		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 
 	}
 
