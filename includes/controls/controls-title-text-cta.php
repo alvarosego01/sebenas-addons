@@ -8,22 +8,11 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
 
-if (!class_exists('sebenas_controls_InfoCta_model')) {
-    class sebenas_controls_InfoCta_model
+if (!class_exists('sebenas_controls_info_text_cta')) {
+    class sebenas_controls_info_text_cta
     {
         public function setControls($class)
         {
-            $class->start_controls_section(
-                'Image_section_info',
-                [
-                'label' => esc_html__('Image', 'Sebenas_Addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-            );
-
-            sebenas_image_component::setControls($class, '_info_image_1');
-
-            $class->end_controls_section();
 
             $class->start_controls_section(
                 'section_info_title',
@@ -56,7 +45,6 @@ if (!class_exists('sebenas_controls_InfoCta_model')) {
                     ],
             ]
             );
-
 
             $class->end_controls_section();
 

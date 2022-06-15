@@ -7,6 +7,7 @@
 
 		// Importaciones
 		require_once SEBENAS_PATH . 'includes/controls/controls-info-cta-model.php';
+		require_once SEBENAS_PATH . 'includes/controls/controls-title-text-cta.php';
 
 
  ?>

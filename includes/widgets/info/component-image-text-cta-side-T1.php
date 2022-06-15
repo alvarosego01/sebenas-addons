@@ -1,13 +1,13 @@
 <?php
 
 // namespace SebenasAddonsWidgets;
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
 
 if (!class_exists('C_ImageTextCtaSide_T1')) {
     /**
@@ -103,11 +103,6 @@ if (!class_exists('C_ImageTextCtaSide_T1')) {
             return ['sebenas', 'info', 'modules', 'url', 'link'];
         }
 
-        public function prueba()
-        {
-            echo 'la mierda esta';
-        }
-
 
         protected function register_controls()
         {
@@ -149,6 +144,8 @@ if (!class_exists('C_ImageTextCtaSide_T1')) {
         {
             $settings = $this->get_settings_for_display();
 
+            require_once SEBENAS_PATH . 'includes/functions/main.php';
+
             $general_settings = array(
                 'side_position_define' => $settings['side_position_define'],
                 'component_styles' => $settings['sebenas_component_defined_styles']
@@ -161,17 +158,17 @@ if (!class_exists('C_ImageTextCtaSide_T1')) {
 
             $settings_title = array(
                 'enable_info_title' => $settings['enable_info_title'],
-                'title_text' => $settings['title_text'],
+                'title_text' => F_textFormating::setFormatingText( $settings['title_text'] ),
             );
 
             $settings_text = array(
                 'enable_info_text' => $settings['enable_info_text'],
-                'info_text' => $settings['info_text'],
+                'info_text' => F_textFormating::setFormatingText( $settings['info_text'] ),
             );
 
             $settings_text = array(
                 'enable_info_text' => $settings['enable_info_text'],
-                'info_text' => $settings['info_text'],
+                'info_text' => F_textFormating::setFormatingText( $settings['info_text'] ),
             );
 
             $slug = '_info_CTA';
@@ -190,32 +187,6 @@ if (!class_exists('C_ImageTextCtaSide_T1')) {
             )
 
             ?>
-
-            <!-- <pre>
-            <?php
-            print_r($general_settings); ?>
-            </pre>
-            <pre>
-            <?php
-            print_r($settings_image); ?>
-            </pre>
-            <pre>
-            <?php
-            print_r($settings_title); ?>
-            </pre>
-            <pre>
-            <?php
-            print_r($settings_text); ?>
-            </pre>
-            <pre>
-            <?php
-            print_r($settings_text); ?>
-            </pre>
-            <pre>
-            <?php
-            print_r($settings_CTA); ?>
-            </pre> -->
-
 
             <?php
                     if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {

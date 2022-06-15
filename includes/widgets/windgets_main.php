@@ -11,13 +11,16 @@ if ( ! function_exists( 'sebenas_register_widgets' ) ) {
 	function sebenas_register_widgets( $widgets_manager ) {
 
 		// Importaciones
-		require_once SEBENAS_PATH . 'includes/widgets/oembed-widget.php';
-		require_once SEBENAS_PATH . 'includes/widgets/info/component-image-text-cta-side-T1.php';
+		require_once SEBENAS_PATH . 'includes/widgets/info/main.php';
+		require_once SEBENAS_PATH . 'includes/widgets/containersCTA/main.php';
 
 		// Declaraciones
-        $widgets_manager->register( new \Elementor_oEmbed_Widget() );
+		// info
         $widgets_manager->register( new \C_ImageTextCtaSide_T1() );
+        $widgets_manager->register( new \C_images_text_3c_T1() );
+        $widgets_manager->register( new \C_TitleTextCta_T1() );
 
+		// Containers CTA
 
 
         // SI SON DE WOOCOMMERCE ENTONCES AQUI

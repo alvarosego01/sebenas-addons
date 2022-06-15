@@ -1,0 +1,134 @@
+
+
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
+    box-shadow: $shadow2
+    @include responsivo(telefonoTable)
+        padding: 25px 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    @include responsivo(general)
+        padding: 75px 65px
+
+    @include responsivo(resto)
+        padding: 75px 60px
+
+    .section-row
+        section.innerSectionElement
+            .groupElements.row
+                .partContainer
+                    padding: 0 15px
+                    display: flex
+                    flex-direction: column
+                    @include responsivo(telefonoTable)
+                        padding: 0
+                    @include responsivo(pcMedio)
+                        padding: 0
+                    @include responsivo(general)
+                        padding: 0 10px
+                    @include responsivo(smallPcTablet)
+                        padding: 0 10px
+                    .containerImage
+                        display: flex
+                        img
+                            object-fit: cover
+                            object-position: center
+                            width: 100%
+                            @include responsivo(telefonoTable)
+                                height: 250px
+                                width: auto
+                                margin: 0 auto
+                            @include responsivo(pcMedio)
+                                height: 325px
+                                width: auto
+                                margin: 0 auto
+                            @include responsivo(general)
+                                height: 350px
+                            @include responsivo(resto)
+                                height: 400px
+
+                    .text
+                        @include p_title_contain()
+                        @include responsivo(telefonoTable)
+                            margin-bottom: 0
+                        @include responsivo(pcMedio)
+                            margin-bottom: 0
+
+                    h3.secondaryTitle,
+                    .text
+                        @include responsivo(telefonoTable)
+                            text-align: center
+                        @include responsivo(pcMedio)
+                            text-align: center
+
+                .partContainer.element_c1
+                    @include responsivo(telefonoTable)
+                        margin-bottom: 25px
+                    @include responsivo(pcMedio)
+                        margin-bottom: 25px
+                    .containElements
+                        display: block
+                        margin: auto 0
+                        h3.secondaryTitle
+                            margin-bottom: 25px
+                            @include h3_title_contain()
+
+                .partContainer.element_c2
+                    .containElements
+                        @include responsivo(telefonoTable)
+                            display: flex
+                            flex-direction: column-reverse
+                        @include responsivo(pcMedio)
+                            display: flex
+                            flex-direction: column-reverse
+                    .containerImage
+                        margin-bottom: 25px
+
+                .partContainer.element_c3
+                    .containElements
+                        display: block
+                        margin: auto 0
+                        @include responsivo(telefonoTable)
+                            display: flex
+                            flex-direction: column
+                        @include responsivo(pcMedio)
+                            display: flex
+                            flex-direction: column
+
+                        .text
+                            @include responsivo(general)
+                                margin-bottom: 25px
+                            @include responsivo(resto)
+                                margin-bottom: 25px
+
+
+    &.whiteBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements.row
+                    .partContainer
+                        h3.secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $grayColor
+
+
+    &.greyBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements.row
+                    .partContainer
+                        h3.secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $blackColor
+
+    &.blackBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements.row
+                    .partContainer
+                        h3.secondaryTitle
+                            color: $whiteBase1
+                        .text
+                            color: $whiteBase1

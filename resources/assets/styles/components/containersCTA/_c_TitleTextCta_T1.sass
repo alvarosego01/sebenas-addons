@@ -1,0 +1,89 @@
+
+
+
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_TitleTextCta_T1
+
+    padding: 75px 0
+    @include responsivo(telefonoTable)
+        padding: 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    .section-row
+        // section.innerSectionElement
+
+        section.innerSectionElement.sct1
+            margin-bottom: 40px
+            .containElements
+                display: flex
+                flex-direction: column
+                .secondaryTitle,
+                .text
+                    text-align: center
+
+                .secondaryTitle
+                    margin-bottom: 25px
+                    @include h2_title_contain()
+                .text
+                    display: block
+                    width: 75%
+                    margin: 0 auto
+                    @include p_title_contain()
+
+        section.innerSectionElement.sct2
+            padding: 75px
+            position: relative
+            box-shadow: $shadow2
+            @include responsivo(telefonoTable)
+                padding: 25px 25px
+                padding-bottom: 0
+            @include responsivo(pcMedio)
+                padding: 50px
+                padding-bottom: 0
+            .containElements
+                display: flex
+                @include responsivo(general)
+                    flex-direction: row
+                @include responsivo(resto)
+                    flex-direction: row
+                .info
+                    @include responsivo(general)
+                        width: 70%
+                    @include responsivo(resto)
+                        width: 70%
+
+                    .secondaryTitle
+                        margin-bottom: 25px
+                        @include h3_title_contain()
+                    .text
+                        @include p_secondaryTitle_contain()
+                .cta
+                    display: flex
+                    justify-content: flex-end
+                    align-content: center
+                    align-items: center
+                    justify-items: center
+                    @include responsivo(general)
+                        width: 30%
+                    @include responsivo(resto)
+                        width: 30%
+                    .sbn_buttonCustom
+                        box-shadow: $shadow2
+                        @include responsivo(telefonoTable)
+                            width: fit-content
+                            margin: 0 auto
+                        @include responsivo(pcMedio)
+                            width: fit-content
+                            margin: 0 auto
+
+            &::before
+                content: ''
+                border-left: 5px solid var(--mf-primary-color)
+                position: absolute
+                left: 0
+                top: 0
+                bottom: 0
+                height: 100%
+                width: 5px
+                margin-right: auto
+                display: block

@@ -3,6 +3,10 @@
 
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 
 use Elementor\Controls_Manager;
 use Elementor\Utils;
@@ -98,6 +102,7 @@ if (!class_exists('sebenas_control_cta_model')) {
                 'type' => Controls_Manager::TEXT,
                 'label' => esc_html__('Text CTA', 'Sebenas_Addons'),
                 'placeholder' => esc_html__('Enter your text CTA', 'Sebenas_Addons'),
+                'label_block' => true,
                 'condition' => [
                     $conditional => 'yes',
                 ],

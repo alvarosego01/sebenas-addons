@@ -1,6 +1,11 @@
 
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+
 use Elementor\Controls_Manager;
 use Elementor\Base_Data_Control;
 use Elementor\Utils;

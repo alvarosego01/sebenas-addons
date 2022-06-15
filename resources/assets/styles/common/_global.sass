@@ -57,11 +57,11 @@ $hastaG: $desdeG + 500
     @include responsivo(pcMedio)
         font-size: 30px
     @include responsivo(general)
-        font-size: 32.5px
-    @include responsivo(smallPcTablet)
-        font-size: 30px
-    @include responsivo(resto)
         font-size: 35px
+    @include responsivo(smallPcTablet)
+        font-size: 32.5px
+    @include responsivo(resto)
+        font-size: 40px
 
 @mixin h3_title_contain()
     line-height: 0.9
@@ -89,9 +89,24 @@ $hastaG: $desdeG + 500
     @include responsivo(resto)
         font-size: 18px
 
+@mixin p_secondaryTitle_contain()
+    line-height: 1.2
+    @include responsivo(telefonoTable)
+        font-size: 12px
+    @include responsivo(pcMedio)
+        font-size: 13px
+    @include responsivo(general)
+        font-size: 14px
+    @include responsivo(smallPcTablet)
+        font-size: 13px
+    @include responsivo(resto)
+        font-size: 16px
+
 
 @import variables
 @import generals
+
+
 
 
 
