@@ -53,9 +53,13 @@ if (!class_exists('C_features_image_services_T1')) {
         {
             require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
 
-            sebenas_control_styles::setControls($this);
+            $sebenas_control_styles = new sebenas_control_styles();
+            $sebenas_control_styles->setControls($this);
 
-            sebenas_title_text_row1::setControls($this);
+            $sebenas_title_text_row1 = new sebenas_title_text_row1();
+            $sebenas_title_text_row1->setControls($this);
+
+            $sebenas_image_component = new sebenas_image_component();
 
             $this->start_controls_section(
                 'section_features',
@@ -166,7 +170,7 @@ if (!class_exists('C_features_image_services_T1')) {
             ]
             );
 
-            sebenas_image_component::setControls($this, '_image_features');
+            $sebenas_image_component->setControls($this, '_image_features');
 
             $this->end_controls_section();
 
@@ -269,6 +273,8 @@ if (!class_exists('C_features_image_services_T1')) {
 
             require_once SEBENAS_PATH . 'includes/functions/main.php';
 
+            $F_textFormating = new F_textFormating();
+
             $general_settings = array(
                 'side_position_define' => $settings['side_position_define'],
                 'component_styles' => $settings['sebenas_component_defined_styles']
@@ -277,21 +283,21 @@ if (!class_exists('C_features_image_services_T1')) {
             $settings_row1 = array(
                 'enable_section_row_1' => $settings['enable_section_row_1'],
                 'enable_title_section_row_1' => $settings['enable_title_section_row_1'],
-                'title_text_section_row_1' => F_textFormating::setFormatingText($settings['title_text_section_row_1']),
+                'title_text_section_row_1' => $F_textFormating->setFormatingText($settings['title_text_section_row_1']),
                 'enable_info_text_section_row_1' => $settings['enable_info_text_section_row_1'],
-                'info_text_section_row_1' => F_textFormating::setFormatingText($settings['info_text_section_row_1']),
+                'info_text_section_row_1' => $F_textFormating->setFormatingText($settings['info_text_section_row_1']),
             );
 
             $features_list = $settings['features_icons_default'];
 
             $settings_title = array(
                 'enable_info_title' => $settings['enable_info_title'],
-                'title_text' => F_textFormating::setFormatingText( $settings['title_text'] ),
+                'title_text' => $F_textFormating->setFormatingText( $settings['title_text'] ),
             );
 
             $settings_text = array(
                 'enable_info_text' => $settings['enable_info_text'],
-                'info_text' => F_textFormating::setFormatingText( $settings['info_text'] ),
+                'info_text' => $F_textFormating->setFormatingText( $settings['info_text'] ),
             );
 
             $slug = '_image_features';
@@ -411,7 +417,7 @@ if (!class_exists('C_features_image_services_T1')) {
 
                                 <div class="containItem">
 
-                                <div class="icon">
+                                <div class="iconBase">
 
                                 <?php
                                 $icon = '';

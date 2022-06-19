@@ -98,7 +98,8 @@ if (!class_exists('sebenas_controls_info_text_cta')) {
             ]
             );
 
-            sebenas_control_cta_model::setControls($class, '_info_CTA', 'enable_info_cta');
+            $sebenas_control_cta_model = new sebenas_control_cta_model();
+            $sebenas_control_cta_model->setControls($class, '_info_CTA', 'enable_info_cta');
 
             $class->end_controls_section();
         }

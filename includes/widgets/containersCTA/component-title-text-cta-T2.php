@@ -48,11 +48,14 @@ if (!class_exists('C_TitleTextCta_T2')) {
         {
             require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
 
-            sebenas_control_styles::setControls($this);
+            $sebenas_control_styles = new sebenas_control_styles();
+            $sebenas_control_styles->setControls($this);
 
-            sebenas_controls_info_text_cta::setControls($this);
+            $sebenas_controls_info_text_cta = new sebenas_controls_info_text_cta();
+            $sebenas_controls_info_text_cta->setControls($this);
 
-            sebenas_background_style_component::setControls($this);
+            $sebenas_background_style_component = new sebenas_background_style_component();
+            $sebenas_background_style_component->setControls($this);
         }
 
         protected function render()
@@ -61,15 +64,17 @@ if (!class_exists('C_TitleTextCta_T2')) {
 
             require_once SEBENAS_PATH . 'includes/functions/main.php';
 
+            $F_textFormating = new F_textFormating();
+
             $general_settings = array(
                 'component_styles' => $settings['sebenas_component_defined_styles']
             );
 
             $settings_banner = array(
                 'enable_info_title' => $settings['enable_info_title'],
-                'title_text' => F_textFormating::setFormatingText($settings['title_text']),
+                'title_text' => $F_textFormating->setFormatingText($settings['title_text']),
                 'enable_info_text' => $settings['enable_info_text'],
-                'info_text' => F_textFormating::setFormatingText($settings['info_text']),
+                'info_text' => $F_textFormating->setFormatingText($settings['info_text']),
             );
 
             $slug = '_info_CTA';

@@ -48,11 +48,14 @@ if (!class_exists('C_TitleTextCta_T1')) {
         {
             require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
 
-            sebenas_control_styles::setControls($this);
+            $sebenas_control_styles = new sebenas_control_styles();
+            $sebenas_control_styles->setControls($this);
 
-            sebenas_title_text_row1::setControls($this);
+            $sebenas_title_text_row1 = new sebenas_title_text_row1();
+            $sebenas_title_text_row1->setControls($this);
 
-            sebenas_controls_info_text_cta::setControls($this);
+            $sebenas_controls_info_text_cta = new sebenas_controls_info_text_cta();
+            $sebenas_controls_info_text_cta->setControls($this);
         }
 
         protected function render()
@@ -64,21 +67,21 @@ if (!class_exists('C_TitleTextCta_T1')) {
             $general_settings = array(
                 'component_styles' => $settings['sebenas_component_defined_styles']
             );
-
+            $F_textFormating = new F_textFormating();
             $settings_row1 = array(
                 'enable_section_row_1' => $settings['enable_section_row_1'],
                 'enable_title_section_row_1' => $settings['enable_title_section_row_1'],
-                'title_text_section_row_1' => F_textFormating::setFormatingText($settings['title_text_section_row_1']),
+                'title_text_section_row_1' => $F_textFormating->setFormatingText($settings['title_text_section_row_1']),
                 'enable_info_text_section_row_1' => $settings['enable_info_text_section_row_1'],
-                'info_text_section_row_1' => F_textFormating::setFormatingText($settings['info_text_section_row_1']),
+                'info_text_section_row_1' => $F_textFormating->setFormatingText($settings['info_text_section_row_1']),
             );
 
 
             $settings_banner = array(
                 'enable_info_title' => $settings['enable_info_title'],
-                'title_text' => F_textFormating::setFormatingText($settings['title_text']),
+                'title_text' => $F_textFormating->setFormatingText($settings['title_text']),
                 'enable_info_text' => $settings['enable_info_text'],
-                'info_text' => F_textFormating::setFormatingText($settings['info_text']),
+                'info_text' => $F_textFormating->setFormatingText($settings['info_text']),
             );
 
             $slug = '_info_CTA';

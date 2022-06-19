@@ -53,7 +53,7 @@ if (!class_exists('sebenas_background_style_component')) {
             );
 
             $class->add_control(
-                'background_image' . $slug,
+                'background_image',
                 [
                 'type' => Controls_Manager::MEDIA,
                 'label' => esc_html__('Choose Image', 'Sebenas_Addons'),
@@ -70,7 +70,7 @@ if (!class_exists('sebenas_background_style_component')) {
             $class->add_group_control(
                 Group_Control_Image_Size::get_type(),
                 [
-                'name'      => 'background_image' . $slug,
+                'name'      => 'background_image',
                 'default'   => 'full',
                 'separator' => 'none',
                 'condition' => [

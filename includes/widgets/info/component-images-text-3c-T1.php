@@ -104,9 +104,13 @@ if (!class_exists('C_images_text_3c_T1')) {
             require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
 
 
-            sebenas_control_styles::setControls($this);
+            $sebenas_control_styles = new sebenas_control_styles();
+            $sebenas_control_styles->setControls($this);
 
-            sebenas_title_text_row1::setControls($this);
+            $sebenas_title_text_row1 = new sebenas_title_text_row1();
+            $sebenas_title_text_row1->setControls($this);
+
+            $sebenas_image_component = new sebenas_image_component();
 
 
             $this->start_controls_section(
@@ -141,7 +145,7 @@ if (!class_exists('C_images_text_3c_T1')) {
             );
 
 
-            sebenas_image_component::setControls($this, '_1c_image');
+            $sebenas_image_component->setControls($this, '_1c_image');
 
             $this->end_controls_section();
 
@@ -152,7 +156,7 @@ if (!class_exists('C_images_text_3c_T1')) {
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
             );
-            sebenas_image_component::setControls($this, '_2c_image');
+            $sebenas_image_component->setControls($this, '_2c_image');
 
 
             $this->add_control(
@@ -214,7 +218,7 @@ if (!class_exists('C_images_text_3c_T1')) {
             ]
             );
 
-            sebenas_image_component::setControls($this, '_3c_image');
+            $sebenas_image_component->setControls($this, '_3c_image');
 
             $this->end_controls_section();
         }
@@ -224,6 +228,8 @@ if (!class_exists('C_images_text_3c_T1')) {
         {
 
             $settings = $this->get_settings_for_display();
+
+            $F_textFormating = new F_textFormating();
 
             require_once SEBENAS_PATH . 'includes/functions/main.php';
 
@@ -235,15 +241,15 @@ if (!class_exists('C_images_text_3c_T1')) {
             $settings_row1 = array(
                 'enable_section_row_1' => $settings['enable_section_row_1'],
                 'enable_title_section_row_1' => $settings['enable_title_section_row_1'],
-                'title_text_section_row_1' => F_textFormating::setFormatingText($settings['title_text_section_row_1']),
+                'title_text_section_row_1' => $F_textFormating->setFormatingText($settings['title_text_section_row_1']),
                 'enable_info_text_section_row_1' => $settings['enable_info_text_section_row_1'],
-                'info_text_section_row_1' => F_textFormating::setFormatingText($settings['info_text_section_row_1']),
+                'info_text_section_row_1' => $F_textFormating->setFormatingText($settings['info_text_section_row_1']),
             );
 
             $slug = '_1c_image';
             $settings_c1 = array(
                 'enable_info_title_1c' => $settings['enable_info_title_1c'],
-                'title_text_1c' => F_textFormating::setFormatingText( $settings['title_text_1c'] ),
+                'title_text_1c' => $F_textFormating->setFormatingText( $settings['title_text_1c'] ),
                 'image_1c' => $settings['image_info' . $slug]
             );
 
@@ -251,14 +257,14 @@ if (!class_exists('C_images_text_3c_T1')) {
             $settings_c2 = array(
                 'image_2c' => $settings['image_info' . $slug],
                 'enable_info_text_2c' => $settings['enable_info_text_2c'],
-                'info_text_2c' => F_textFormating::setFormatingText( $settings['info_text_2c'] )
+                'info_text_2c' => $F_textFormating->setFormatingText( $settings['info_text_2c'] )
             );
 
             $slug = '_3c_image';
             $settings_c3 = array(
                 'image_3c' => $settings['image_info' . $slug],
                 'enable_info_text_3c' => $settings['enable_info_text_3c'],
-                'info_text_3c' => F_textFormating::setFormatingText( $settings['info_text_3c'] )
+                'info_text_3c' => $F_textFormating->setFormatingText( $settings['info_text_3c'] )
             );
 
             $pre_styleContainer = null;

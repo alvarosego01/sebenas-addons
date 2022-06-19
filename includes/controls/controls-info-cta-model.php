@@ -13,6 +13,9 @@ if (!class_exists('sebenas_controls_InfoCta_model')) {
     {
         public function setControls($class)
         {
+
+            $sebenas_image_component = new sebenas_image_component();
+
             $class->start_controls_section(
                 'Image_section_info',
                 [
@@ -21,7 +24,7 @@ if (!class_exists('sebenas_controls_InfoCta_model')) {
             ]
             );
 
-            sebenas_image_component::setControls($class, '_info_image_1');
+            $sebenas_image_component->setControls($class, '_info_image_1');
 
             $class->end_controls_section();
 
@@ -110,7 +113,8 @@ if (!class_exists('sebenas_controls_InfoCta_model')) {
             ]
             );
 
-            sebenas_control_cta_model::setControls($class, '_info_CTA', 'enable_info_cta');
+            $sebenas_control_cta_model = new sebenas_control_cta_model();
+            $sebenas_control_cta_model->setControls($class, '_info_CTA', 'enable_info_cta');
 
             $class->end_controls_section();
         }
