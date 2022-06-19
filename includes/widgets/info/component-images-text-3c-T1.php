@@ -229,6 +229,8 @@ if (!class_exists('C_images_text_3c_T1')) {
 
             $settings = $this->get_settings_for_display();
 
+            require_once SEBENAS_PATH . 'includes/functions/main.php';
+
             $F_textFormating = new F_textFormating();
 
             require_once SEBENAS_PATH . 'includes/functions/main.php';
