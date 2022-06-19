@@ -106,6 +106,8 @@ if (!class_exists('C_images_text_3c_T1')) {
 
             sebenas_control_styles::setControls($this);
 
+            sebenas_title_text_row1::setControls($this);
+
 
             $this->start_controls_section(
                 'column_section_1',
@@ -230,6 +232,14 @@ if (!class_exists('C_images_text_3c_T1')) {
                 'component_styles' => $settings['sebenas_component_defined_styles']
             );
 
+            $settings_row1 = array(
+                'enable_section_row_1' => $settings['enable_section_row_1'],
+                'enable_title_section_row_1' => $settings['enable_title_section_row_1'],
+                'title_text_section_row_1' => F_textFormating::setFormatingText($settings['title_text_section_row_1']),
+                'enable_info_text_section_row_1' => $settings['enable_info_text_section_row_1'],
+                'info_text_section_row_1' => F_textFormating::setFormatingText($settings['info_text_section_row_1']),
+            );
+
             $slug = '_1c_image';
             $settings_c1 = array(
                 'enable_info_title_1c' => $settings['enable_info_title_1c'],
@@ -251,31 +261,57 @@ if (!class_exists('C_images_text_3c_T1')) {
                 'info_text_3c' => F_textFormating::setFormatingText( $settings['info_text_3c'] )
             );
 
+            $pre_styleContainer = null;
             if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {
-                ?>
-
-<section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 whiteBackground_Style">
-
-<?php
+                $pre_styleContainer = 'whiteBackground_Style';
             }
             if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'grey_component_style') {
-                ?>
-
-<section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 greyBackground_Style">
-
-<?php
+                $pre_styleContainer = 'greyBackground_Style';
             }
-            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style') {
-                ?>
+            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style'){
+                 $pre_styleContainer = 'blackBackground_Style';
+            }
+            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'primary_component_style'){
+                 $pre_styleContainer = 'primaryBackground_Style';
+            }
 
-<section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 blackBackground_Style">
+            ?>
 
-<?php
-            } ?>
+        <section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 <?php echo $pre_styleContainer ?>">
+            <div class="section-row">
 
-    <div class="section-row">
+             <?php
+                    if (isset($settings_row1) && $settings_row1['enable_section_row_1'] == 'yes') {
+                        ?>
+                <section class="innerSectionElement sct1">
+                        <div class="containElements">
 
-        <section class="innerSectionElement">
+                            <?php
+                        if (isset($settings_row1) && $settings_row1['enable_title_section_row_1'] == 'yes') {
+                            ?>
+                                <h2 class="secondaryTitle">
+                                    <?php echo isset($settings_row1['title_text_section_row_1']) ? $settings_row1['title_text_section_row_1'] : ''; ?>
+                                </h2>
+                                <?php
+                        } ?>
+
+                    <?php
+                        if (isset($settings_row1) && $settings_row1['enable_info_text_section_row_1'] == 'yes') {
+                            ?>
+                                <div class="text">
+                                    <?php echo isset($settings_row1['info_text_section_row_1']) ? $settings_row1['info_text_section_row_1'] : ''; ?>
+                                </div>
+                                <?php
+                        } ?>
+
+                    </div>
+
+            </section>
+
+            <?php
+                    } ?>
+
+        <section class="innerSectionElement sct2">
             <div class="groupElements row">
                 <div class="col-md-12 col-lg-4 partContainer element_c1">
                     <div class="containElements">

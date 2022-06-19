@@ -35,6 +35,16 @@ if (!class_exists('sebenas_image_component')) {
                 'separator' => 'none',
             ]
             );
+
+            $class->add_control(
+                'enable_image_box_shadow' . $slug,
+                [
+                'label' => esc_html__('Enable box shadow', 'Sebenas_Addons'),
+                'type' => Controls_Manager::SWITCHER,
+                ]
+            );
+
+
         }
     }
 }

@@ -1,0 +1,235 @@
+
+
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_services_T1
+    padding: 75px
+    box-shadow: $shadow2
+    @include responsivo(telefonoTable)
+        padding: 25px 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    @include responsivo(smallPcTablet)
+        padding: 75px 50px
+
+    .section-row
+        section.innerSectionElement.sct2
+            .containElements.row
+                .image
+                    @include responsivo(telefonoTable)
+                        margin-bottom: 25px
+                    @include responsivo(pcMedio)
+                        margin-bottom: 25px
+                    .containerImage
+                        img
+                            width: 100%
+                            object-fit: cover
+                            object-position: center top
+                            @include responsivo(telefonoTable)
+                                height: 300px
+                            @include responsivo(pcMedio)
+                                height: 350px
+                            @include responsivo(general)
+                                height: 500px
+                            @include responsivo(resto)
+                                height: 550px
+
+                .info
+                    display: flex
+                    flex-direction: column
+                    .containInfo
+                        margin: auto 0
+                        .secondaryTitle
+                            margin-bottom: 25px
+                            @include responsivo(telefonoTable)
+                                text-align: center
+                            @include responsivo(pcMedio)
+                                text-align: center
+                            @include h3_title_contain()
+                        .text
+                            margin-bottom: 50px
+                            @include responsivo(telefonoTable)
+                                text-align: center
+                                margin-bottom: 25px
+                            @include responsivo(pcMedio)
+                                text-align: center
+                                margin-bottom: 25px
+                            @include p_secondaryText_contain()
+                        .featureList
+                            display: flex
+                            align-content: center
+                            justify-content: center
+                            .featureItem
+                                display: flex
+                                padding: 10px
+                                padding-bottom: 25px
+                                padding-top: 0
+                                @include responsivo(pcMedio)
+                                    width: 50%!important
+
+                                &:last-child
+                                    padding-bottom: 0
+
+                                .containItem
+                                    display: flex
+                                    // margin: 0 auto
+                                    @include responsivo(telefonoTable)
+                                        flex-direction: column
+                                        width: 100%
+                                    @include responsivo(pcMedio)
+                                        flex-direction: column
+                                        width: 100%
+                                    @include responsivo(general)
+                                        flex-direction: row
+                                    @include responsivo(resto)
+                                        flex-direction: row
+                                    .icon
+                                        margin-right: 15px
+                                        @include responsivo(telefonoTable)
+                                            margin: 0
+                                            margin-bottom: 15px
+                                        @include responsivo(pcMedio)
+                                            margin: 0
+                                            margin-bottom: 15px
+                                        .icon-container
+                                            @include responsivo(telefonoTable)
+                                                width: fit-content
+                                                margin: 0 auto
+                                            @include responsivo(pcMedio)
+                                                width: fit-content
+                                                margin: 0 auto
+                                            i
+                                                font-size: 32px
+                                                @include responsivo(telefonoTable)
+                                                    font-size: 25px
+                                                @include responsivo(pcMedio)
+                                                    font-size: 27.5px
+                                    .info
+                                        h4.smallTitle
+                                            text-align: left
+                                            font-weight: 600
+                                            margin-bottom: 10px
+                                            @include responsivo(telefonoTable)
+                                                text-align: center
+                                            @include responsivo(pcMedio)
+                                                text-align: center
+                                            @include h4_title_small()
+                                        .text
+                                            text-align: left
+                                            margin-bottom: 0
+                                            @include responsivo(telefonoTable)
+                                                text-align: center
+                                            @include responsivo(pcMedio)
+                                                text-align: center
+                                            @include p_secondaryText_contain()
+
+
+    &.greyBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .containInfo
+                        .secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $blackColor
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $blackColor
+    &.blackBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $whiteBase1
+                    .text
+                        color: $whiteBase1
+            section.innerSectionElement.sct2
+                .containElements
+                    .containInfo
+                        .secondaryTitle
+                            color: $whiteBase1
+                        .text
+                            color: $whiteBase1
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $whiteBase1
+                                    .text
+                                        color: $whiteBase1
+
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .containInfo
+                        .secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $blackColor
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $whiteBase1
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $blackColor
+
+    &.whiteBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $grayColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .containInfo
+                        .secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $grayColor
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $grayColor

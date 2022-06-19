@@ -9,7 +9,8 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
         padding: 50px
     @include responsivo(general)
         padding: 75px 65px
-
+    @include responsivo(smallPcTablet)
+        padding: 75px 50px
     @include responsivo(resto)
         padding: 75px 60px
 
@@ -30,16 +31,24 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
                         padding: 0 10px
                     .containerImage
                         display: flex
+                        @include responsivo(telefonoTable)
+                            width: fit-content
+                            margin-left: auto
+                            margin-right: auto
+                        @include responsivo(pcMedio)
+                            width: fit-content
+                            margin-left: auto
+                            margin-right: auto
                         img
                             object-fit: cover
                             object-position: center
                             width: 100%
                             @include responsivo(telefonoTable)
-                                height: 250px
+                                height: 225px
                                 width: auto
                                 margin: 0 auto
                             @include responsivo(pcMedio)
-                                height: 325px
+                                height: 300px
                                 width: auto
                                 margin: 0 auto
                             @include responsivo(general)
@@ -48,7 +57,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
                                 height: 400px
 
                     .text
-                        @include p_title_contain()
+                        @include p_secondaryText_contain()
                         @include responsivo(telefonoTable)
                             margin-bottom: 0
                         @include responsivo(pcMedio)
@@ -101,6 +110,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
                             @include responsivo(resto)
                                 margin-bottom: 25px
 
+// primaryBackground_Style
 
     &.whiteBackground_Style
         .section-row
@@ -132,3 +142,13 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_images_text_3c_T1
                             color: $whiteBase1
                         .text
                             color: $whiteBase1
+
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements.row
+                    .partContainer
+                        h3.secondaryTitle
+                            color: $blackColor
+                        .text
+                            color: $blackColor

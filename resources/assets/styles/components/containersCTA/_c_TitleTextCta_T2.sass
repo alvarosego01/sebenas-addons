@@ -1,0 +1,99 @@
+
+
+
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_TitleTextCta_T2
+
+    padding: 75px 0
+    box-shadow: $shadow2
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    @include responsivo(telefonoTable)
+        padding: 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    @include responsivo(smallPcTablet)
+        padding: 75px 50px
+    .section-row
+
+        section.innerSectionElement.sct2
+            position: relative
+
+            .groupElements
+                display: flex
+                justify-content: center
+                align-content: center
+                align-items: center
+                .info
+                    width: 100%
+                    @include responsivo(telefonoTable)
+                        width: 100%
+                        padding-left: 0
+                        padding-right: 0
+                    @include responsivo(pcMedio)
+                        width: 100%
+                        padding-left: 0
+                        padding-right: 0
+                    @include responsivo(general)
+                        width: 75%
+                    @include responsivo(resto)
+                        width: 75%
+
+                    .containElements
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        align-content: center
+                        align-items: center
+                        .secondaryTitle
+                            margin-bottom: 25px
+                            text-align: center
+                            @include h3_title_contain()
+                        .text
+                            margin-bottom: 25px
+                            text-align: center
+                            @include p_secondaryText_contain()
+
+    &.whiteBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements
+                    .info
+                        .containElements
+                            h3.secondaryTitle
+                                color: $blackColor
+                            .text
+                                color: $grayColor
+
+    &.greyBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements
+                    .info
+                        .containElements
+                            h3.secondaryTitle
+                                color: $blackColor
+                            .text
+                                color: $blackColor
+    &.blackBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements
+                    .info
+                        .containElements
+                            h3.secondaryTitle
+                                color: $whiteBase1
+                            .text
+                                color: $whiteBase1
+
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement
+                .groupElements
+                    .info
+                        .containElements
+                            h3.secondaryTitle
+                                color: $blackColor
+                            .text
+                                color: $blackColor

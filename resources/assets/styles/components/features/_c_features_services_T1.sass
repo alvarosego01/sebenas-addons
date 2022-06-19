@@ -1,0 +1,176 @@
+
+
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_services_T1
+    padding: 75px
+    box-shadow: $shadow2
+    @include responsivo(telefonoTable)
+        padding: 25px 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    @include responsivo(smallPcTablet)
+        padding: 75px 50px
+
+    .section-row
+        section.innerSectionElement.sct2
+
+            .containElements
+                display: flex
+                justify-content: center
+                align-content: center
+                align-items: center
+                width: 100%
+                margin: 0 auto
+                .featureList
+                    display: flex
+                    align-content: center
+                    justify-content: center
+                    .featureItem
+                        display: flex
+                        padding: 10px
+                        padding-bottom: 25px
+                        padding-top: 0
+
+                        .containItem
+                            display: flex
+                            // margin: 0 auto
+                            @include responsivo(telefonoTable)
+                                flex-direction: column
+                                width: 100%
+                            @include responsivo(pcMedio)
+                                flex-direction: column
+                                width: 100%
+                            @include responsivo(general)
+                                flex-direction: row
+                            @include responsivo(resto)
+                                flex-direction: row
+                            .icon
+                                margin-right: 15px
+                                @include responsivo(telefonoTable)
+                                    margin: 0
+                                    margin-bottom: 15px
+                                @include responsivo(pcMedio)
+                                    margin: 0
+                                    margin-bottom: 15px
+                                .icon-container
+                                    @include responsivo(telefonoTable)
+                                        width: fit-content
+                                        margin: 0 auto
+                                    @include responsivo(pcMedio)
+                                        width: fit-content
+                                        margin: 0 auto
+                                    i
+                                        font-size: 32px
+                                        @include responsivo(telefonoTable)
+                                            font-size: 25px
+                                        @include responsivo(pcMedio)
+                                            font-size: 27.5px
+                            .info
+                                h4.smallTitle
+                                    text-align: left
+                                    font-weight: 600
+                                    margin-bottom: 10px
+                                    @include responsivo(telefonoTable)
+                                        text-align: center
+                                    @include responsivo(pcMedio)
+                                        text-align: center
+                                    @include h4_title_small()
+                                .text
+                                    text-align: left
+                                    @include responsivo(telefonoTable)
+                                        text-align: center
+                                    @include responsivo(pcMedio)
+                                        text-align: center
+                                    @include p_secondaryText_contain()
+
+
+    &.greyBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $blackColor
+    &.blackBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $whiteBase1
+                    .text
+                        color: $whiteBase1
+            section.innerSectionElement.sct2
+                .containElements
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $whiteBase1
+                                    .text
+                                        color: $whiteBase1
+
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $whiteBase1
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $blackColor
+
+    &.whiteBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $grayColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .featureList
+                        .featureItem
+                            .containItem
+                                .icon
+                                    .icon-container
+                                        i
+                                            color: $primaryColorYellow
+                                .info
+                                    .smallTitle
+                                        color: $blackColor
+                                    .text
+                                        color: $grayColor

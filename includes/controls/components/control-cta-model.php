@@ -187,6 +187,70 @@ if (!class_exists('sebenas_control_cta_model')) {
             );
 
         }
+
+
+        public function setCTA( $settings ){
+
+            if( isset($settings) && $settings != null ){
+
+                $ctaClasses = '';
+                $ctaClasses .= isset($settings['cta_style']) ? $settings['cta_style'] : '';
+                $ctaClasses .= ' ';
+                $ctaClasses .= isset($settings['icon_side_cta']) ? $settings['icon_side_cta'] : '';
+                $ctaClasses .= ' ';
+                if( isset($settings['cta_action_click']) ){
+                    if( $settings['cta_action_click'] == 'external_url' ){ ?>
+                        <a href="<?php  echo $settings['link_cta']['url'] ?>" class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                    <?php }
+                    if( $settings['cta_action_click'] == 'special_action' ){
+
+                        if( $settings['cta_special_action'] == 'add_cart_current_product' ) {
+                            $ctaClasses .= ' sbn_addCart_this';
+                            ?>
+                            <a class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                        <?php }
+                        if( $settings['cta_special_action'] == 'open_popup' )
+                        {
+                            $ctaClasses .= ' sbn_openPopup';
+                            ?>
+                            <a class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+
+                        <?php }
+
+                    }
+                }
+                ?>
+                        <?php
+                        if (isset($settings) && $settings['enable_info_cta'] == 'yes') {
+                            $icon = '';
+                            $icon_class = '';
+                            if ($settings['icon_type_cta'] == 'icons') {
+                                if ($settings['icon_cta']) {
+                                    $icon = '<i class="' . esc_attr($settings['icon_cta']) . '"></i>';
+                                }
+                            } elseif ($settings['icon_type_cta'] == 'custom_icons') {
+                                if ($settings['custom_icon_cta'] && \Elementor\Icons_Manager::is_migration_allowed()) {
+                                    ob_start();
+                                    \Elementor\Icons_Manager::render_icon($settings['custom_icon_cta'], [ 'aria-hidden' => 'true' ]);
+                                    $icon = ob_get_clean();
+                                    if ($settings['custom_icon_cta']['library'] == 'svg') {
+                                        $icon_class = 'icon-svg';
+                                    }
+                                }
+                            } ?>
+                            <div class="icon-container <?php echo esc_attr($icon_class); ?>">
+                                <?php echo $icon; ?>
+                            </div>
+                        <?php
+                        } ?>
+                        <?php echo isset($settings['text_cta']) ? $settings['text_cta'] : ''; ?>
+                    </a>
+                    <?php
+
+            }
+         }
+
+
     }
 }
 

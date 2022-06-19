@@ -9,9 +9,38 @@
 
 @import ./info/_infoMain
 
+@import ./features/_featuresMain
+
 
 
 
 section.sbn_ComponentCustom.parentElement.elementorCustom
     .containerImage.containImageHover
         box-shadow: $shadow2
+
+    .section-row
+        section.innerSectionElement.sct1
+            margin-bottom: 50px
+            @include responsivo(telefonoTable)
+                margin-bottom: 25px
+            @include responsivo(pcMedio)
+                margin-bottom: 25px
+            .containElements
+                display: flex
+                flex-direction: column
+                .secondaryTitle,
+                .text
+                    text-align: center
+
+                .secondaryTitle
+                    margin-bottom: 25px
+                    @include h2_title_contain()
+                .text
+                    display: block
+                    width: 75%
+                    margin: 0 auto
+                    @include responsivo(telefonoTable)
+                        width: 100%
+                    @include responsivo(pcMedio)
+                        width: 100%
+                    @include p_text_contain()

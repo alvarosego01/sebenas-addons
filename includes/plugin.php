@@ -21,7 +21,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.1.5';
 
 	/**
 	 * Minimum Elementor Version
@@ -288,6 +288,20 @@ final class Plugin {
 			'sebenas_widgets_modules_info',
 			[
 				'title' => esc_html__( 'Sebenas Modules - Info', 'Sebenas_Addons' ),
+				'icon' => 'eicon-star-o',
+			]
+		);
+		$elements_manager->add_category(
+			'sebenas_widgets_modules_ctas',
+			[
+				'title' => esc_html__( 'Sebenas Modules - CTAs', 'Sebenas_Addons' ),
+				'icon' => 'eicon-star-o',
+			]
+		);
+		$elements_manager->add_category(
+			'sebenas_widgets_modules_features',
+			[
+				'title' => esc_html__( 'Sebenas Modules - Features', 'Sebenas_Addons' ),
 				'icon' => 'eicon-star-o',
 			]
 		);

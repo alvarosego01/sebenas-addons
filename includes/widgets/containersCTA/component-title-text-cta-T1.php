@@ -35,7 +35,7 @@ if (!class_exists('C_TitleTextCta_T1')) {
 
         public function get_categories()
         {
-            return ['sebenas_widgets_modules', 'sebenas_widgets_modules_info'];
+            return ['sebenas_widgets_modules', 'sebenas_widgets_modules_info', 'sebenas_widgets_modules_ctas'];
         }
 
 
@@ -50,77 +50,7 @@ if (!class_exists('C_TitleTextCta_T1')) {
 
             sebenas_control_styles::setControls($this);
 
-            $this->start_controls_section(
-                'section_row_1',
-                [
-                'label' => esc_html__('Section row 1', 'Sebenas_Addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-            );
-
-            $this->add_control(
-                'enable_section_row_1',
-                [
-                'label' => esc_html__('Enable section row 1', 'Sebenas_Addons'),
-                'type' => Controls_Manager::SWITCHER,
-                ]
-            );
-
-            $this->add_control(
-                'enable_title_section_row_1',
-                [
-                'label' => esc_html__('Enable title section row 1', 'Sebenas_Addons'),
-                'type' => Controls_Manager::SWITCHER,
-                'condition' => [
-                    'enable_section_row_1' => 'yes',
-                ],
-                ]
-            );
-
-            $this->add_control(
-                'title_text_section_row_1',
-                [
-                    'type' => Controls_Manager::TEXT,
-                    'label' => esc_html__('Title principal', 'Sebenas_Addons'),
-                    'placeholder' => esc_html__('Enter your title', 'Sebenas_Addons'),
-                    'default' => 'Lorem ipsum dolor sit amet co',
-                    'label_block' => true,
-                    'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
-                    'condition' => [
-                        'enable_section_row_1' => 'yes',
-                        'enable_title_section_row_1' => 'yes',
-                    ],
-            ]
-            );
-
-            $this->add_control(
-                'enable_info_text_section_row_1',
-                [
-                'label' => esc_html__('Enable title section row 1', 'Sebenas_Addons'),
-                'type' => Controls_Manager::SWITCHER,
-                'condition' => [
-                    'enable_section_row_1' => 'yes',
-                ],
-                ]
-            );
-
-            $this->add_control(
-                'info_text_section_row_1',
-                [
-                'label' => esc_html__('Description text', 'Sebenas_Addons'),
-                'type' => Controls_Manager::WYSIWYG,
-                'default' => esc_html__('Default text', 'Sebenas_Addons'),
-                'placeholder' => esc_html__('Type your text here', 'Sebenas_Addons'),
-                'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet repellat consectetur in cumque laborum. Dicta labore similique commodi earum possimus, numquam corrupti consequuntur modi, repellendus animi quasi cum repellat atque?',
-                'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
-                'condition' => [
-                    'enable_info_text_section_row_1' => 'yes',
-                ],
-
-            ]
-            );
-
-            $this->end_controls_section();
+            sebenas_title_text_row1::setControls($this);
 
             sebenas_controls_info_text_cta::setControls($this);
         }
@@ -200,32 +130,23 @@ if (!class_exists('C_TitleTextCta_T1')) {
             </section>
 
             <?php
-                    } ?>
+                    }
 
-                    <?php
-
-if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {
-    ?>
-
- <section class="innerSectionElement sct2  whiteBackground_Style">
-
-<?php
-}
-if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'grey_component_style') {
-    ?>
-
- <section class="innerSectionElement sct2  greyBackground_Style">
-
-<?php
-}
-if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style') {
-    ?>
-
- <section class="innerSectionElement sct2  blackBackground_Style">
-
-<?php
-}  ?>
-
+                    $pre_styleContainer = null;
+                    if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {
+                        $pre_styleContainer = 'whiteBackground_Style';
+                    }
+                    if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'grey_component_style') {
+                        $pre_styleContainer = 'greyBackground_Style';
+                    }
+                    if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style'){
+                         $pre_styleContainer = 'blackBackground_Style';
+                    }
+                    if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'primary_component_style'){
+                         $pre_styleContainer = 'primaryBackground_Style';
+                    }
+                ?>
+                <section class="innerSectionElement sct2  <?php echo $pre_styleContainer ?>">
                     <div class="containElements">
 
                         <div class="info">

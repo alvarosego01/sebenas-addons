@@ -11,6 +11,8 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
     @include responsivo(pcMedio)
         padding: 50px
         padding-bottom: 0
+    @include responsivo(general)
+        padding: 75px 50px
     .section-row
         section.innerSectionElement
             .groupElements.row
@@ -36,7 +38,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                             margin-bottom: 25px
                             @include h3_title_contain()
                         .text
-                            @include p_title_contain()
+                            @include p_secondaryText_contain()
                         h3.secondaryTitle,
                         .text
                             @include responsivo(telefonoTable)
@@ -54,15 +56,24 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                 .partContainer.image
                     .containerImage
                         display: flex
+                        @include responsivo(telefonoTable)
+                            width: fit-content
+                            margin-left: auto
+                            margin-right: auto
+                        @include responsivo(pcMedio)
+                            width: fit-content
+                            margin-left: auto
+                            margin-right: auto
                         img
                             object-fit: cover
                             object-position: center
+                            width: 100%
                             @include responsivo(telefonoTable)
-                                height: 250px
+                                height: 225px
                                 width: auto
                                 margin: 0 auto
                             @include responsivo(pcMedio)
-                                height: 325px
+                                height: 300px
                                 width: auto
                                 margin: 0 auto
 
@@ -99,7 +110,13 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
 
     &.whiteBackground_Style
         .section-row
-            section.innerSectionElement
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $grayColor
+            section.innerSectionElement.sct2
                 .groupElements.row
                     .partContainer.info
                         .containElements
@@ -110,7 +127,13 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
 
     &.greyBackground_Style
         .section-row
-            section.innerSectionElement
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
                 .groupElements.row
                     .partContainer.info
                         .containElements
@@ -120,7 +143,13 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                                 color: $blackColor
     &.blackBackground_Style
         .section-row
-            section.innerSectionElement
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $whiteBase1
+                    .text
+                        color: $whiteBase1
+            section.innerSectionElement.sct2
                 .groupElements.row
                     .partContainer.info
                         .containElements
@@ -128,3 +157,19 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                                 color: $whiteBase1
                             .text
                                 color: $whiteBase1
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .groupElements.row
+                    .partContainer.info
+                        .containElements
+                            h3.secondaryTitle
+                                color: $blackColor
+                            .text
+                                color: $blackColor
