@@ -238,7 +238,7 @@ if (!class_exists('sebenas_control_cta_model')) {
                                     }
                                 }
                             } ?>
-                            <div class="icon-container <?php echo esc_attr($icon_class); ?>">
+                            <div class="icon_container <?php echo esc_attr($icon_class); ?>">
                                 <?php echo $icon; ?>
                             </div>
                         <?php
