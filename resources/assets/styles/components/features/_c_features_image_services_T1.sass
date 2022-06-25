@@ -14,10 +14,26 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_servi
     .section-row
         section.innerSectionElement.sct2
             .containElements.row
+                @include responsivo(general)
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-content: center
+                    align-items: center
+                @include responsivo(resto)
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-content: center
+                    align-items: center
                 .image
                     @include responsivo(telefonoTable)
+                        padding-left: 0
+                        padding-right: 0
                         margin-bottom: 25px
                     @include responsivo(pcMedio)
+                        padding-left: 0
+                        padding-right: 0
                         margin-bottom: 25px
                     .containerImage
                         img
@@ -36,6 +52,14 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_servi
                 .info
                     display: flex
                     flex-direction: column
+                    @include responsivo(telefonoTable)
+                        padding-left: 0
+                        padding-right: 0
+
+                    @include responsivo(pcMedio)
+                        padding-left: 0
+                        padding-right: 0
+
                     .containInfo
                         margin: auto 0
                         .secondaryTitle
@@ -56,13 +80,40 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_servi
                             @include p_secondaryText_contain()
                         .featureList
                             display: flex
-                            align-content: center
-                            justify-content: center
+                            width: 100%
+                            @include responsivo(telefonoTable)
+                                flex-direction: row
+                                flex-flow: wrap
+                                justify-content: center
+                                align-content: center
+
+                            @include responsivo(pcMedio)
+                                flex-direction: row
+                                flex-flow: wrap
+                                justify-content: center
+                                align-content: center
+
+                            @include responsivo(general)
+                                flex-direction: row
+                                flex-flow: wrap
+                                justify-content: center
+                                align-content: center
+                            @include responsivo(resto)
+                                flex-direction: row
+                                flex-flow: wrap
+                                justify-content: center
+                                align-content: center
                             .featureItem
                                 display: flex
                                 padding: 10px
                                 padding-bottom: 25px
                                 padding-top: 0
+                                @include responsivo(telefonoTable)
+                                    padding: 0 10px
+                                    padding-bottom: 25px
+                                @include responsivo(pcMedio)
+                                    padding: 0 10px
+                                    padding-bottom: 25px
                                 @include responsivo(pcMedio)
                                     width: 50%!important
 

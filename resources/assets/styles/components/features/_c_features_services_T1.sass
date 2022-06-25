@@ -19,12 +19,36 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_services_T1
                 justify-content: center
                 align-content: center
                 align-items: center
-                width: 100%
                 margin: 0 auto
+                @include responsivo(general)
+                    width: 75%
+                @include responsivo(resto)
+                    width: 75%
                 .featureList
                     display: flex
-                    align-content: center
-                    justify-content: center
+                    width: 100%
+                    @include responsivo(telefonoTable)
+                        flex-direction: row
+                        flex-flow: wrap
+                        justify-content: center
+                        align-content: center
+
+                    @include responsivo(pcMedio)
+                        flex-direction: row
+                        flex-flow: wrap
+                        justify-content: center
+                        align-content: center
+
+                    @include responsivo(general)
+                        flex-direction: row
+                        flex-flow: wrap
+                        justify-content: center
+                        align-content: center
+                    @include responsivo(resto)
+                        flex-direction: row
+                        flex-flow: wrap
+                        justify-content: center
+                        align-content: center
                     .featureItem
                         display: flex
                         padding: 10px

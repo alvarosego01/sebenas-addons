@@ -16,6 +16,20 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
     .section-row
         section.innerSectionElement
             .groupElements.row
+                @include responsivo(general)
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-content: center
+                    align-items: center
+
+                @include responsivo(resto)
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-content: center
+                    align-items: center
+
                 .partContainer
                     padding: 0
 
@@ -77,6 +91,12 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                                 height: 300px
                                 width: auto
                                 margin: 0 auto
+                            @include responsivo(general)
+                                max-height: 500px
+                            @include responsivo(smallPcTablet)
+                                max-height: 475px
+                            @include responsivo(resto)
+                                max-height: 525px
 
                 &.rightSide
                     @include responsivo(telefonoTable)
