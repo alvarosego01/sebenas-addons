@@ -200,20 +200,20 @@ if (!class_exists('sebenas_control_cta_model')) {
                 $ctaClasses .= ' ';
                 if( isset($settings['cta_action_click']) ){
                     if( $settings['cta_action_click'] == 'external_url' ){ ?>
-                        <a href="<?php  echo $settings['link_cta']['url'] ?>" class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                        <a href="<?php  echo $settings['link_cta']['url'] ?>" class="sbn_buttonCustom sbn_btn_normal boxShadow2 <?php echo $ctaClasses ?> ">
                     <?php }
                     if( $settings['cta_action_click'] == 'special_action' ){
 
                         if( $settings['cta_special_action'] == 'add_cart_current_product' ) {
                             $ctaClasses .= ' sbn_addCart_this';
                             ?>
-                            <a class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                            <a class="sbn_buttonCustom sbn_btn_normal boxShadow2 <?php echo $ctaClasses ?> ">
                         <?php }
                         if( $settings['cta_special_action'] == 'open_popup' )
                         {
                             $ctaClasses .= ' sbn_openPopup';
                             ?>
-                            <a class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                            <a class="sbn_buttonCustom sbn_btn_normal boxShadow2 <?php echo $ctaClasses ?> ">
 
                         <?php }
 

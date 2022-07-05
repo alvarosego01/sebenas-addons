@@ -167,7 +167,7 @@ if (!class_exists('C_TitleTextCta_T2')) {
                         $ctaClasses .= ' ';
                         $ctaClasses .= isset($settings_CTA['icon_side_cta']) ? $settings_CTA['icon_side_cta'] : '';
                         $ctaClasses .= ' '; ?>
-                        <a href="" class="sbn_buttonCustom <?php echo $ctaClasses ?> ">
+                        <a href="" class="sbn_buttonCustom sbn_btn_normal boxShadow2 <?php echo $ctaClasses ?> ">
                             <?php
                             if (isset($settings_CTA) && $settings_CTA['enable_info_cta'] == 'yes') {
                                 $icon = '';

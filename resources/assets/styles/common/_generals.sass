@@ -53,9 +53,6 @@
     color: $lightGray_color
 
 
-.sbn_buttonCustom
-    box-shadow: $shadow2!important
-
 
 .boxShadow2
     box-shadow: $shadow2
@@ -64,151 +61,133 @@
     box-shadow: none!important
 
 
-.desktopElement
-    @include responsivo(telefonoTable)
-        display: none!important
-    @include responsivo(pcMedio)
-        display: none!important
-    @include responsivo(general)
-        display: block!important
-    @include responsivo(resto)
-        display: block!important
-.mobileElement
-    @include responsivo(telefonoTable)
-        display: block!important
-    @include responsivo(pcMedio)
-        display: block!important
-    @include responsivo(general)
-        display: none!important
-    @include responsivo(resto)
-        display: none!important
-.tabletElement
-    @include responsivo(telefonoTable)
-        display: none!important
-    @include responsivo(pcMedio)
-        display: block!important
-    @include responsivo(general)
-        display: none!important
-    @include responsivo(resto)
-        display: none!important
-
-.desktopTabletElement
-    @include responsivo(telefonoTable)
-        display: none!important
-    @include responsivo(pcMedio)
-        display: block!important
-
-    @include responsivo(general)
-        display: block!important
-
-    @include responsivoSpecial(1000px, 1125px)
-        display: none!important
-
-    @include responsivo(resto)
-        display: block!important
-
-.mobileSmallElement
-    @include responsivo(telefonoTable)
-        display: block!important
-    @include responsivo(pcMedio)
-        display: none!important
-    @include responsivo(general)
-        display: none!important
-    @include responsivo(resto)
-        display: none!important
-
-.desktopElement_flex
-    @include responsivo(telefonoTable)
-        display: none!important
-    @include responsivo(pcMedio)
-        display: none!important
-    @include responsivo(general)
-        display: flex!important
-    @include responsivo(resto)
-        display: flex!important
-.mobileElement_flex
-    @include responsivo(telefonoTable)
-        display: flex!important
-    @include responsivo(pcMedio)
-        display: flex!important
-    @include responsivo(general)
-        display: none!important
-    @include responsivo(resto)
-        display: none!important
-
-.desktopTabletElement_flex
-    @include responsivo(telefonoTable)
-        display: none!important
-    @include responsivo(pcMedio)
-        display: flex!important
-
-    @include responsivo(general)
-        display: flex!important
-
-    @include responsivoSpecial(1000px, 1125px)
-        display: none!important
-
-    @include responsivo(resto)
-        display: flex!important
-
-.mobileSmallElement_flex
-    @include responsivo(telefonoTable)
-        display: flex!important
-    @include responsivo(pcMedio)
-        display: none!important
-    @include responsivo(general)
-        display: none!important
-    @include responsivo(resto)
-        display: none!important
 
 
 // botones
 .sbn_buttonCustom
-    display: flex
-    flex-direction: row
+    display: flex!important
+    flex-direction: row!important
     justify-content: center
     justify-items: center
     align-content: center
     align-items: center
     text-decoration: none
-    font-size: 20px
-    line-height: 1
-    padding: 15px 40px!important
+    line-height: 1!important
     width: fit-content
     transition: $trans
-    transform: scale(1)
-    @include responsivo(telefonoTable)
-        font-size: 13px!important
-        padding: 12.5px 25px!important
-    @include responsivo(pcMedio)
-        font-size: 18px!important
-        padding: 15px 40px!important
-    @include responsivo(smallPcTablet)
-        padding: 15px 30px!important
-        font-size: 18px!important
+    // transform: scale(1)
+    height: auto!important
+    min-height: unset!important
+    min-width: unset!important
+
+
     .icon_container
         display: flex
         flex-direction: column
         justify-content: center
         align-content: center
         align-items: center
-        i
-            display: block
-            margin: auto
-            @include responsivo(telefonoTable)
-                font-size: 15px
-            @include responsivo(pcMedio)
-                font-size: 15px
-            @include responsivo(general)
-                font-size: 18px
-            @include responsivo(smallPcTablet)
-                font-size: 16px
-            @include responsivo(resto)
-                font-size: 18px
+        font-size: unset
 
     &:hover
-        transform: scale(1.05)
+        transform: scale(1.1)
         cursor: pointer
+
+    &.sbn_btn_normal
+        @include responsivo(telefonoTable)
+            font-size: 13px!important
+            padding: 12.5px 25px!important
+        @include responsivo(pcMedio)
+            font-size: 18px!important
+            padding: 15px 40px!important
+        @include responsivo(general)
+            padding: 15px 35px!important
+            font-size: 18px!important
+
+        @include responsivo(smallPcTablet)
+            padding: 10px 25px!important
+            font-size: 16px!important
+        @include responsivo(resto)
+            font-size: 20px!important
+            padding: 15px 40px!important
+
+        .icon_container
+            i[class*="fa"]
+                display: block
+                margin: auto
+                line-height: 1
+                @include responsivo(telefonoTable)
+                    font-size: 15px!important
+                @include responsivo(pcMedio)
+                    font-size: 15px!important
+                @include responsivo(general)
+                    font-size: 18px!important
+                @include responsivo(smallPcTablet)
+                    font-size: 16px!important
+                @include responsivo(resto)
+                    font-size: 20px!important
+            i.las
+                display: block
+                margin: auto
+                line-height: 1
+                @include responsivo(telefonoTable)
+                    font-size: 20px!important
+                @include responsivo(pcMedio)
+                    font-size: 20px!important
+                @include responsivo(general)
+                    font-size: 27.5px!important
+                @include responsivo(smallPcTablet)
+                    font-size: 25px!important
+                @include responsivo(resto)
+                    font-size: 30px!important
+
+    &.sbn_btn_small
+        @include responsivo(telefonoTable)
+            font-size: 13px!important
+            padding: 12.5px 25px!important
+        @include responsivo(pcMedio)
+            font-size: 14px!important
+            padding: 10px 25px!important
+        @include responsivo(general)
+            font-size: 14px!important
+            padding: 10px 20px!important
+        @include responsivo(smallPcTablet)
+            font-size: 12px!important
+            padding: 10px 20px!important
+        @include responsivo(resto)
+            font-size: 16px!important
+            padding: 10px 20px!important
+
+        .icon_container
+            i[class*="fa"]
+                display: block
+                margin: auto
+                line-height: 1
+                @include responsivo(telefonoTable)
+                    font-size: 14px!important
+                @include responsivo(pcMedio)
+                    font-size: 14px!important
+                @include responsivo(general)
+                    font-size: 14px!important
+                @include responsivo(smallPcTablet)
+                    font-size: 14px!important
+                @include responsivo(resto)
+                    font-size: 16px!important
+            i.las
+                display: block
+                margin: auto
+                line-height: 1
+                @include responsivo(telefonoTable)
+                    font-size: 14px!important
+                @include responsivo(pcMedio)
+                    font-size: 14px!important
+                @include responsivo(general)
+                    font-size: 16px!important
+                @include responsivo(smallPcTablet)
+                    font-size: 14px!important
+                @include responsivo(resto)
+                    font-size: 18px!important
+
 
     &.sbn_primaryButton
         background-color: $primaryColorYellow
@@ -228,10 +207,12 @@
     &.right_side
         display: flex
         flex-direction: row-reverse
+        .icon_container,
         .icon_container
             margin-left: 10px
     &.left_side
         display: flex
         flex-direction: row
+        .icon_container,
         .icon_container
             margin-right: 10px
