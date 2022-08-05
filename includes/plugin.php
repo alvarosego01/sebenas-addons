@@ -243,18 +243,22 @@ final class Plugin {
 
 	}
 
-
     public function frontend_styles() {
 
-		wp_register_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
-	    wp_enqueue_style('sb_addons_Main.Css');
+	    wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 
 	}
 
+
 	public function frontend_scripts() {
 
-		wp_register_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', ['jquery'], PLUGIN_VERSION, true);
-	    wp_enqueue_script('sb_addons_Main.js');
+	    wp_enqueue_script('Magnific-Popup.js', SEBENAS_URL . 'resources/assets/library/Magnific-Popup/jquery.magnific-popup.min.js', ['jquery'], true);
+
+		wp_enqueue_style('Magnific-Popup.css', SEBENAS_URL . 'resources/assets/library/Magnific-Popup/magnific-popup.css', array(), rand(), 'all');
+
+	    wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', ['jquery'], PLUGIN_VERSION, true);
+
+	    wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL . 'assets/dist/scripts/functions/popupsControl.js', ['jquery'], PLUGIN_VERSION, true);
 
 	}
 
@@ -268,12 +272,10 @@ final class Plugin {
 		add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 
+
+
+
 	}
-
-
-
-
-
 
 	function add_elementor_widget_categories( $elements_manager ) {
 
@@ -306,10 +308,12 @@ final class Plugin {
 			]
 		);
 
-
 	}
 
 
 }
+
+
+
 
 ?>

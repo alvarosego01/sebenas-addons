@@ -43,16 +43,24 @@ function sebenas_init_loaded()
         return;
     }
 
-
     // include_once( SEBENAS_PATH . 'includes/widgets-manager.php' );
     // include_once( SEBENAS_PATH . 'includes/controls-manager.php' );
 
     // Load plugin file
     require_once(SEBENAS_PATH . 'includes/plugin.php');
 
+    // importaciones
+    require_once(SEBENAS_PATH . 'functions/main.php');
+
     // Run the plugin
     \Sebenas_Addons\Plugin::instance();
 
 }
 
+
+
+
+
 add_action('plugins_loaded', 'sebenas_init_loaded');
+
+
