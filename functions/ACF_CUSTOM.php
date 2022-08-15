@@ -10,13 +10,60 @@ if (!defined('ABSPATH')) {
         if (function_exists('acf_add_local_field_group')) {
 
             sbn_registerFieldGroups(
+                sbn_type_page_settings()
+            );
+            sbn_registerFieldGroups(
                 sbn_popups_settings()
+            );
+            sbn_registerFieldGroups(
+                sbn_footer_settings()
             );
             sbn_registerFieldGroups(
                 sbn_template_popups()
             );
 
         }
+    }
+
+
+    function sbn_type_page_settings (){
+
+        return array(
+            array(
+            'key' => 'sbn_type_template_page',
+            'title' => 'Set type template page',
+            'fields' => array(
+                array(
+                    'key' => 'sbn_type_template',
+                    'name' => 'sbn_type_template',
+                    'label' => 'Sbn type page',
+                    'type' => 'select',
+                    'choices' => array(
+                        'sbn_type_page_regular' => 'Type regular page',
+                        'sbn_type_page_landing' => 'Type landing page',
+                        'sbn_type_page_product' => 'Type product page',
+                    ),
+                )
+
+            ),
+            'location' => array(
+
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '!=',
+                        'value' => 'sbn_footer',
+                    ),
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '!=',
+                        'value' => 'sbn_popups',
+                    ),
+                ),
+
+            ),
+        ),
+        );
     }
 
 
@@ -354,6 +401,423 @@ if (!defined('ABSPATH')) {
         );
 
     }
+
+
+    function sbn_footer_settings() {
+
+        $aux = wp_get_nav_menus();
+
+        $body = array();
+
+        if(count( $aux ) > 0){
+
+            foreach ($aux as $key => $value) {
+            # code...
+            // array_push( $body, [
+                // $value['term_id' => $value['name']]
+                // ])
+                $body[$value->term_id] = $value->name;
+
+            }
+
+        }
+
+        $postTypes = get_post_types();
+
+
+        return array(
+
+            array(
+                'key' => 'sbn_footer_settings_1c_4c',
+                'title' => 'Columna 1 ( 4c )',
+                'fields' => array(
+
+                    array(
+                        'key' => 'sbn_footer_logo_1c_4c',
+                        'name' => 'sbn_footer_logo_1c_4c',
+                        'label' => 'Sebenas footer logo',
+                        'type' => 'image',
+                    ),
+
+                    array(
+                        'key' => 'sbn_footer_texto_1c_4c',
+                        'name' => 'sbn_footer_texto_1c_4c',
+                        'label' => 'Texto columna 1',
+                        'type' => 'textarea',
+                    ),
+
+                    array(
+
+                        'key' => 'enable_menu_1c_4c',
+                        'name' => 'enable_menu_1c_4c',
+                        'label' => 'Habilitar menu columna 1',
+                        'type' => 'true_false',
+
+                    ),
+
+                    array(
+                        'key' => 'title_menu_1c_4c',
+                        'name' => 'title_menu_1c_4c',
+                        'label' => 'Titulo Menu columna 1',
+                        'type' => 'text',
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_1c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                    array(
+                        'key' => 'menu_1c_4c',
+                        'name' => 'menu_1c_4c',
+                        'label' => 'Menu columna 1',
+                        'type' => 'select',
+                        'choices' => $body,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_1c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+                        array(
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ),
+                    ),
+
+                ),
+
+            ),
+            array(
+                'key' => 'sbn_footer_settings_2c_4c',
+                'title' => 'Columna 2 ( 4c )',
+                'fields' => array(
+
+                    array(
+
+                        'key' => 'enable_menu_2c_4c',
+                        'name' => 'enable_menu_2c_4c',
+                        'label' => 'Habilitar menu columna 2',
+                        'type' => 'true_false',
+
+                    ),
+
+                    array(
+                        'key' => 'title_menu_2c_4c',
+                        'name' => 'title_menu_2c_4c',
+                        'label' => 'Titulo Menu columna 2',
+                        'type' => 'text',
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_2c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                    array(
+                        'key' => 'menu_2c_4c',
+                        'name' => 'menu_2c_4c',
+                        'label' => 'Menu columna 2',
+                        'type' => 'select',
+                        'choices' => $body,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_2c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+                        array(
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ),
+                    ),
+
+                ),
+
+            ),
+
+            array(
+                'key' => 'sbn_footer_settings_3c_4c',
+                'title' => 'Columna 3 ( 4c )',
+                'fields' => array(
+
+                    array(
+
+                        'key' => 'enable_menu_3c_4c',
+                        'name' => 'enable_menu_3c_4c',
+                        'label' => 'Habilitar menu columna 3',
+                        'type' => 'true_false',
+
+                    ),
+
+                    array(
+                        'key' => 'title_menu_3c_4c',
+                        'name' => 'title_menu_3c_4c',
+                        'label' => 'Titulo Menu columna 3',
+                        'type' => 'text',
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_3c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                    array(
+                        'key' => 'menu_3c_4c',
+                        'name' => 'menu_3c_4c',
+                        'label' => 'Menu columna 3',
+                        'type' => 'select',
+                        'choices' => $body,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_3c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+                        array(
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ),
+                    ),
+
+                ),
+
+            ),
+            array(
+                'key' => 'sbn_footer_settings_4c_4c',
+                'title' => 'Columna 4 ( 4c )',
+                'fields' => array(
+
+                    array(
+
+                        'key' => 'enable_menu_4c_4c',
+                        'name' => 'enable_menu_4c_4c',
+                        'label' => 'Habilitar menu columna 4',
+                        'type' => 'true_false',
+
+                    ),
+
+                    array(
+                        'key' => 'title_menu_4c_4c',
+                        'name' => 'title_menu_4c_4c',
+                        'label' => 'Titulo Menu columna 4',
+                        'type' => 'text',
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_4c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+
+                    array(
+                        'key' => 'menu_4c_4c',
+                        'name' => 'menu_4c_4c',
+                        'label' => 'Menu columna 4',
+                        'type' => 'select',
+                        'choices' => $body,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_4c_4c',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ]
+                    ),
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+                        array(
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ),
+                    ),
+
+                ),
+
+            ),
+
+            array(
+                'key' => 'sbn_footer_settings_base_4c',
+                'title' => 'Sebenas footer base ( 4c )',
+                'fields' => array(
+
+                    array(
+                        'key' => 'sbn_footer_texto_base_4c',
+                        'name' => 'sbn_footer_texto_base_4c',
+                        'label' => 'Texto base',
+                        'type' => 'textarea',
+                    ),
+
+                    array(
+                        'key' => 'title_footer_base_menu',
+                        'name' => 'title_footer_base_menu',
+                        'label' => 'Titulo footer base menu 4c',
+                        'type' => 'text',
+                    ),
+
+                    array(
+                        'key' => 'menu_base_4c',
+                        'name' => 'menu_base_4c',
+                        'label' => 'Menu footer base',
+                        'type' => 'select',
+                        'choices' => $body,
+                    ),
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+                        array(
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ),
+                    ),
+
+                ),
+            ),
+
+            array(
+                'key' => 'sbn_footer_settings',
+                'title' => 'Sebenas footer template',
+                'fields' => array(
+
+                    array(
+                        'key' => 'sbn_footer_template',
+                        'label' => 'Bootstrap Sebenas footer model',
+                        'name' => 'sbn_footer_template',
+                        'type' => 'select',
+                        'choices' => array(
+                            'sbn_footer_bootstrap_general_t1' => 'Sebenas footer general 1',
+                        ),
+                    )
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+
+                    ),
+
+                ),
+            ),
+            array(
+                'key' => 'sbn_order_appear_footer',
+                'title' => 'Sebenas footer Appear',
+                'fields' => array(
+
+                    array(
+                        'key' => 'sbn_footer_appear',
+                        'label' => 'Bootstrap Sebenas footer appear',
+                        'name' => 'sbn_footer_appear',
+                        'type' => 'select',
+                        'multiple' => 1,
+                        'choices' => array(
+                            'sbn_type_page_regular' => 'Type regular page',
+                            'sbn_type_page_landing' => 'Type landing page',
+                            'sbn_type_page_product' => 'Type product page',
+                        ),
+                    )
+
+                ),
+                'location' => array(
+
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ),
+
+                    ),
+
+                ),
+            )
+
+        );
+
+    }
+
 
 
       function sbn_registerFieldGroups( $fieldsPack )

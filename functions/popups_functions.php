@@ -98,21 +98,10 @@ function sbn_popups() {
 
     function sbn_popup_appear_set( $parameters, $appearId, $page_id ){
 
-
         if( isset($parameters) && isset($appearId) && isset($page_id) ){
 
             if( array_search( $page_id, $appearId ) !== false ){
 
-                ?>
-                    <pre>
-                    <?php
-                        print_r($parameters);
-                        print_r($appearId);
-                        echo ' page_id '. $page_id;
-
-                    ?>
-                    </pre>
-                <?php
 
                 if( $parameters['sbn_popup_template'] == 'sbn_popup_template_1' ){
 
@@ -123,9 +112,6 @@ function sbn_popups() {
             }
 
         }
-
-
-
 
     }
 
