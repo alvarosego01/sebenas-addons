@@ -31,7 +31,7 @@ function sbn_footer_general1( $parameters ){
                                 $i = $i['url'];
                             ?>
 
-                            <img src="<?php echo $i; ?>">
+                            <img alt="Sebenasmart logo mark" src="<?php echo $i; ?>">
 
                         </div>
                     <?php } ?>

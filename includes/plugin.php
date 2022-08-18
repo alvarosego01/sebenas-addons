@@ -21,7 +21,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.2.000';
+	const VERSION = '1.2.100';
 
 	/**
 	 * Minimum Elementor Version
@@ -245,7 +245,7 @@ final class Plugin {
 
     public function frontend_styles() {
 
-	    wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+	    // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 
 	}
 
