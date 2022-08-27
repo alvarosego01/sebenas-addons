@@ -65,6 +65,7 @@ if (!class_exists('C_TitleTextCta_T2')) {
             require_once SEBENAS_PATH . 'includes/functions/main.php';
 
             $F_textFormating = new F_textFormating();
+            $sebenas_control_cta_model = new sebenas_control_cta_model();
 
             $general_settings = array(
                 'component_styles' => $settings['sebenas_component_defined_styles']
@@ -162,6 +163,7 @@ if (!class_exists('C_TitleTextCta_T2')) {
 
                 <?php
                 if (isset($settings_CTA) && $settings_CTA['enable_info_cta'] == 'yes') {
+                    /*
                         $ctaClasses = '';
                         $ctaClasses .= isset($settings_CTA['cta_style']) ? $settings_CTA['cta_style'] : '';
                         $ctaClasses .= ' ';
@@ -195,6 +197,10 @@ if (!class_exists('C_TitleTextCta_T2')) {
                             <?php echo isset($settings_CTA['text_cta']) ? $settings_CTA['text_cta'] : ''; ?>
                         </a>
                         <?php
+                        */
+
+                        $sebenas_control_cta_model->setCTA( $settings_CTA );
+
                 } ?>
                     </div>
 
