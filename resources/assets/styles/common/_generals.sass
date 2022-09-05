@@ -53,6 +53,106 @@
     color: $lightGray_color
 
 
+br.space
+    display: block!important
+
+.desktopElement
+    @include responsivo(telefonoTable)
+        display: none!important
+    @include responsivo(pcMedio)
+        display: none!important
+    @include responsivo(general)
+        display: block!important
+    @include responsivo(resto)
+        display: block!important
+.mobileElement
+    @include responsivo(telefonoTable)
+        display: block!important
+    @include responsivo(pcMedio)
+        display: block!important
+    @include responsivo(general)
+        display: none!important
+    @include responsivo(resto)
+        display: none!important
+.tabletElement
+    @include responsivo(telefonoTable)
+        display: none!important
+    @include responsivo(pcMedio)
+        display: block!important
+    @include responsivo(general)
+        display: none!important
+    @include responsivo(resto)
+        display: none!important
+
+.desktopTabletElement
+    @include responsivo(telefonoTable)
+        display: none!important
+    @include responsivo(pcMedio)
+        display: block!important
+
+    @include responsivo(general)
+        display: block!important
+
+    @include responsivoSpecial(1000px, 1125px)
+        display: none!important
+
+    @include responsivo(resto)
+        display: block!important
+
+.mobileSmallElement
+    @include responsivo(telefonoTable)
+        display: block!important
+    @include responsivo(pcMedio)
+        display: none!important
+    @include responsivo(general)
+        display: none!important
+    @include responsivo(resto)
+        display: none!important
+
+.desktopElement_flex
+    @include responsivo(telefonoTable)
+        display: none!important
+    @include responsivo(pcMedio)
+        display: none!important
+    @include responsivo(general)
+        display: flex!important
+    @include responsivo(resto)
+        display: flex!important
+.mobileElement_flex
+    @include responsivo(telefonoTable)
+        display: flex!important
+    @include responsivo(pcMedio)
+        display: flex!important
+    @include responsivo(general)
+        display: none!important
+    @include responsivo(resto)
+        display: none!important
+
+.desktopTabletElement_flex
+    @include responsivo(telefonoTable)
+        display: none!important
+    @include responsivo(pcMedio)
+        display: flex!important
+
+    @include responsivo(general)
+        display: flex!important
+
+    @include responsivoSpecial(1000px, 1125px)
+        display: none!important
+
+    @include responsivo(resto)
+        display: flex!important
+
+.mobileSmallElement_flex
+    @include responsivo(telefonoTable)
+        display: flex!important
+    @include responsivo(pcMedio)
+        display: none!important
+    @include responsivo(general)
+        display: none!important
+    @include responsivo(resto)
+        display: none!important
+
 
 div#payment
     ul.wc_payment_methods.payment_methods.methods
@@ -126,6 +226,13 @@ div#payment
     .sbn_payment_gateways_preselectors
         padding-left: 30px
         padding-right: 30px
+        @include responsivo(telefonoTable)
+            padding-left: 25px
+            padding-right: 25px
+
+        @include responsivo(pcMedio)
+            padding-left: 25px
+            padding-right: 25px
         .selectorsElements
             ul.gatewayLists
                 padding-left: 0
@@ -179,6 +286,15 @@ div#payment
                                 font-size: 14px
                                 line-height: 1
                                 font-weight: 600
+                                @include responsivo(telefonoTable)
+                                    font-size: 12px
+                                @include responsivo(pcMedio)
+                                    font-size: 14px
+                                @include responsivo(general)
+                                    font-size: 13px
+                                @include responsivo(smallPcTablet)
+                                    font-size: 12.5px
+
 
                             small
                                 font-weight: 500
@@ -186,6 +302,15 @@ div#payment
                                 line-height: 1
                                 font-size: 12px
                                 margin-bottom: 0
+                                @include responsivo(telefonoTable)
+                                    font-size: 10px
+                                @include responsivo(pcMedio)
+                                    font-size: 12px
+                                @include responsivo(general)
+                                    font-size: 11px
+                                @include responsivo(smallPcTablet)
+                                    font-size: 10.5px
+
 
                         .customCheckBox
                             position: absolute

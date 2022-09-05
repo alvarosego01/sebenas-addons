@@ -82,7 +82,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
                                     Credit or debit card
                                 </h5>
                                 <small>
-                                The best and safest way to pay online
+                                The best and safest way <br class="mobileSmallElement"> <br class="desktopElement"> to pay online
                                 </small>
 
                             </div>
