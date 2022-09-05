@@ -21,7 +21,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.200.101';
+	const VERSION = '1.200.105';
 
 	/**
 	 * Minimum Elementor Version
@@ -259,6 +259,8 @@ final class Plugin {
 	    wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', ['jquery'], PLUGIN_VERSION, true);
 
 	    wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL . 'assets/dist/scripts/functions/popupsControl.js', ['jquery'], PLUGIN_VERSION, true);
+
+	    wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL . 'assets/dist/scripts/functions/checkout_functions.js', ['jquery'], PLUGIN_VERSION, true);
 
 	}
 
