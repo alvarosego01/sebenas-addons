@@ -22,7 +22,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
 
                         <li class="gatewayElement paypal active">
 
-                            <button onclick="setpaymentgateway(this)" gateway="paypal" type="button" class="sbn_buttonCustom sbn_selectable_check_Button paypal">
+                            <button onclick="setpaymentgateway(this)" gateway="paypal" type="button" class="sbn_buttonCustom btn-button sbn_selectable_check_Button paypal">
 
                             <div class="selectorInner">
 
@@ -63,7 +63,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
                         </li>
 
                         <li class="gatewayElement stripe">
-                            <button onclick="setpaymentgateway(this)" gateway="stripe"  type="button" class="sbn_buttonCustom sbn_selectable_check_Button stripe">
+                            <button onclick="setpaymentgateway(this)" gateway="stripe"  type="button" class="sbn_buttonCustom btn-button sbn_selectable_check_Button stripe">
 
                             <div class="selectorInner">
 
@@ -127,15 +127,15 @@ add_action( 'woocommerce_checkout_pre_payment_methods', 'preSelectors_gateway_pa
 
 
 
-function testFunc(){
+function sbn_payment_methods_desc(){
 
     ?>
     <section class="sbn_payment_methods_desc">
 
         <div class="containElements">
-            <!-- <small>
+            <label>
             We accept these cards
-            </small> -->
+            </label>
             <ul class="payment_methods_list">
 
                 <li class="payment_method_item">
@@ -194,8 +194,14 @@ function testFunc(){
     </section>
     <?php
 }
+add_filter( 'wc_stripe_description', 'sbn_payment_methods_desc' );
 
-add_filter( 'wc_stripe_description', 'testFunc' );
+
+add_filter('woocommerce_paypal_payments_checkout_button_renderer_hook', function() {
+    return 'woocommerce_review_order_before_submit';
+});
+
+
 
 
 ?>

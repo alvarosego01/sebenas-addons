@@ -49,6 +49,20 @@ $hastaG: $desdeG + 500
         width: 100%!important
         max-width: 1275px!important
 
+@mixin h1_title_contain()
+    line-height: 0.9
+    margin-top: 0!important
+    @include responsivo(telefonoTable)
+        font-size: 30px
+    @include responsivo(pcMedio)
+        font-size: 35px
+    @include responsivo(general)
+        font-size: 45px
+    @include responsivo(smallPcTablet)
+        font-size: 40px
+    @include responsivo(resto)
+        font-size: 50px
+
 @mixin h2_title_contain()
     line-height: 0.9
     margin-top: 0!important

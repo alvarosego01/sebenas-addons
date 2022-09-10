@@ -1,6 +1,5 @@
 
 
-
 @media (min-width: 992px)
     .col-lg-4
         width: 33.33333333%!important
@@ -25,8 +24,6 @@
         width: 50%!important
     .col-md-12
         width: 100%!important
-
-
 
 
 .blackBackground_Style
@@ -154,6 +151,7 @@ br.space
         display: none!important
 
 
+
 div#payment
     ul.wc_payment_methods.payment_methods.methods
 
@@ -191,6 +189,12 @@ div#payment
                 padding-left: 30px
                 padding-right: 30px
                 padding-bottom: 0
+                @include responsivo(telefonoTable)
+                    padding-left: 25px
+                    padding-right: 25px
+                @include responsivo(pcMedio)
+                    padding-left: 25px
+                    padding-right: 25px
 
                 div#stripe-payment-data
                     p
@@ -222,7 +226,12 @@ div#payment
 
 
                 section.sbn_payment_methods_desc
+                    margin: 10px 0
+                    margin-top: 0
                     .containElements
+                        label
+                            margin-bottom: 10px
+                            display: block
                         ul.payment_methods_list
                             display: flex
                             flex-direction: row
@@ -230,14 +239,46 @@ div#payment
                             align-content: center
                             align-items: center
                             list-style: none
+                            // flex-flow: wrap
                             padding: 0
-                            margin: 10px 0
+                            margin: 0
+                            @include responsivo(telefonoTable)
+                                flex-flow: wrap
+                            @include responsivo(pcMedio)
+                                justify-content: flex-start
 
                             li.payment_method_item
+                                // width: 30%
+                                // margin-bottom: 10px
+                                margin: 0 2.5px
+                                @include responsivo(telefonoTable)
+                                    width: 20%
+                                    margin-bottom: 5px
+                                    margin-left: 5px
+                                    margin-right: 5px
 
+                                @include responsivo(general)
+                                    margin: 2px
+                                    margin-bottom: 0!important
+                                @include responsivo(smallPcTablet)
+                                    margin-bottom: 0!important
+                                    margin: 0 2px
                                 .icon
+                                    // display: flex
                                     img
-                                        height: 35px
+                                        display: block
+                                        margin: auto
+                                        height: 40px
+                                        @include responsivo(telefonoTable)
+                                            height: 35px
+                                        @include responsivo(pcMedio)
+                                            height: 40px
+                                        @include responsivo(general)
+                                            height: 35px
+
+                                        @include responsivo(smallPcTablet)
+                                            height: 25px
+
 
 
 
@@ -278,14 +319,18 @@ div#payment
                         width: 100%
                         margin-bottom: 10px
                     .sbn_buttonCustom
-                        padding: 0
-                        padding-right: 10px
+                        padding: 0!important
                         border: none
                         width: 100%
+                        display: flex
                         justify-content: flex-start
+                        align-content: center
+                        align-items: center
                         border: 1px solid rgba(0,0,0,0.025)
                         position: relative
                         transition: $trans
+                        background-color: $whiteBase1
+                        box-shadow: $shadow2
                         .selectorInner
                             .icon
                                 img
