@@ -22,7 +22,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
 
                         <li class="gatewayElement paypal active">
 
-                            <button onclick="setpaymentgateway(this)" gateway="paypal" type="button" class="sbn_buttonCustom sbn_selectable_check_Button paypal">
+                            <button onclick="setpaymentgateway(this)" gateway="paypal" type="button" class="sbn_buttonCustom btn-button sbn_selectable_check_Button paypal">
 
                             <div class="selectorInner">
 
@@ -30,7 +30,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
                                     <?php
                                      $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51306.png';
                                     ?>
-                                    <img src="<?php echo $x; ?>" alt="Sebenasmart paypal payment method" class="iconSmall">
+                                    <img src="<?php echo $x; ?>" alt="Sebenasmart visa payment method" class="iconSmall">
                                 </div>
 
                             </div>
@@ -63,7 +63,7 @@ if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
                         </li>
 
                         <li class="gatewayElement stripe">
-                            <button onclick="setpaymentgateway(this)" gateway="stripe"  type="button" class="sbn_buttonCustom sbn_selectable_check_Button stripe">
+                            <button onclick="setpaymentgateway(this)" gateway="stripe"  type="button" class="sbn_buttonCustom btn-button sbn_selectable_check_Button stripe">
 
                             <div class="selectorInner">
 
@@ -125,64 +125,83 @@ add_action( 'woocommerce_checkout_pre_payment_methods', 'preSelectors_gateway_pa
 
 
 
-// add_filter( 'woocommerce_gateway_icon', 'sort_stripe_payment_icons', 10, 2 );
-// function sort_stripe_payment_icons( $icons_str, $payment_id ) {
-
-// }
 
 
+function sbn_payment_methods_desc(){
 
+    ?>
+    <section class="sbn_payment_methods_desc">
 
-/*
+        <div class="containElements">
+            <label>
+            We accept these cards
+            </label>
+            <ul class="payment_methods_list">
 
-        add_filter( 'woocommerce_gateway_icon', 'sort_stripe_payment_icons', 10, 2 );
-        function sort_stripe_payment_icons( $icons_str, $payment_id ) {
-
-            $icons_str = null;
-            ob_start();
-            if ( $payment_id === 'ppcp-gateway' && is_checkout() ) {
-                // paypal
-
-                // $icons_str = 'paypal';
-
-
-                $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-256x256-51306.png'
-                ?>
-                    <div class="payment_gateway_singleIcon">
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51303.png';
+                        ?>
                         <img src="<?php echo $x; ?>" alt="Sebenasmart paypal payment method" class="iconSmall">
                     </div>
-                <?php
-
-
-            }
-
-            if ( $payment_id === 'stripe' && is_checkout() ) {
-                // stripe
-
-
-                // if ( 'USD' === get_woocommerce_currency() ) {
-                //     $icons_str .= isset( $icons['discover'] ) ? $icons['discover'] : '';
-                //     // $icons_str .= isset( $icons['jcb'] ) ? $icons['jcb'] : '';
-                //     // $icons_str .= isset( $icons['diners'] ) ? $icons['diners'] : '';
-                // }
-
-                // $icons_str = 'AAAA';
-
-                $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-256x256-51317.png'
-                ?>
-                    <div class="payment_gateway_singleIcon">
-                        <img src="<?php echo $x; ?>" alt="Sebenasmart stripe payment method" class="iconSmall" >
+                </li>
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51314.png';
+                        ?>
+                        <img src="<?php echo $x; ?>" alt="Sebenasmart American Express payment method" class="iconSmall">
                     </div>
-                <?php
+                </li>
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51305.png';
+                        ?>
+                        <img src="<?php echo $x; ?>" alt="Sebenasmart Master Card payment method" class="iconSmall">
+                    </div>
+                </li>
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51332.png';
+                        ?>
+                        <img src="<?php echo $x; ?>" alt="Sebenasmart JCB payment method" class="iconSmall">
+                    </div>
+                </li>
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51330.png';
+                        ?>
+                        <img src="<?php echo $x; ?>" alt="Sebenasmart Discover payment method"  class="iconSmall">
+                    </div>
+                </li>
+                <li class="payment_method_item">
+                    <div class="icon">
+                        <?php
+                         $x = content_url() . '/plugins/sebenas-addons/resources/assets/images/icons/payments/payment-512x512-51320.png';
+                        ?>
+                        <img src="<?php echo $x; ?>" alt="Sebenasmart Diners Club payment method" class="iconSmall">
+                    </div>
+                </li>
 
-            }
-            // return $icons_str;
-            // return $payment_id;
 
-            return ob_get_clean();
-        }
 
-*/
+            </ul>
+        </div>
+    </section>
+    <?php
+}
+add_filter( 'wc_stripe_description', 'sbn_payment_methods_desc' );
+
+
+add_filter('woocommerce_paypal_payments_checkout_button_renderer_hook', function() {
+    return 'woocommerce_review_order_before_submit';
+});
+
+
 
 
 ?>
