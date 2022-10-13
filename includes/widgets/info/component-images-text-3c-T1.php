@@ -10,19 +10,20 @@ if (!defined('ABSPATH')) {
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 
+require_once SEBENAS_PATH.'includes/controls/controls_main.php';
+require_once SEBENAS_PATH.'includes/functions/main.php';
 
 if (!class_exists('C_images_text_3c_T1')) {
     class C_images_text_3c_T1 extends Widget_Base
     {
-
-                /**
+        /**
          * Get widget name.
          *
          * Retrieve oEmbed widget name.
          *
          * @since 1.0.0
          *
-         * @return string Widget name.
+         * @return string widget name
          */
         public function get_name()
         {
@@ -36,7 +37,7 @@ if (!class_exists('C_images_text_3c_T1')) {
          *
          * @since 1.0.0
          *
-         * @return string Widget title.
+         * @return string widget title
          */
         public function get_title()
         {
@@ -50,7 +51,7 @@ if (!class_exists('C_images_text_3c_T1')) {
          *
          * @since 1.0.0
          *
-         * @return string Widget icon.
+         * @return string widget icon
          */
         public function get_icon()
         {
@@ -64,7 +65,7 @@ if (!class_exists('C_images_text_3c_T1')) {
          *
          * @since 1.0.0
          *
-         * @return string Widget help URL.
+         * @return string widget help URL
          */
         public function get_custom_help_url()
         {
@@ -78,7 +79,7 @@ if (!class_exists('C_images_text_3c_T1')) {
          *
          * @since 1.0.0
          *
-         * @return array Widget categories.
+         * @return array widget categories
          */
         public function get_categories()
         {
@@ -92,7 +93,7 @@ if (!class_exists('C_images_text_3c_T1')) {
          *
          * @since 1.0.0
          *
-         * @return array Widget keywords.
+         * @return array widget keywords
          */
         public function get_keywords()
         {
@@ -101,9 +102,6 @@ if (!class_exists('C_images_text_3c_T1')) {
 
         protected function register_controls()
         {
-            require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
-
-
             $sebenas_control_styles = new sebenas_control_styles();
             $sebenas_control_styles->setControls($this);
 
@@ -111,7 +109,6 @@ if (!class_exists('C_images_text_3c_T1')) {
             $sebenas_title_text_row1->setControls($this);
 
             $sebenas_image_component = new sebenas_image_component();
-
 
             $this->start_controls_section(
                 'column_section_1',
@@ -137,13 +134,12 @@ if (!class_exists('C_images_text_3c_T1')) {
                     'placeholder' => esc_html__('Enter your title', 'Sebenas_Addons'),
                     'default' => 'Lorem ipsum dolor sit amet co',
                     'label_block' => true,
-                    'description' => esc_html__( 'Use {{p text p}} for add primary color', 'Sebenas_Addons' ),
+                    'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
                     'condition' => [
                         'enable_info_title_1c' => 'yes',
                     ],
             ]
             );
-
 
             $sebenas_image_component->setControls($this, '_1c_image');
 
@@ -157,7 +153,6 @@ if (!class_exists('C_images_text_3c_T1')) {
             ]
             );
             $sebenas_image_component->setControls($this, '_2c_image');
-
 
             $this->add_control(
                 'enable_info_text_2c',
@@ -175,14 +170,12 @@ if (!class_exists('C_images_text_3c_T1')) {
                 'default' => esc_html__('Default text', 'Sebenas_Addons'),
                 'placeholder' => esc_html__('Type your text here', 'Sebenas_Addons'),
                 'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet repellat consectetur in cumque laborum. Dicta labore similique commodi earum possimus, numquam corrupti consequuntur modi, repellendus animi quasi cum repellat atque?',
-                'description' => esc_html__( 'Use {{p text p}} for add primary color', 'Sebenas_Addons' ),
+                'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
                 'condition' => [
                     'enable_info_text_2c' => 'yes',
                 ],
-
             ]
             );
-
 
             $this->end_controls_section();
 
@@ -210,11 +203,10 @@ if (!class_exists('C_images_text_3c_T1')) {
                 'default' => esc_html__('Default text', 'Sebenas_Addons'),
                 'placeholder' => esc_html__('Type your text here', 'Sebenas_Addons'),
                 'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet repellat consectetur in cumque laborum. Dicta labore similique commodi earum possimus, numquam corrupti consequuntur modi, repellendus animi quasi cum repellat atque?',
-                'description' => esc_html__( 'Use {{p text p}} for add primary color', 'Sebenas_Addons' ),
+                'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
                 'condition' => [
                     'enable_info_text_3c' => 'yes',
                 ],
-
             ]
             );
 
@@ -223,101 +215,75 @@ if (!class_exists('C_images_text_3c_T1')) {
             $this->end_controls_section();
         }
 
-
         protected function render()
         {
-
             $settings = $this->get_settings_for_display();
+            $sebenas_title_text_row1 = new sebenas_title_text_row1();
 
-            require_once SEBENAS_PATH . 'includes/functions/main.php';
-
+            $sebenas_image_component = new sebenas_image_component();
             $F_textFormating = new F_textFormating();
+            $sebenas_control_styles = new sebenas_control_styles();
 
-            require_once SEBENAS_PATH . 'includes/functions/main.php';
+            $general_settings = [
+                'component_styles' => $settings['sebenas_component_defined_styles'],
+            ];
 
-
-            $general_settings = array(
-                'component_styles' => $settings['sebenas_component_defined_styles']
-            );
-
-            $settings_row1 = array(
+            $settings_row1 = [
                 'enable_section_row_1' => $settings['enable_section_row_1'],
                 'enable_title_section_row_1' => $settings['enable_title_section_row_1'],
                 'title_text_section_row_1' => $F_textFormating->setFormatingText($settings['title_text_section_row_1']),
                 'enable_info_text_section_row_1' => $settings['enable_info_text_section_row_1'],
                 'info_text_section_row_1' => $F_textFormating->setFormatingText($settings['info_text_section_row_1']),
-            );
+            ];
 
             $slug = '_1c_image';
-            $settings_c1 = array(
+            $settings_c1 = [
                 'enable_info_title_1c' => $settings['enable_info_title_1c'],
-                'title_text_1c' => $F_textFormating->setFormatingText( $settings['title_text_1c'] ),
-                'image_1c' => $settings['image_info' . $slug]
-            );
+                'title_text_1c' => $F_textFormating->setFormatingText($settings['title_text_1c']),
+            ];
+
+            $settings_image1 = [
+                'image_info' => $settings['image_info'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_circle_style' => $settings['enable_image_circle_style'.$slug],
+            ];
 
             $slug = '_2c_image';
-            $settings_c2 = array(
-                'image_2c' => $settings['image_info' . $slug],
+            $settings_c2 = [
                 'enable_info_text_2c' => $settings['enable_info_text_2c'],
-                'info_text_2c' => $F_textFormating->setFormatingText( $settings['info_text_2c'] )
-            );
+                'info_text_2c' => $F_textFormating->setFormatingText($settings['info_text_2c']),
+            ];
+
+            $settings_image2 = [
+                'image_info' => $settings['image_info'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_circle_style' => $settings['enable_image_circle_style'.$slug],
+            ];
 
             $slug = '_3c_image';
-            $settings_c3 = array(
-                'image_3c' => $settings['image_info' . $slug],
+            $settings_c3 = [
                 'enable_info_text_3c' => $settings['enable_info_text_3c'],
-                'info_text_3c' => $F_textFormating->setFormatingText( $settings['info_text_3c'] )
-            );
+                'info_text_3c' => $F_textFormating->setFormatingText($settings['info_text_3c']),
+            ];
+
+            $settings_image3 = [
+                'image_info' => $settings['image_info'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
+                'enable_image_circle_style' => $settings['enable_image_circle_style'.$slug],
+            ];
 
             $pre_styleContainer = null;
-            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {
-                $pre_styleContainer = 'whiteBackground_Style';
-            }
-            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'grey_component_style') {
-                $pre_styleContainer = 'greyBackground_Style';
-            }
-            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style'){
-                 $pre_styleContainer = 'blackBackground_Style';
-            }
-            if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'primary_component_style'){
-                 $pre_styleContainer = 'primaryBackground_Style';
-            }
+            $pre_styleContainer = $sebenas_control_styles->set_background_style($general_settings); ?>
 
-            ?>
-
-        <section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 <?php echo $pre_styleContainer ?>">
+        <section class="sbn_ComponentCustom parentElement elementorCustom C_images_text_3c_T1 <?php echo $pre_styleContainer; ?>">
             <div class="section-row">
 
-             <?php
-                    if (isset($settings_row1) && $settings_row1['enable_section_row_1'] == 'yes') {
-                        ?>
-                <section class="innerSectionElement sct1">
-                        <div class="containElements">
-
-                            <?php
-                        if (isset($settings_row1) && $settings_row1['enable_title_section_row_1'] == 'yes') {
-                            ?>
-                                <h2 class="secondaryTitle">
-                                    <?php echo isset($settings_row1['title_text_section_row_1']) ? $settings_row1['title_text_section_row_1'] : ''; ?>
-                                </h2>
-                                <?php
-                        } ?>
-
-                    <?php
-                        if (isset($settings_row1) && $settings_row1['enable_info_text_section_row_1'] == 'yes') {
-                            ?>
-                                <div class="text">
-                                    <?php echo isset($settings_row1['info_text_section_row_1']) ? $settings_row1['info_text_section_row_1'] : ''; ?>
-                                </div>
-                                <?php
-                        } ?>
-
-                    </div>
-
-            </section>
-
             <?php
-                    } ?>
+                    $sebenas_title_text_row1->set_row1_section($settings_row1); ?>
+
 
         <section class="innerSectionElement sct2">
             <div class="groupElements row">
@@ -333,25 +299,16 @@ if (!class_exists('C_images_text_3c_T1')) {
                         <?php
                     } ?>
 
-                        <div class="containerImage containImageHover">
-                            <?php
-                                $imageSrc = isset($settings_c1['image_1c']) ? $settings_c1['image_1c']['url'] : ''; ?>
-                            <img  src="<?php echo $imageSrc ?>" alt="" loading="lazy">
-
-                        </div>
+                        <?php
+                            $sebenas_image_component->setImageContain($settings_image1); ?>
 
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4 partContainer element_c2">
                     <div class="containElements">
 
-
-                    <div class="containerImage containImageHover">
-                            <?php
-                                $imageSrc = isset($settings_c2['image_2c']) ? $settings_c2['image_2c']['url'] : ''; ?>
-                            <img  src="<?php echo $imageSrc ?>" alt="" loading="lazy">
-
-                        </div>
+                        <?php
+                            $sebenas_image_component->setImageContain($settings_image2); ?>
 
                         <?php
                 if (isset($settings_c2) && $settings_c2['enable_info_text_2c'] == 'yes') {
@@ -376,12 +333,8 @@ if (!class_exists('C_images_text_3c_T1')) {
                         <?php
                 } ?>
 
-                            <div class="containerImage containImageHover">
-                            <?php
-                                $imageSrc = isset($settings_c3['image_3c']) ? $settings_c3['image_3c']['url'] : ''; ?>
-                            <img  src="<?php echo $imageSrc ?>" alt="" loading="lazy">
-
-                             </div>
+                    <?php
+                       $sebenas_image_component->setImageContain($settings_image3); ?>
 
                     </div>
                 </div>

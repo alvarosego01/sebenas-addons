@@ -1,9 +1,5 @@
 
-
-
-
 // @import ../common/global
-
 
 @import ./containersCTA/_containersCtaMain
 
@@ -13,12 +9,17 @@
 
 @import _sbn_popup
 
-
-
-
 section.sbn_ComponentCustom.parentElement.elementorCustom
-    .containerImage.containImageHover
-        box-shadow: $shadow2
+    padding: 50px 75px
+    @include responsivo(telefonoTable)
+        padding: 25px 25px
+    @include responsivo(pcMedio)
+        padding: 50px
+    @include responsivo(general)
+        padding: 50px
+
+    // .containerImage.containImageHover
+    //     box-shadow: $shadow2
 
     .section-row
         section.innerSectionElement.sct1
@@ -47,12 +48,10 @@ section.sbn_ComponentCustom.parentElement.elementorCustom
                         width: 100%
                     @include p_text_contain()
 
-
         .text
             p
                 &:last-child
                     margin-bottom: 0!important
-
 
 html
     margin: 0!important

@@ -2,14 +2,8 @@
 
 
 section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_services_T1
-    padding: 75px
     box-shadow: $shadow2
-    @include responsivo(telefonoTable)
-        padding: 25px 25px
-    @include responsivo(pcMedio)
-        padding: 50px
-    @include responsivo(smallPcTablet)
-        padding: 75px 50px
+
 
     .section-row
         section.innerSectionElement.sct2
@@ -21,9 +15,11 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_services_T1
                 align-items: center
                 margin: 0 auto
                 @include responsivo(general)
-                    width: 75%
+                    width: 90%
+                @include responsivo(smallPcTablet)
+                    width: 95%
                 @include responsivo(resto)
-                    width: 75%
+                    width: 85%
                 .featureList
                     display: flex
                     width: 100%

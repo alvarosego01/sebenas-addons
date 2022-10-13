@@ -21,7 +21,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.200.108';
+	const VERSION = '1.200.110';
 
 	/**
 	 * Minimum Elementor Version
@@ -256,6 +256,12 @@ final class Plugin {
 
 		wp_enqueue_style('Magnific-Popup.css', SEBENAS_URL . 'resources/assets/library/Magnific-Popup/magnific-popup.css', array(), rand(), 'all');
 
+		// lightbox2
+		wp_enqueue_style('lightbox2.css', SEBENAS_URL . 'resources/assets/library/lightbox2/lightbox.min.css', array(), rand(), 'all');
+		wp_enqueue_script('lightbox2.js', SEBENAS_URL . 'resources/assets/library/lightbox2/lightbox.min.js', ['jquery'], PLUGIN_VERSION, true);
+
+		// --------------------
+
 	    wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', ['jquery'], PLUGIN_VERSION, true);
 
 	    wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL . 'assets/dist/scripts/functions/popupsControl.js', ['jquery'], PLUGIN_VERSION, true);
@@ -263,7 +269,6 @@ final class Plugin {
 	    wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL . 'assets/dist/scripts/functions/checkout_functions.js', ['jquery'], PLUGIN_VERSION, true);
 
 	}
-
 
 	protected function add_actions() {
 
