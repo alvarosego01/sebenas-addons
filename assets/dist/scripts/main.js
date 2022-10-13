@@ -1,1 +1,1 @@
-jQuery.noConflict(),jQuery(document).ready(function(){});
+function lightboxes2_settings(){lightbox.option({resizeDuration:200,wrapAround:!0,alwaysShowNavOnTouchDevices:!0,positionFromTop:100})}jQuery.noConflict(),console.log("pruebas"),jQuery(document).ready(function(){lightboxes2_settings()});

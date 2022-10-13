@@ -2,14 +2,8 @@
 
 
 section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_services_T1
-    padding: 75px
     box-shadow: $shadow2
-    @include responsivo(telefonoTable)
-        padding: 25px 25px
-    @include responsivo(pcMedio)
-        padding: 50px
-    @include responsivo(smallPcTablet)
-        padding: 75px 50px
+
 
     .section-row
         section.innerSectionElement.sct2
@@ -45,9 +39,11 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_features_image_servi
                             @include responsivo(pcMedio)
                                 height: 350px
                             @include responsivo(general)
-                                height: 500px
-                            @include responsivo(resto)
+                                height: 600px
+                            @include responsivo(smallPcTablet)
                                 height: 550px
+                            @include responsivo(resto)
+                                height: 650px
 
                 .info
                     display: flex

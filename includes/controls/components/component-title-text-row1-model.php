@@ -2,20 +2,17 @@
 
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
-
 use Elementor\Controls_Manager;
-use Elementor\Utils;
 
 if (!class_exists('sebenas_title_text_row1')) {
     class sebenas_title_text_row1
     {
-        public function setControls( $class )
+        public function setControls($class)
         {
-
             $class->start_controls_section(
                 'section_row_1',
                 [
@@ -82,13 +79,43 @@ if (!class_exists('sebenas_title_text_row1')) {
                 'condition' => [
                     'enable_info_text_section_row_1' => 'yes',
                 ],
-
             ]
             );
 
             $class->end_controls_section();
+        }
 
+        public function set_row1_section($settings_row1)
+        {
+            if (isset($settings_row1) && $settings_row1['enable_section_row_1'] == 'yes') {
+                ?>
+    <section class="innerSectionElement sct1">
+                <div class="containElements">
 
+                    <?php
+                if (isset($settings_row1) && $settings_row1['enable_title_section_row_1'] == 'yes') {
+                    ?>
+                        <h2 class="secondaryTitle">
+                            <?php echo isset($settings_row1['title_text_section_row_1']) ? $settings_row1['title_text_section_row_1'] : ''; ?>
+                        </h2>
+                        <?php
+                } ?>
+
+            <?php
+                if (isset($settings_row1) && $settings_row1['enable_info_text_section_row_1'] == 'yes') {
+                    ?>
+                        <div class="text">
+                            <?php echo isset($settings_row1['info_text_section_row_1']) ? $settings_row1['info_text_section_row_1'] : ''; ?>
+                        </div>
+                        <?php
+                } ?>
+
+            </div>
+
+    </section>
+
+    <?php
+            }
         }
     }
 }

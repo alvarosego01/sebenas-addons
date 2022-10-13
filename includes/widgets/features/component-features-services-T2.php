@@ -10,20 +10,20 @@ use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 
-require_once SEBENAS_PATH.'includes/functions/main.php';
 require_once SEBENAS_PATH.'includes/controls/controls_main.php';
+require_once SEBENAS_PATH.'includes/functions/main.php';
 
-if (!class_exists('C_features_image_services_T1')) {
-    class C_features_image_services_T1 extends Widget_Base
+if (!class_exists('C_features_services_T2')) {
+    class C_features_services_T2 extends Widget_Base
     {
         public function get_name()
         {
-            return 'C_features_image_services_T1';
+            return 'C_features_services_T2';
         }
 
         public function get_title()
         {
-            return esc_html__('Features image services T1', 'sbn_e_features_image_services_T1');
+            return esc_html__('Features services T2', 'sbn_e_features_services_T2');
         }
 
         public function get_icon()
@@ -54,7 +54,8 @@ if (!class_exists('C_features_image_services_T1')) {
             $sebenas_title_text_row1 = new sebenas_title_text_row1();
             $sebenas_title_text_row1->setControls($this);
 
-            $sebenas_image_component = new sebenas_image_component();
+            $sebenas_controls_InfoCta_model = new sebenas_controls_InfoCta_model();
+            $sebenas_controls_InfoCta_model->setControls($this);
 
             $this->start_controls_section(
                 'section_features',
@@ -157,85 +158,6 @@ if (!class_exists('C_features_image_services_T1')) {
             $this->end_controls_section();
 
             $this->start_controls_section(
-                'image_features_section',
-                [
-                'label' => esc_html__('Image feature', 'Sebenas_Addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-            );
-
-            $sebenas_image_component->setControls($this, '_image_features');
-
-            $this->end_controls_section();
-
-            $this->start_controls_section(
-                'section_info_title',
-                [
-                'label' => esc_html__('Title info section', 'Sebenas_Addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-                'default' => 'Title Lorem ipsum dolor, sit amet consectetur adipisicing',
-            ]
-            );
-
-            $this->add_control(
-                'enable_info_title',
-                [
-                'label' => esc_html__('Enable title text', 'Sebenas_Addons'),
-                'type' => Controls_Manager::SWITCHER,
-                ]
-            );
-
-            $this->add_control(
-                'title_text',
-                [
-                    'type' => Controls_Manager::TEXT,
-                    'label' => esc_html__('Title', 'Sebenas_Addons'),
-                    'placeholder' => esc_html__('Enter your title', 'Sebenas_Addons'),
-                    'default' => 'Lorem ipsum dolor sit amet co',
-                    'label_block' => true,
-                    'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
-                    'condition' => [
-                        'enable_info_title' => 'yes',
-                    ],
-            ]
-            );
-
-            $this->end_controls_section();
-
-            $this->start_controls_section(
-                'section_info_text',
-                [
-                'label' => esc_html__('Text info section', 'Sebenas_Addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-            );
-
-            $this->add_control(
-                'enable_info_text',
-                [
-                'label' => esc_html__('Enable Description text', 'Sebenas_Addons'),
-                'type' => Controls_Manager::SWITCHER,
-            ]
-            );
-
-            $this->add_control(
-                'info_text',
-                [
-                'label' => esc_html__('Description text', 'Sebenas_Addons'),
-                'type' => Controls_Manager::WYSIWYG,
-                'default' => esc_html__('Default text', 'Sebenas_Addons'),
-                'placeholder' => esc_html__('Type your text here', 'Sebenas_Addons'),
-                'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet repellat consectetur in cumque laborum. Dicta labore similique commodi earum possimus, numquam corrupti consequuntur modi, repellendus animi quasi cum repellat atque?',
-                'description' => esc_html__('Use {{p text p}} for add primary color', 'Sebenas_Addons'),
-                'condition' => [
-                    'enable_info_text' => 'yes',
-                ],
-            ]
-            );
-
-            $this->end_controls_section();
-
-            $this->start_controls_section(
                 'side_position_section',
                 [
                 'label' => esc_html__('Component position side', 'Sebenas_Addons'),
@@ -262,13 +184,13 @@ if (!class_exists('C_features_image_services_T1')) {
         protected function render()
         {
             $settings = $this->get_settings_for_display();
-
             $sebenas_title_text_row1 = new sebenas_title_text_row1();
 
             $F_textFormating = new F_textFormating();
-            $sebenas_image_component = new sebenas_image_component();
 
             $sebenas_control_styles = new sebenas_control_styles();
+
+            $sebenas_control_cta_model = new sebenas_control_cta_model();
 
             $general_settings = [
                 'side_position_define' => $settings['side_position_define'],
@@ -283,8 +205,6 @@ if (!class_exists('C_features_image_services_T1')) {
                 'info_text_section_row_1' => $F_textFormating->setFormatingText($settings['info_text_section_row_1']),
             ];
 
-            $features_list = $settings['features_icons_default'];
-
             $settings_title = [
                 'enable_info_title' => $settings['enable_info_title'],
                 'title_text' => $F_textFormating->setFormatingText($settings['title_text']),
@@ -295,96 +215,106 @@ if (!class_exists('C_features_image_services_T1')) {
                 'info_text' => $F_textFormating->setFormatingText($settings['info_text']),
             ];
 
-            $slug = '_image_features';
-            $settings_image = [
-                'image_info' => $settings['image_info'.$slug],
-                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
-                'enable_image_box_shadow' => $settings['enable_image_box_shadow'.$slug],
-                'enable_image_circle_style' => $settings['enable_image_circle_style'.$slug],
+            $slug = '_info_CTA';
+            $settings_CTA = [
+                'enable_info_cta' => $settings['enable_info_cta'],
+                'enable_icon_cta' => $settings['enable_icon_cta'.$slug],
+                'icon_type_cta' => $settings['icon_type_cta'.$slug],
+                'icon_cta' => $settings['icon_cta'.$slug],
+                'custom_icon_cta' => $settings['custom_icon_cta'.$slug],
+                'icon_side_cta' => $settings['icon_side_cta'.$slug],
+                'text_cta' => $settings['text_cta'.$slug],
+                'cta_action_click' => $settings['cta_action_click'.$slug],
+                'cta_special_action' => $settings['cta_special_action'.$slug],
+                'link_cta' => $settings['link_cta'.$slug],
+                'cta_style' => $settings['cta_style'.$slug],
             ];
+
+            $features_list = $settings['features_icons_default'];
+
+            $columnsFeatures = null;
+
+            if (isset($features_list) && count($features_list) <= 4) {
+                $columnsFeatures = 'col-md-12 col-lg-6';
+            }
+            if (isset($features_list) && count($features_list) >= 5) {
+                $columnsFeatures = 'col-md-12 col-lg-4';
+            }
 
             $pre_styleContainer = null;
             $pre_styleContainer = $sebenas_control_styles->set_background_style($general_settings); ?>
 
-        <section class="sbn_ComponentCustom parentElement elementorCustom C_features_image_services_T1 <?php echo $pre_styleContainer; ?> ">
-        <div class="section-row">
+<section class="sbn_ComponentCustom parentElement elementorCustom C_features_services_T2 <?php echo $pre_styleContainer; ?>">
 
+<div class="section-row">
+
+
+    <?php
+        $sebenas_title_text_row1->set_row1_section($settings_row1); ?>
+
+    <section class="innerSectionElement sct2">
         <?php
-                    $sebenas_title_text_row1->set_row1_section($settings_row1); ?>
-
-        <section class="innerSectionElement sct2  ">
-
-                <?php
-
-                $side = $general_settings['side_position_define'];
-            if (isset($side) && $side == 'left_side_component') {
-                $side = 'leftSide';
-            }
-            if (isset($side) && $side == 'right_side_component') {
-                $side = 'rightSide';
+        if (isset($general_settings['side_position_define']) && $general_settings['side_position_define'] == 'right_side_component') {
+            ?>
+        <div class="groupElements row rightSide">
+            <div class="col-md-12 col-lg-5 partContainer info">
+                <div class="containElements">
+            <?php
+            if (isset($settings_title) && $settings_title['enable_info_title'] == 'yes') {
+                ?>
+                    <h3 class="secondaryTitle">
+                        <?php echo isset($settings_title['title_text']) ? $settings_title['title_text'] : ''; ?>
+                    </h3>
+                    <?php
             } ?>
 
-            <div class="containElements row <?php echo $side; ?> ">
-
-                <div class="col-md-12 col-lg-6 image">
-
+            <?php
+            if (isset($settings_text) && $settings_text['enable_info_text'] == 'yes') {
+                ?>
+                    <div class="text">
+                        <?php echo isset($settings_text['info_text']) ? $settings_text['info_text'] : ''; ?>
+                    </div>
                     <?php
-                        $sebenas_image_component->setImageContain($settings_image); ?>
+            } ?>
 
-				</div>
+            <?php
 
-                <div class="col-md-12 col-lg-6 info">
+                $sebenas_control_cta_model->setCTA($settings_CTA); ?>
+                </div>
 
-                    <div class="containInfo">
+            </div>
+            <div class="col-md-12 col-lg-7 partContainer features">
 
-                <?php
-                        if (isset($settings_title) && $settings_title['enable_info_title'] == 'yes') {
-                            ?>
-                                <h3 class="secondaryTitle">
-                                    <?php echo isset($settings_title['title_text']) ? $settings_title['title_text'] : ''; ?>
-                                </h3>
-                                <?php
-                        } ?>
-
-                        <?php
-                        if (isset($settings_text) && $settings_text['enable_info_text'] == 'yes') {
-                            ?>
-                                <div class="text">
-                                    <?php echo isset($settings_text['info_text']) ? $settings_text['info_text'] : ''; ?>
-                                </div>
-                                <?php
-                        } ?>
-
-                <?php if (isset($features_list) && count($features_list) > 0) { ?>
-
+            <?php if (isset($features_list) && count($features_list) > 0) { ?>
                     <div class="featureList row">
 
-                        <?php foreach ($features_list as $key => $value) { ?>
+                        <?php
+                        foreach ($features_list as $key => $value) {
+                            ?>
+                            <div class="featureItem  <?php echo $columnsFeatures; ?>">
 
-                            <div class="featureItem col-md-6 col-lg-12">
-
-                                <div class="containItem">
+                                <div class="containItem shadow2">
 
                                 <div class="iconBase">
 
                                 <?php
                                 $icon = '';
-                                $icon_class = '';
-                                if ($value['features_icon_type'] == 'icons') {
-                                    if ($value['features_icon']) {
-                                        $icon = '<i class="'.esc_attr($value['features_icon']).'"></i>';
-                                    }
-                                } elseif ($value['features_icon_type'] == 'custom_icons') {
-                                    if ($value['features_custom_icon'] && \Elementor\Icons_Manager::is_migration_allowed()) {
-                                        ob_start();
-                                        \Elementor\Icons_Manager::render_icon($value['features_custom_icon'], ['aria-hidden' => 'true']);
-                                        $icon = ob_get_clean();
+                            $icon_class = '';
+                            if ($value['features_icon_type'] == 'icons') {
+                                if ($value['features_icon']) {
+                                    $icon = '<i class="'.esc_attr($value['features_icon']).'"></i>';
+                                }
+                            } elseif ($value['features_icon_type'] == 'custom_icons') {
+                                if ($value['features_custom_icon'] && \Elementor\Icons_Manager::is_migration_allowed()) {
+                                    ob_start();
+                                    \Elementor\Icons_Manager::render_icon($value['features_custom_icon'], ['aria-hidden' => 'true']);
+                                    $icon = ob_get_clean();
 
-                                        if ($value['features_custom_icon']['library'] == 'svg') {
-                                            $icon_class = 'icon-svg';
-                                        }
+                                    if ($value['features_custom_icon']['library'] == 'svg') {
+                                        $icon_class = 'icon-svg';
                                     }
-                                } ?>
+                                }
+                            } ?>
                                 <div class="icon_container <?php echo esc_attr($icon_class); ?>">
                                     <?php echo $icon; ?>
                                 </div>
@@ -416,24 +346,135 @@ if (!class_exists('C_features_image_services_T1')) {
                                 </div>
                             </div>
 
-                        <?php } ?>
+                        <?php
+                        } ?>
+
 
                     </div>
-
-                    <?php } ?>
-                </div>
-                </div>
-
+                <?php } ?>
 
             </div>
 
+        </div>
+
+    <?php
+        } ?>
+        <?php
+        if (isset($general_settings['side_position_define']) && $general_settings['side_position_define'] == 'left_side_component') {
+            ?>
+        <div class="groupElements row leftSide">
+
+            <div class="col-md-12 col-lg-7 partContainer features">
+
+            <?php if (isset($features_list) && count($features_list) > 0) { ?>
+                    <div class="featureList row">
+
+                        <?php
+                        foreach ($features_list as $key => $value) {
+                            ?>
+
+                            <div class="featureItem  <?php echo $columnsFeatures; ?>">
+
+                                <div class="containItem shadow2">
+
+                                <div class="iconBase">
+
+                                <?php
+                                $icon = '';
+                            $icon_class = '';
+                            if ($value['features_icon_type'] == 'icons') {
+                                if ($value['features_icon']) {
+                                    $icon = '<i class="'.esc_attr($value['features_icon']).'"></i>';
+                                }
+                            } elseif ($value['features_icon_type'] == 'custom_icons') {
+                                if ($value['features_custom_icon'] && \Elementor\Icons_Manager::is_migration_allowed()) {
+                                    ob_start();
+                                    \Elementor\Icons_Manager::render_icon($value['features_custom_icon'], ['aria-hidden' => 'true']);
+                                    $icon = ob_get_clean();
+
+                                    if ($value['features_custom_icon']['library'] == 'svg') {
+                                        $icon_class = 'icon-svg';
+                                    }
+                                }
+                            } ?>
+                                <div class="icon_container <?php echo esc_attr($icon_class); ?>">
+                                    <?php echo $icon; ?>
+                                </div>
+
+                                </div>
+                                <div class="info">
+
+                                <?php
+                                    if (isset($value['features_title']) && $value['features_title'] != '') {
+                                        ?>
+                                            <h4 class="smallTitle">
+                                                <?php echo isset($value['features_title']) ? $value['features_title'] : ''; ?>
+                                            </h3>
+                                            <?php
+                                    } ?>
+
+                                    <?php
+                                    if (isset($value['features_desc']) && $value['features_desc'] != '') {
+                                        ?>
+                                            <div class="text">
+                                                <?php echo isset($value['features_desc']) ? $value['features_desc'] : ''; ?>
+                                            </div>
+                                            <?php
+                                    } ?>
+
+                                </div>
+                                </div>
+                            </div>
+
+                        <?php
+                        } ?>
+
+
+                    </div>
+                <?php } ?>
+
+            </div>
+
+
+            <div class="col-md-12 col-lg-5 partContainer info">
+                <div class="containElements">
+            <?php
+
+            if (isset($settings_title) && $settings_title['enable_info_title'] == 'yes') {
+                ?>
+                    <h3 class="secondaryTitle">
+                        <?php echo isset($settings_title['title_text']) ? $settings_title['title_text'] : ''; ?>
+                    </h3>
+
+            <?php
+            } ?>
+
+            <?php
+            if (isset($settings_text) && $settings_text['enable_info_text'] == 'yes') {
+                ?>
+                    <div class="text">
+                        <?php echo isset($settings_text['info_text']) ? $settings_text['info_text'] : ''; ?>
+                    </div>
+                    <?php
+            } ?>
+
+            <?php
+
+                    $sebenas_control_cta_model->setCTA($settings_CTA); ?>
+
+                    </div>
+            </div>
+
+        </div>
+
+        <?php
+        } ?>
+
+
+        </section>
+
+    </div>
     </section>
-
-
-</div>
-
-
-</section>
 
 <?php
         }

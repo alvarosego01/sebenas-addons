@@ -1,0 +1,193 @@
+
+section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
+    box-shadow: $shadow2
+    .section-row
+
+        section.innerSectionElement.sct1
+
+        section.innerSectionElement.sct2
+            .containElements
+
+                .imagesList.row
+                    @include responsivo(general)
+                        display: flex
+                        flex-flow: wrap
+                    @include responsivo(resto)
+                        display: flex
+                        flex-flow: wrap
+                    .item
+                        padding-left: 10px
+                        padding-right: 10px
+                        @include responsivo(general)
+                            margin-bottom: 25px
+                        @include responsivo(resto)
+                            margin-bottom: 25px
+                        .image
+                            margin-bottom: 35px
+                        .info
+                            h4.smallTitle
+                                font-weight: 600
+                                text-align: center
+                                margin-bottom: 25px
+                                @include h4_title_small()
+                            p.text
+                                margin-bottom: 0
+                                text-align: center
+                                @include p_secondaryText_contain()
+
+                    .item.col-md-12.col-lg-12,
+                    .item.col-md-12.col-lg-6
+                        .info
+                            h4.smallTitle
+                                @include h3_title_contain()
+                            p.text
+                                @include p_text_contain()
+                    .item.col-md-12.col-lg-12
+                        .image
+                            .containerImage
+                                a
+                                    width: 100%
+                                    display: block
+                                    img
+                                        width: auto
+                                        @include responsivo(telefonoTable)
+                                            height: 300px
+                                        @include responsivo(pcMedio)
+                                            height: 350px
+                                        @include responsivo(general)
+                                            height: 475px
+                                        @include responsivo(smallPcTablet)
+                                            height: 450px
+                                        @include responsivo(resto)
+                                            height: 500px
+
+                    .item.col-md-12.col-lg-6
+                        .image
+                            .containerImage
+                                a
+                                    width: 100%
+                                    display: block
+                                    img
+                                        width: auto
+                                        @include responsivo(telefonoTable)
+                                            height: 275px
+                                        @include responsivo(pcMedio)
+                                            height: 300px
+                                        @include responsivo(general)
+                                            height: 375px
+                                        @include responsivo(smallPcTablet)
+                                            height: 350px
+                                        @include responsivo(resto)
+                                            height: 400px
+                    .item.col-md-12.col-lg-4
+                        .image
+                            .containerImage
+                                a
+                                    width: 100%
+                                    display: block
+                                    img
+                                        width: auto
+                                        @include responsivo(telefonoTable)
+                                            height: 250px
+                                        @include responsivo(pcMedio)
+                                            height: 275px
+                                        @include responsivo(general)
+                                            height: 325px
+                                        @include responsivo(smallPcTablet)
+                                            height: 300px
+                                        @include responsivo(resto)
+                                            height: 350px
+                    .item.col-md-12.col-lg-3
+                        .image
+                            .containerImage
+                                a
+                                    width: 100%
+                                    display: block
+                                    img
+                                        width: auto
+                                        @include responsivo(telefonoTable)
+                                            height: 225px
+                                        @include responsivo(pcMedio)
+                                            height: 250px
+                                        @include responsivo(general)
+                                            height: 225px
+                                        @include responsivo(smallPcTablet)
+                                            height: 200px
+                                        @include responsivo(resto)
+                                            height: 250px
+
+
+                    .item.item_position_bottom
+                        .info
+                            margin-bottom: 25px
+                        .image
+                            margin-bottom: 0
+
+    &.primaryBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .imagesList.row
+                        .item
+                            .info
+                                h4.smallTitle
+                                    color: $blackColor
+                                p.text
+                                    color: $blackColor
+    &.whiteBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $grayColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .imagesList.row
+                        .item
+                            .info
+                                h4.smallTitle
+                                    color: $blackColor
+                                p.text
+                                    color: $grayColor
+    &.greyBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $blackColor
+                    .text
+                        color: $blackColor
+            section.innerSectionElement.sct2
+                .containElements
+                    .imagesList.row
+                        .item
+                            .info
+                                h4.smallTitle
+                                    color: $blackColor
+                                p.text
+                                    color: $blackColor
+    &.blackBackground_Style
+        .section-row
+            section.innerSectionElement.sct1
+                .containElements
+                    h2.secondaryTitle
+                        color: $whiteBase1
+                    .text
+                        color: $whiteBase1
+            section.innerSectionElement.sct2
+                .containElements
+                    .imagesList.row
+                        .item
+                            .info
+                                h4.smallTitle
+                                    color: $whiteBase1
+                                p.text
+                                    color: $whiteBase1

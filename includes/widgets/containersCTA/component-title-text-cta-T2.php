@@ -4,8 +4,10 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
+
+require_once SEBENAS_PATH.'includes/controls/controls_main.php';
+require_once SEBENAS_PATH.'includes/functions/main.php';
 
 if (!class_exists('C_TitleTextCta_T2')) {
     class C_TitleTextCta_T2 extends Widget_Base
@@ -20,24 +22,20 @@ if (!class_exists('C_TitleTextCta_T2')) {
             return esc_html__('CTA title text T2', 'sbn_e_TitleTextCta_T2');
         }
 
-
         public function get_icon()
         {
             return 'eicon-code';
         }
-
 
         public function get_custom_help_url()
         {
             return 'https://developers.elementor.com/docs/widgets/';
         }
 
-
         public function get_categories()
         {
             return ['sebenas_widgets_modules', 'sebenas_widgets_modules_info', 'sebenas_widgets_modules_ctas'];
         }
-
 
         public function get_keywords()
         {
@@ -46,99 +44,71 @@ if (!class_exists('C_TitleTextCta_T2')) {
 
         protected function register_controls()
         {
-            require_once SEBENAS_PATH . 'includes/controls/controls_main.php';
-
-            $sebenas_control_styles = new sebenas_control_styles();
-            $sebenas_control_styles->setControls($this);
-
             $sebenas_controls_info_text_cta = new sebenas_controls_info_text_cta();
             $sebenas_controls_info_text_cta->setControls($this);
 
-            $sebenas_background_style_component = new sebenas_background_style_component();
-            $sebenas_background_style_component->setControls($this);
+            $sebenas_control_styles = new sebenas_control_styles();
+            $sebenas_control_styles->setControls($this);
         }
 
         protected function render()
         {
             $settings = $this->get_settings_for_display();
 
-            require_once SEBENAS_PATH . 'includes/functions/main.php';
-
             $F_textFormating = new F_textFormating();
             $sebenas_control_cta_model = new sebenas_control_cta_model();
 
-            $general_settings = array(
-                'component_styles' => $settings['sebenas_component_defined_styles']
-            );
+            $sebenas_control_styles = new sebenas_control_styles();
 
-            $settings_banner = array(
+            $general_settings = [
+                'component_styles' => $settings['sebenas_component_defined_styles'],
+            ];
+
+            $settings_banner = [
                 'enable_info_title' => $settings['enable_info_title'],
                 'title_text' => $F_textFormating->setFormatingText($settings['title_text']),
                 'enable_info_text' => $settings['enable_info_text'],
                 'info_text' => $F_textFormating->setFormatingText($settings['info_text']),
-            );
+            ];
 
             $slug = '_info_CTA';
-            $settings_CTA = array(
+            $settings_CTA = [
                 'enable_info_cta' => $settings['enable_info_cta'],
-                'enable_icon_cta' => $settings['enable_icon_cta' . $slug],
-                'icon_type_cta' => $settings['icon_type_cta' . $slug],
-                'icon_cta' => $settings['icon_cta' . $slug],
-                'custom_icon_cta' => $settings['custom_icon_cta' . $slug],
-                'icon_side_cta' => $settings['icon_side_cta' . $slug],
-                'text_cta' => $settings['text_cta' . $slug],
-                'cta_action_click' => $settings['cta_action_click' . $slug],
-                'cta_special_action' => $settings['cta_special_action' . $slug],
-                'link_cta' => $settings['link_cta' . $slug],
-                'cta_style' => $settings['cta_style' . $slug],
-            );
+                'enable_icon_cta' => $settings['enable_icon_cta'.$slug],
+                'icon_type_cta' => $settings['icon_type_cta'.$slug],
+                'icon_cta' => $settings['icon_cta'.$slug],
+                'custom_icon_cta' => $settings['custom_icon_cta'.$slug],
+                'icon_side_cta' => $settings['icon_side_cta'.$slug],
+                'text_cta' => $settings['text_cta'.$slug],
+                'cta_action_click' => $settings['cta_action_click'.$slug],
+                'cta_special_action' => $settings['cta_special_action'.$slug],
+                'link_cta' => $settings['link_cta'.$slug],
+                'cta_style' => $settings['cta_style'.$slug],
+            ];
 
-            $background_style = array(
+            $background_style = [
                 'enable_special_background' => $settings['enable_special_background'],
                 'special_background_type' => $settings['special_background_type'],
                 'background_image' => $settings['background_image'],
                 // 'background_color' => $settings['background_color'],
-            );
+            ];
 
             $backgroundSRC = null;
             if (isset($background_style['enable_special_background']) && $background_style['enable_special_background'] == 'yes') {
-
                 if (isset($background_style['special_background_type']) && $background_style['special_background_type'] == 'special_background_image') {
-
                     $backgroundSRC = isset($background_style['background_image']) ? $background_style['background_image']['url'] : null;
-                 /*<section style="background-image: url('<?php echo $backgroundSRC ?>')" class="sbn_ComponentCustom parentElement elementorCustom C_TitleTextCta_T2 whiteBackground_Style">
+                    /*<section style="background-image: url('<?php echo $backgroundSRC ?>')" class="sbn_ComponentCustom parentElement elementorCustom C_TitleTextCta_T2 whiteBackground_Style">
                 */
                 }
             }
 
-                $pre_styleContainer = null;
-                if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'white_component_style') {
-                    $pre_styleContainer = 'whiteBackground_Style';
-                }
-                if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'grey_component_style') {
-                    $pre_styleContainer = 'greyBackground_Style';
-                }
-                if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'black_component_style'){
-                     $pre_styleContainer = 'blackBackground_Style';
-                }
-                if (isset($general_settings['component_styles']) && $general_settings['component_styles'] == 'primary_component_style'){
-                     $pre_styleContainer = 'primaryBackground_Style';
-                }
-
-                ?>
-
-                    <?php if( isset($backgroundSRC) && $backgroundSRC != null ){  ?>
-
-                    <section
-                    style="background-image: url('<?php echo $backgroundSRC ?>')"
-                    class="sbn_ComponentCustom parentElement elementorCustom C_TitleTextCta_T2 <?php echo $pre_styleContainer ?>">
-
-                    <?php } else {  ?>
+            $pre_styleContainer = null;
+            $pre_styleContainer = $sebenas_control_styles->set_background_style($general_settings); ?>
 
                         <section
-                        class="sbn_ComponentCustom parentElement elementorCustom C_TitleTextCta_T2 <?php echo $pre_styleContainer ?>">
+                        class="sbn_ComponentCustom parentElement elementorCustom C_TitleTextCta_T2 <?php echo $pre_styleContainer; ?>">
 
-                    <?php } ?>
+
 
         <div class="section-row">
 
@@ -148,9 +118,9 @@ if (!class_exists('C_TitleTextCta_T2')) {
                 <div class="col-md-12 col-lg-12 info">
                     <div class="containElements">
                 <?php if (isset($settings_banner) && $settings_banner['enable_info_title'] == 'yes') { ?>
-                        <h3 class="secondaryTitle">
+                        <h2 class="secondaryTitle">
                             <?php echo isset($settings_banner['title_text']) ? $settings_banner['title_text'] : ''; ?>
-                        </h3>
+                        </h2>
                         <?php
                 } ?>
 
@@ -163,44 +133,7 @@ if (!class_exists('C_TitleTextCta_T2')) {
 
                 <?php
                 if (isset($settings_CTA) && $settings_CTA['enable_info_cta'] == 'yes') {
-                    /*
-                        $ctaClasses = '';
-                        $ctaClasses .= isset($settings_CTA['cta_style']) ? $settings_CTA['cta_style'] : '';
-                        $ctaClasses .= ' ';
-                        $ctaClasses .= isset($settings_CTA['icon_side_cta']) ? $settings_CTA['icon_side_cta'] : '';
-                        $ctaClasses .= ' '; ?>
-                        <a href="" class="sbn_buttonCustom sbn_btn_normal boxShadow2 <?php echo $ctaClasses ?> ">
-                            <?php
-                            if (isset($settings_CTA) && $settings_CTA['enable_info_cta'] == 'yes') {
-                                $icon = '';
-                                $icon_class = '';
-                                if ($settings_CTA['icon_type_cta'] == 'icons') {
-                                    if ($settings_CTA['icon_cta']) {
-                                        $icon = '<i class="' . esc_attr($settings_CTA['icon_cta']) . '"></i>';
-                                    }
-                                } elseif ($settings_CTA['icon_type_cta'] == 'custom_icons') {
-                                    if ($settings_CTA['custom_icon_cta'] && \Elementor\Icons_Manager::is_migration_allowed()) {
-                                        ob_start();
-                                        \Elementor\Icons_Manager::render_icon($settings_CTA['custom_icon_cta'], [ 'aria-hidden' => 'true' ]);
-                                        $icon = ob_get_clean();
-
-                                        if ($settings_CTA['custom_icon_cta']['library'] == 'svg') {
-                                            $icon_class = 'icon-svg';
-                                        }
-                                    }
-                                } ?>
-                                <div class="icon_container <?php echo esc_attr($icon_class); ?>">
-                                    <?php echo $icon; ?>
-                                </div>
-                            <?php
-                            } ?>
-                            <?php echo isset($settings_CTA['text_cta']) ? $settings_CTA['text_cta'] : ''; ?>
-                        </a>
-                        <?php
-                        */
-
-                        $sebenas_control_cta_model->setCTA( $settings_CTA );
-
+                    $sebenas_control_cta_model->setCTA($settings_CTA);
                 } ?>
                     </div>
 
@@ -215,9 +148,9 @@ if (!class_exists('C_TitleTextCta_T2')) {
         </div>
 
         </section>
-<?php }
-
+<?php
         }
     }
+}
 
 ?>
