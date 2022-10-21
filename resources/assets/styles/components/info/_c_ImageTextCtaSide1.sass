@@ -74,7 +74,9 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                         img
                             object-fit: cover
                             object-position: center
-                            width: 100%
+                            // width: 100%
+                            max-width: unset!important
+                            max-height: unset!important
                             @include responsivo(telefonoTable)
                                 height: 225px
                                 width: auto
@@ -84,11 +86,16 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_ImageTextCtaSide_T1
                                 width: auto
                                 margin: 0 auto
                             @include responsivo(general)
-                                max-height: 500px
+                                height: 475px
+                                width: 475px
                             @include responsivo(smallPcTablet)
-                                max-height: 475px
+                                height: 450px
+                                width: 450px
+
                             @include responsivo(resto)
-                                max-height: 525px
+                                height: 500px
+                                width: 500px
+
 
                 &.rightSide
                     @include responsivo(telefonoTable)

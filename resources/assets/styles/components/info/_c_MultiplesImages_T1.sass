@@ -18,12 +18,16 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                     .item
                         padding-left: 10px
                         padding-right: 10px
+                        @include responsivo(telefonoTable)
+                            margin-bottom: 25px
+                        @include responsivo(pcMedio)
+                            margin-bottom: 25px
                         @include responsivo(general)
                             margin-bottom: 25px
                         @include responsivo(resto)
                             margin-bottom: 25px
                         .image
-                            margin-bottom: 35px
+                            margin-bottom: 25px
                         .info
                             h4.smallTitle
                                 font-weight: 600
