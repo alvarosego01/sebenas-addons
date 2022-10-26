@@ -295,23 +295,30 @@ if (!class_exists('C_MultiplesImages_T1')) {
                                         </div>
                                      <?php } ?>
 
+                                     <?php
+                                     if (
+                                        (isset($value['item_title']) && $value['item_title'] != '') ||
+                                        (isset($value['item_desc']) && $value['item_desc'] != '')
+                                     ) {   ?>
                                 <div class="info">
                                 <?php if (isset($value['item_title'])) {
-                                                ?>
+                                         ?>
                                     <h4 class="smallTitle">
                                         <?php echo isset($value['item_title']) ? $value['item_title'] : ''; ?>
                                     </h4>
                                    <?php
-                                            } ?>
+                                     } ?>
                                            <?php if (isset($value['item_desc'])) {
-                                                ?>
+                                         ?>
                                     <p class="text">
                                         <?php echo isset($value['item_desc']) ? $value['item_desc'] : ''; ?>
                                     </p>
 
                                     <?php
-                                            } ?>
+                                     } ?>
                                 </div>
+
+                                <?php } ?>
 
                                 <?php if ($position == 'item_position_bottom') { ?>
                                         <div class="image">
@@ -328,14 +335,17 @@ if (!class_exists('C_MultiplesImages_T1')) {
                     </div>
                     <?php } ?>
 
-
+                    <?php
+                     if (isset($settings_CTA) && $settings_CTA['enable_info_cta'] == 'yes') {
+                         ?>
                     <div class="cta">
                             <?php
                                  $sebenas_control_cta_model->setCTA($settings_CTA); ?>
 
                         </div>
 
-
+                    <?php
+                     } ?>
 
                 </div>
 

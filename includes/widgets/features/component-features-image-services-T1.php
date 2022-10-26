@@ -361,7 +361,7 @@ if (!class_exists('C_features_image_services_T1')) {
 
                         <?php foreach ($features_list as $key => $value) { ?>
 
-                            <div class="featureItem col-md-6 col-lg-12">
+                            <div class="featureItem  ">
 
                                 <div class="containItem">
 

@@ -9,7 +9,7 @@
 
 @import _sbn_popup
 
-section.sbn_ComponentCustom.parentElement.elementorCustom
+.sbn_ComponentCustom.parentElement.elementorCustom
     padding: 50px 75px
     @include responsivo(telefonoTable)
         padding: 25px 25px
@@ -22,7 +22,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom
     //     box-shadow: $shadow2
 
     .section-row
-        section.innerSectionElement.sct1
+        .innerSectionElement.sct1
             margin-bottom: 50px
             @include responsivo(telefonoTable)
                 margin-bottom: 25px
@@ -52,6 +52,55 @@ section.sbn_ComponentCustom.parentElement.elementorCustom
             p
                 &:last-child
                     margin-bottom: 0!important
+
+
+    .row
+        // [class*="col-"]
+        //     @include responsivo(general)
+        //         &:first-child
+        //             padding-left: 0!important
+        //         &:last-child
+        //             padding-right: 0!important
+        //     @include responsivo(resto)
+        //         &:first-child
+        //             padding-left: 0!important
+        //         &:last-child
+        //             padding-right: 0!important
+        [class*="col-lg-6"]
+            @include responsivo(general)
+                &:nth-of-type(odd)
+                    padding-left: 0!important
+                &:nth-of-type(even)
+                    padding-right: 0!important
+            @include responsivo(resto)
+                &:nth-of-type(odd)
+                    padding-left: 0!important
+                &:nth-of-type(even)
+                    padding-right: 0!important
+
+        [class*="col-lg-4"]
+            @include responsivo(general)
+                &:nth-of-type(3n-2)
+                    padding-left: 0!important
+                &:nth-of-type(3n)
+                    padding-right: 0!important
+            @include responsivo(resto)
+                &:nth-of-type(3n-2)
+                    padding-left: 0!important
+                &:nth-of-type(3n)
+                    padding-right: 0!important
+
+        [class*="col-lg-3"]
+            @include responsivo(general)
+                &:nth-of-type(4n-3)
+                    padding-left: 0!important
+                &:nth-of-type(4n)
+                    padding-right: 0!important
+            @include responsivo(resto)
+                &:nth-of-type(4n-3)
+                    padding-left: 0!important
+                &:nth-of-type(4n)
+                    padding-right: 0!important
 
 html
     margin: 0!important
