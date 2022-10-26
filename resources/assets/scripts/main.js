@@ -16,6 +16,10 @@ function lightboxes2_settings(){
 
 }
 
+
+
+
+
 jQuery(document).ready(function () {
 
     lightboxes2_settings();

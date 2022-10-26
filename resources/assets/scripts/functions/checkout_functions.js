@@ -59,5 +59,7 @@ function setActiveGateway(type) {
 jQuery(document).ready(function () {
 
 
+
+
 });
 

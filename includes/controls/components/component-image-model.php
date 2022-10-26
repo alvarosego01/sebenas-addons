@@ -74,7 +74,6 @@ if (!class_exists('sebenas_image_component')) {
                     } ?>
                     <div class="containerImage lightbox containImageHover <?php echo $imageStyle; ?>">
                         <a href="<?php echo $imageSrc; ?>" data-lightbox="roadtrip" data-alt="<?php echo $imageAlt; ?>" data-title="<?php echo $imageDesc; ?>">
-                            <?php echo $imageAlt; ?>
                             <img  src="<?php echo $imageSrc; ?>" alt="<?php echo $imageAlt; ?>" loading="lazy">
                         </a>
                     </div>

@@ -1,13 +1,19 @@
 
 section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
     box-shadow: $shadow2
+    padding-bottom: 25px
     .section-row
 
         section.innerSectionElement.sct1
 
         section.innerSectionElement.sct2
             .containElements
-
+                .cta
+                    display: flex
+                    justify-content: center
+                    align-content: center
+                    margin-top: 25px
+                    padding-bottom: 25px
                 .imagesList.row
                     @include responsivo(general)
                         display: flex
@@ -18,12 +24,16 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                     .item
                         padding-left: 10px
                         padding-right: 10px
+                        @include responsivo(telefonoTable)
+                            margin-bottom: 25px
+                        @include responsivo(pcMedio)
+                            margin-bottom: 25px
                         @include responsivo(general)
                             margin-bottom: 25px
                         @include responsivo(resto)
                             margin-bottom: 25px
                         .image
-                            margin-bottom: 35px
+                            margin-bottom: 0
                         .info
                             h4.smallTitle
                                 font-weight: 600
@@ -74,11 +84,11 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                                         @include responsivo(pcMedio)
                                             height: 300px
                                         @include responsivo(general)
-                                            height: 375px
+                                            height: 450px
                                         @include responsivo(smallPcTablet)
-                                            height: 350px
-                                        @include responsivo(resto)
                                             height: 400px
+                                        @include responsivo(resto)
+                                            height: 475px
                     .item.col-md-12.col-lg-4
                         .image
                             .containerImage
@@ -120,6 +130,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                     .item.item_position_bottom
                         .info
                             margin-bottom: 25px
+                            margin-top: 25px
                         .image
                             margin-bottom: 0
 
