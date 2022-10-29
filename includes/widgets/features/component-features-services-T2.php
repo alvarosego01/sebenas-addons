@@ -257,12 +257,17 @@ if (!class_exists('C_features_services_T2')) {
         if (isset($general_settings['side_position_define']) && $general_settings['side_position_define'] == 'right_side_component') {
             ?>
         <div class="groupElements row rightSide">
+
             <div class="col-md-12 col-lg-5 partContainer info">
                 <div class="containElements">
             <?php
             if (isset($settings_title) && $settings_title['enable_info_title'] == 'yes') {
-                ?>
-                    <h3 class="secondaryTitle">
+                $space_class = null;
+                if (isset($settings_text) && $settings_text['enable_info_text'] == 'yes') {
+                    $space_class = 'mb25';
+                } ?>
+
+                    <h3 class="secondaryTitle <?php echo $space_class; ?>">
                         <?php echo isset($settings_title['title_text']) ? $settings_title['title_text'] : ''; ?>
                     </h3>
                     <?php
@@ -441,8 +446,11 @@ if (!class_exists('C_features_services_T2')) {
             <?php
 
             if (isset($settings_title) && $settings_title['enable_info_title'] == 'yes') {
-                ?>
-                    <h3 class="secondaryTitle">
+                $space_class = null;
+                if (isset($settings_text) && $settings_text['enable_info_text'] == 'yes') {
+                    $space_class = 'mb25';
+                } ?>
+                    <h3 class="secondaryTitle <?php echo $space_class; ?>">
                         <?php echo isset($settings_title['title_text']) ? $settings_title['title_text'] : ''; ?>
                     </h3>
 

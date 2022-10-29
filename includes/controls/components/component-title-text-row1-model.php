@@ -88,14 +88,18 @@ if (!class_exists('sebenas_title_text_row1')) {
         public function set_row1_section($settings_row1)
         {
             if (isset($settings_row1) && $settings_row1['enable_section_row_1'] == 'yes') {
-                ?>
-    <section class="innerSectionElement sct1">
+                $space_class = null;
+
+                if (isset($settings_row1) && $settings_row1['enable_info_text_section_row_1'] == 'yes') {
+                    $space_class = 'mb25';
+                } ?>
+            <section class="innerSectionElement sct1">
                 <div class="containElements">
 
                     <?php
                 if (isset($settings_row1) && $settings_row1['enable_title_section_row_1'] == 'yes') {
                     ?>
-                        <h2 class="secondaryTitle">
+                        <h2 class="secondaryTitle <?php echo $space_class; ?>">
                             <?php echo isset($settings_row1['title_text_section_row_1']) ? $settings_row1['title_text_section_row_1'] : ''; ?>
                         </h2>
                         <?php
@@ -110,9 +114,9 @@ if (!class_exists('sebenas_title_text_row1')) {
                         <?php
                 } ?>
 
-            </div>
+                </div>
 
-    </section>
+            </section>
 
     <?php
             }

@@ -302,8 +302,11 @@ if (!class_exists('C_MultiplesImages_T1')) {
                                      ) {   ?>
                                 <div class="info">
                                 <?php if (isset($value['item_title'])) {
-                                         ?>
-                                    <h4 class="smallTitle">
+                                         $space_class = null;
+                                         if (isset($value['item_desc']) && $value['item_desc'] != '') {
+                                             $space_class = 'mb25';
+                                         } ?>
+                                    <h4 class="smallTitle <?php echo $space_class; ?>">
                                         <?php echo isset($value['item_title']) ? $value['item_title'] : ''; ?>
                                     </h4>
                                    <?php
