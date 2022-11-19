@@ -1,5 +1,4 @@
 
-
 @media (min-width: 992px)
     .col-lg-4
         width: 33.33333333%!important
@@ -13,7 +12,6 @@
         flex: 0 0 auto
         width: 66.66666667%!important
 
-
 @include responsivo(telefonoTable)
     .col-md-6
         width: 50%!important
@@ -25,20 +23,23 @@
     .col-md-12
         width: 100%!important
 
-
 .blackBackground_Style
     background-color: $blackColor
 .whiteBackground_Style
     background-color: $whiteBase1
 .greyBackground_Style
     background-color: $lightGray_color
+.yellowBackground_Style
+    background-color: $yellow_color
+.darkBlueBackground_Style
+    background-color: $darkBlue_color
+.greenBackground_Style
+    background-color: $turcGreen_color
 .primaryBackground_Style
-    background-color: $primaryColorYellow
-
-
+    background-color: $primaryColor
 
 .primaryColor
-    color: $primaryColorYellow
+    color: $primaryColor
 
 .blackColor
     color: $blackColor
@@ -48,7 +49,6 @@
     color: $whiteBase1
 .lightGray_color
     color: $lightGray_color
-
 
 br.space
     display: block!important
@@ -150,8 +150,6 @@ br.space
     @include responsivo(resto)
         display: none!important
 
-
-
 div#payment
     ul.wc_payment_methods.payment_methods.methods
 
@@ -180,8 +178,6 @@ div#payment
                 // .payment_gateway_singleIcon
                 //     img.iconSmall
                 //         height: 65px
-
-
 
             .payment_box
                 margin-top: 0
@@ -223,7 +219,6 @@ div#payment
                                     font-size: 14px
                                 @include responsivo(resto)
                                     font-size: 14px
-
 
                 section.sbn_payment_methods_desc
                     margin: 10px 0
@@ -278,9 +273,6 @@ div#payment
 
                                         @include responsivo(smallPcTablet)
                                             height: 25px
-
-
-
 
     .sbn_payment_gateways_preselectors
         padding-left: 30px
@@ -358,7 +350,6 @@ div#payment
                                 @include responsivo(smallPcTablet)
                                     font-size: 12.5px
 
-
                             small
                                 font-weight: 500
                                 text-align: left
@@ -374,7 +365,6 @@ div#payment
                                 @include responsivo(smallPcTablet)
                                     font-size: 10.5px
 
-
                         .customCheckBox
                             position: absolute
                             right: 0
@@ -386,16 +376,14 @@ div#payment
 
                 li.gatewayElement.active
                     .sbn_buttonCustom
-                        background-color: $primaryColorYellow
-
-
+                        background-color: $yellow_color
 
 .checkboxCustom
-    --background:#fff
-    --border:#D1D6EE
-    --border-hover:#BBC1E1
-    --border-active:#1E2235
-    --tick:#fff
+    --background: #fff
+    --border: #D1D6EE
+    --border-hover: #BBC1E1
+    --border-active: #1E2235
+    --tick: #fff
     position: relative
     box-sizing: inherit
     &:before, &:after
@@ -427,10 +415,10 @@ div#payment
         transition: box-shadow 0.3s
         box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border))
         &:hover
-            --s:2px
-            --b:var(--border-hover)
+            --s: 2px
+            --b: var(--border-hover)
         &:checked
-            --b:var(--border-active)
+            --b: var(--border-active)
         &::-ms-check
             display: none
         &::before
@@ -452,26 +440,25 @@ div#payment
 
     &.path
         input:checked
-            --s:2px
+            --s: 2px
             transition-delay: 0.4s
             + svg
-                --a:16.1 86.12
-                --o:102.22
+                --a: 16.1 86.12
+                --o: 102.22
         svg
             stroke-dasharray: var(--a, 86.12)
             stroke-dashoffset: var(--o, 86.12)
             transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s
 
     &.bounce
-        --stroke:var(--tick)
+        --stroke: var(--tick)
         input:checked
-            --s:11px
+            --s: 11px
             + svg
                 -webkit-animation: bounce 0.4s linear forwards 0.2s
                 animation: bounce 0.4s linear forwards 0.2s
         svg
-            --scale:0
-
+            --scale: 0
 
 @keyframes bounce
     50%
@@ -480,7 +467,6 @@ div#payment
         transform: scale(0.9)
     100%
         transform: scale(1)
-
 
 .customCheckBox
     display: flex
@@ -511,7 +497,6 @@ div#payment
         margin-right: 15px
         width: 20px
 
-
 .containerImage.lightbox
     position: relative
     z-index: 490
@@ -528,12 +513,14 @@ div#payment
         object-fit: cover
         object-position: top
 
-
-
-
 .containerImage
     &.circleBox
         border-radius: 100%
 
 .shadow2
     box-shadow: $shadow2!important
+
+.mb25
+    margin-bottom: 25px!important
+
+
