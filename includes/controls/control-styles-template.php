@@ -84,6 +84,8 @@ if (!class_exists('sebenas_control_styles')) {
                     'white_component_style' => 'White style',
                     'grey_component_style' => 'Grey style',
                     'black_component_style' => 'Black style',
+                    'green_component_style' => 'Green style',
+                    'yellow_component_style' => 'Yellow style',
                     'primary_component_style' => 'Primary style',
                 ],
                 'default' => 'white_component_style',

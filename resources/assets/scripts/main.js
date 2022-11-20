@@ -4,7 +4,7 @@ jQuery.noConflict()
 
 
 console.log('pruebas');
-function lightboxes2_settings(){
+function lightboxes2_settings() {
 
     lightbox.option({
         'resizeDuration': 200,

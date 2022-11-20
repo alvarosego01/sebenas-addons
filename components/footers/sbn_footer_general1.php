@@ -1,17 +1,15 @@
 
 
 <?php
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
 
 <?php
-function sbn_footer_general1( $parameters ){
-
-    $footer_id = $parameters['sbn_footer_postType'];
-
-?>
+function sbn_footer_general1($parameters)
+{
+    $footer_id = $parameters['sbn_footer_postType']; ?>
 
 <footer id="sbn_footer" class="content-info custom_footer sbn_footer principal_footer1">
 
@@ -23,50 +21,52 @@ function sbn_footer_general1( $parameters ){
 
             <?php
                     $sbn_footer_logo_1c_4c = sbn_getField('sbn_footer_logo_1c_4c', $footer_id);
-                    if(isset($sbn_footer_logo_1c_4c) && $sbn_footer_logo_1c_4c != null){
-                    ?>
+    if (isset($sbn_footer_logo_1c_4c) && $sbn_footer_logo_1c_4c != null) {
+        ?>
                         <div class="containerImage logoPiePagina">
                             <?php
                                 $i = $sbn_footer_logo_1c_4c;
-                                $i = $i['url'];
-                            ?>
+        $i = $i['url']; ?>
 
                             <img alt="Sebenasmart logo mark" src="<?php echo $i; ?>">
 
                         </div>
-                    <?php } ?>
+                    <?php
+    } ?>
 
 
                 <?php
                     $sbn_footer_texto_1c_4c = sbn_getField('sbn_footer_texto_1c_4c', $footer_id);
-                    if(isset($sbn_footer_texto_1c_4c) && $sbn_footer_texto_1c_4c != null){
-                    ?>
+    if (isset($sbn_footer_texto_1c_4c) && $sbn_footer_texto_1c_4c != null) {
+        ?>
                         <p class="text">
                             <?php echo $sbn_footer_texto_1c_4c; ?>
                         </p>
-                    <?php } ?>
+                    <?php
+    } ?>
 
                 <?php
                     $enable_menu_1c_4c = sbn_getField('enable_menu_1c_4c', $footer_id);
-                    if(isset($enable_menu_1c_4c) && $enable_menu_1c_4c == 1){
-                ?>
+    if (isset($enable_menu_1c_4c) && $enable_menu_1c_4c == 1) {
+        ?>
                     <div class="menuContainer menu-b-social-networks-container">
 
                         <?php
                             $title_menu_1c_4c = sbn_getField('title_menu_1c_4c', $footer_id);
-                            if(isset($title_menu_1c_4c) && $title_menu_1c_4c != null){
-                        ?>
+        if (isset($title_menu_1c_4c) && $title_menu_1c_4c != null) {
+            ?>
                             <h3 class="titleMenu">
                                 <?php echo $title_menu_1c_4c; ?>
                             </h3>
 
-                        <?php } ?>
+                        <?php
+        } ?>
 
 
                         <?php
                             $menu_1c_4c = sbn_getField('menu_1c_4c', $footer_id);
-                            if(isset($menu_1c_4c) && $menu_1c_4c != null){
-                            ?>
+        if (isset($menu_1c_4c) && $menu_1c_4c != null) {
+            ?>
                             <?php  wp_nav_menu([
                                 'menu' => $menu_1c_4c,
                                 'container' => false,
@@ -75,12 +75,14 @@ function sbn_footer_general1( $parameters ){
                                 'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
                                 'depth' => 3,
                                 // 'walker' => new \App\wp_bootstrap5_navwalker(),
-                            ]) ?>
-                        <?php } ?>
+                            ]); ?>
+                        <?php
+        } ?>
 
                     </div>
 
-                    <?php } ?>
+                    <?php
+    } ?>
 
             </div>
 
@@ -88,25 +90,26 @@ function sbn_footer_general1( $parameters ){
 
 <?php
 $enable_menu_2c_4c = sbn_getField('enable_menu_2c_4c', $footer_id);
-if(isset($enable_menu_2c_4c) && $enable_menu_2c_4c == 1){
-?>
+    if (isset($enable_menu_2c_4c) && $enable_menu_2c_4c == 1) {
+        ?>
 
 <div class="menuContainer">
 
     <?php
         $title_menu_2c_4c = sbn_getField('title_menu_2c_4c', $footer_id);
-        if(isset($title_menu_2c_4c) && $title_menu_2c_4c != null){
-        ?>
+        if (isset($title_menu_2c_4c) && $title_menu_2c_4c != null) {
+            ?>
         <h3 class="titleMenu">
-            <?php echo $title_menu_2c_4c;  ?>
+            <?php echo $title_menu_2c_4c; ?>
         </h3>
-    <?php } ?>
+    <?php
+        } ?>
 
 
     <?php
         $menu_2c_4c = sbn_getField('menu_2c_4c', $footer_id);
-        if(isset($menu_2c_4c) && $menu_2c_4c != null){
-    ?>
+        if (isset($menu_2c_4c) && $menu_2c_4c != null) {
+            ?>
         <?php  wp_nav_menu([
             'menu' => $menu_2c_4c,
             'container' => false,
@@ -115,11 +118,13 @@ if(isset($enable_menu_2c_4c) && $enable_menu_2c_4c == 1){
             'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
             'depth' => 3,
             // 'walker' => new \App\wp_bootstrap5_navwalker(),
-            ])  ?>
-    <?php } ?>
+            ]); ?>
+    <?php
+        } ?>
 
 </div>
-<?php } ?>
+<?php
+    } ?>
 
 </div>
 
@@ -127,24 +132,25 @@ if(isset($enable_menu_2c_4c) && $enable_menu_2c_4c == 1){
 
 <?php
 $enable_menu_3c_4c = sbn_getField('enable_menu_3c_4c', $footer_id);
-if(isset($enable_menu_3c_4c) && $enable_menu_3c_4c == 1){
-?>
+    if (isset($enable_menu_3c_4c) && $enable_menu_3c_4c == 1) {
+        ?>
 <div class="menuContainer">
 
     <?php
         $title_menu_3c_4c = sbn_getField('title_menu_3c_4c', $footer_id);
-    if(isset($title_menu_3c_4c) && $title_menu_3c_4c != null){
-    ?>
+        if (isset($title_menu_3c_4c) && $title_menu_3c_4c != null) {
+            ?>
         <h3 class="titleMenu">
-            <?php echo $title_menu_3c_4c;  ?>
+            <?php echo $title_menu_3c_4c; ?>
         </h3>
-    <?php } ?>
+    <?php
+        } ?>
 
 
     <?php
         $menu_3c_4c = sbn_getField('menu_3c_4c', $footer_id);
-        if(isset($menu_3c_4c) && $menu_3c_4c != null){
-    ?>
+        if (isset($menu_3c_4c) && $menu_3c_4c != null) {
+            ?>
         <?php  wp_nav_menu([
             'menu' => $menu_3c_4c,
             'container' => false,
@@ -153,11 +159,13 @@ if(isset($enable_menu_3c_4c) && $enable_menu_3c_4c == 1){
             'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
             'depth' => 3,
             // 'walker' => new \App\wp_bootstrap5_navwalker(),
-            ])  ?>
-    <?php } ?>
+            ]); ?>
+    <?php
+        } ?>
 
 </div>
-<?php } ?>
+<?php
+    } ?>
 
 
 
@@ -167,24 +175,25 @@ if(isset($enable_menu_3c_4c) && $enable_menu_3c_4c == 1){
 
 <?php
 $enable_menu_4c_4c = sbn_getField('enable_menu_4c_4c', $footer_id);
-if(isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1){
-?>
+    if (isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1) {
+        ?>
 <div class="menuContainer">
 
     <?php
         $title_menu_4c_4c = sbn_getField('title_menu_4c_4c', $footer_id);
-    if(isset($title_menu_4c_4c) && $title_menu_4c_4c != null){
-    ?>
+        if (isset($title_menu_4c_4c) && $title_menu_4c_4c != null) {
+            ?>
         <h3 class="titleMenu">
-            <?php echo $title_menu_4c_4c;  ?>
+            <?php echo $title_menu_4c_4c; ?>
         </h3>
-    <?php } ?>
+    <?php
+        } ?>
 
 
     <?php
         $menu_4c_4c = sbn_getField('menu_4c_4c', $footer_id);
-        if(isset($menu_4c_4c) && $menu_4c_4c != null){
-    ?>
+        if (isset($menu_4c_4c) && $menu_4c_4c != null) {
+            ?>
         <?php  wp_nav_menu([
             'menu' => $menu_4c_4c,
             'container' => false,
@@ -193,11 +202,13 @@ if(isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1){
             'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
             'depth' => 3,
             // 'walker' => new \App\wp_bootstrap5_navwalker(),
-            ])  ?>
-    <?php } ?>
+            ]); ?>
+    <?php
+        } ?>
 
 </div>
-<?php } ?>
+<?php
+    } ?>
 
 
 
@@ -206,18 +217,56 @@ if(isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1){
         </div>
 
 
+        <?php
+            $enable_menu_4c_4c = sbn_getField('enable_menu_4c_4c', $footer_id);
+    if (isset($enable_menu_4c_4c) && $enable_menu_4c_4c != null) {
+        ?>
+            <div class="footer_base_categories slider_menu_container_parent">
+
+                <div class="menuContainer slider_menu_container">
+
+                <?php
+                    $menu_4c_base_ctg = sbn_getField('menu_4c_base_ctg', $footer_id);
+        if (isset($menu_4c_base_ctg) && $menu_4c_base_ctg != null) {
+            ?>
+                                    <?php  wp_nav_menu([
+                                        'menu' => $menu_4c_base_ctg,
+                                        'container' => false,
+                                        'menu_class' => 'menu slide',
+                                        'fallback_cb' => '__return_false',
+                                        'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
+                                        'depth' => 3,
+                                    ]); ?>
+                                    <?php  wp_nav_menu([
+                                        'menu' => $menu_4c_base_ctg,
+                                        'container' => false,
+                                        'menu_class' => 'menu slide',
+                                        'fallback_cb' => '__return_false',
+                                        'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
+                                        'depth' => 3,
+                                    ]); ?>
+
+    <?php
+        } ?>
+
+                </div>
+
+            </div>
+
+        <?php
+    } ?>
+
 
     <?php
             $sbn_footer_texto_base_4c = sbn_getField('sbn_footer_texto_base_4c', $footer_id);
-        if (isset($sbn_footer_texto_base_4c) && $sbn_footer_texto_base_4c != null){
-    ?>
+    if (isset($sbn_footer_texto_base_4c) && $sbn_footer_texto_base_4c != null) {
+        ?>
             <div class="bottom_footer">
 
                 <p class="text">
 
                     <?php
-                    echo $sbn_footer_texto_base_4c;
-                     ?>
+                    echo $sbn_footer_texto_base_4c; ?>
 
                 </p>
 
@@ -225,19 +274,20 @@ if(isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1){
 
 <?php
     $title_menu_1c_4c = sbn_getField('title_menu_base_4c', $footer_id);
-    if(isset($title_menu_1c_4c) && $title_menu_1c_4c != null){
-?>
+        if (isset($title_menu_1c_4c) && $title_menu_1c_4c != null) {
+            ?>
     <h3 class="titleMenu">
         <?php echo $title_menu_1c_4c; ?>
     </h3>
 
-<?php } ?>
+<?php
+        } ?>
 
 
 <?php
     $menu_1c_4c = sbn_getField('menu_base_4c', $footer_id);
-    if(isset($menu_1c_4c) && $menu_1c_4c != null){
-    ?>
+        if (isset($menu_1c_4c) && $menu_1c_4c != null) {
+            ?>
     <?php  wp_nav_menu([
         'menu' => $menu_1c_4c,
         'container' => false,
@@ -246,18 +296,21 @@ if(isset($enable_menu_4c_4c) && $enable_menu_4c_4c == 1){
         'items_wrap' => '<ul id="%1$s" class="navbar-nav  mb-2 mb-md-0 %2$s">%3$s</ul>',
         'depth' => 3,
         // 'walker' => new \App\wp_bootstrap5_navwalker(),
-    ]) ?>
-<?php } ?>
+    ]); ?>
+<?php
+        } ?>
 
 </div>
 
 
             </div>
-            <?php } ?>
+            <?php
+    } ?>
 
 
     </div>
 
 </footer>
 
-<?php } ?>
+<?php
+} ?>

@@ -635,6 +635,49 @@ if (!defined('ABSPATH')) {
                     ],
                 ],
             ],
+            [
+                'key' => 'sbn_footer_settings_4c_base_ctg',
+                'title' => 'Base categories',
+                'fields' => [
+                    [
+                        'key' => 'enable_menu_4c_base_ctg',
+                        'name' => 'enable_menu_4c_base_ctg',
+                        'label' => 'Habilitar base categorias',
+                        'type' => 'true_false',
+                    ],
+
+                    [
+                        'key' => 'menu_4c_base_ctg',
+                        'name' => 'menu_4c_base_ctg',
+                        'label' => 'Menu base categorias',
+                        'type' => 'select',
+                        'choices' => $body,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field' => 'enable_menu_4c_base_ctg',
+                                    'operator' => '==',
+                                    'value' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                'location' => [
+                    [
+                        [
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'sbn_footer',
+                        ],
+                        [
+                            'param' => 'post_taxonomy',
+                            'operator' => '==',
+                            'value' => 'sbn_footer-category-tax:general_sbn_footer_columns4',
+                        ],
+                    ],
+                ],
+            ],
 
             [
                 'key' => 'sbn_footer_settings_base_4c',
