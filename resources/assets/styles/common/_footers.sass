@@ -53,12 +53,29 @@
                 font-size: 15px
             @include responsivo(smallPcTablet)
                 font-size: 14px
+        .footer_base_categories
+            border-top: 1px solid $gray_ult_color
+            // padding: 15px
+            // .menuContainer
+            //     ul.navbar-nav
+            //         list-style: none
+            //         display: flex
+            //         flex-direction: row
+            //         overflow: hidden
+            //         margin: 0 auto
+            //         li.menu-item
+            //             width: fit-content
+            //             a
+            //                 display: flex
+            //                 flex-direction: row
+            //                 width: 100%
+            //                 display: block
         .bottom_footer
             display: flex
             flex-direction: row
             padding: 15px 0
             padding-bottom: 0
-            border-top: 1px solid $lightGray_color
+            border-top: 1px solid $gray_ult_color
             @include responsivo(telefonoTable)
                 flex-direction: column
                 justify-content: center
@@ -188,7 +205,7 @@
                         margin-left: 0!important
                     img
                         margin-left: 0
-                        height: 100px
+                        height: 85px
                         width: auto
                         @include responsivo(telefonoTable)
                             height: 50px
@@ -238,7 +255,7 @@
                             a
                                 font-size: 16px
                                 font-style: normal
-                                font-weight: 400
+                                font-weight: 500
                                 line-height: 1
                                 letter-spacing: -1px
                                 color: $grayColor
@@ -272,8 +289,10 @@
                     width: 30%
                 @include responsivo(general)
                     width: 20%
+                    padding-right: 25px
                 @include responsivo(resto)
                     width: 20%
+                    padding-right: 25px
             .columnItem.c3
                 ul.menu
                     li
@@ -302,6 +321,13 @@
                         margin-bottom: 25px
                     @include responsivo(pcMedio)
                         margin-bottom: 25px
+
+            .columnItem
+                &:last-child
+                    @include responsivo(general)
+                        padding-right: 0!important
+                    @include responsivo(resto)
+                        padding-right: 0!important
 
 
 

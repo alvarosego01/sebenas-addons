@@ -41,6 +41,18 @@
 .primaryColor
     color: $primaryColor
 
+.yellowColor
+    color: $yellow_color
+
+.whiteColor
+    color: $whiteBase1
+
+.greenColor
+    color: $turcGreen_color
+
+.darkBlueColor
+    color: $darkBlue_color
+
 .blackColor
     color: $blackColor
 .grayColor
@@ -524,3 +536,56 @@ div#payment
     margin-bottom: 25px!important
 
 
+
+.slider_menu_container_parent
+    position: relative
+    padding: 0
+    height: 50px
+    overflow: hidden
+    .slider_menu_container
+        display: block
+        margin: 0 auto
+        position: absolute
+        animation: slide_infinite_menu_animation 20s linear infinite
+        @include responsivo(telefonoTable)
+            width: 600%
+        @include responsivo(pcMedio)
+            width: 375%
+        @include responsivo(general)
+            width: 325%
+        @include responsivo(smallPcTablet)
+            width: 365%
+        @include responsivo(resto)
+            width: 275%
+        ul
+            list-style: none
+
+        ul.navbar-nav.slide
+            float: left
+            width: 50%
+            display: flex
+            flex-direction: row
+            padding-left: 0
+            li.menu-item
+                padding: 0 10px
+                width: fit-content
+                a
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    @include responsivo(telefonoTable)
+                        font-size: 12px
+                    @include responsivo(pcMedio)
+                        font-size: 12px
+
+
+        &:hover
+            animation-play-state: paused
+
+
+
+@keyframes slide_infinite_menu_animation
+    0%
+        left: 0
+    100%
+        left: -100%
