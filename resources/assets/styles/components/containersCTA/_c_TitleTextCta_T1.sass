@@ -107,7 +107,17 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_TitleTextCta_T1
                             color: $whiteBase1
                         .text
                             color: $whiteBase1
-            &.primaryBackground_Style
+            &.greenBackground_Style
+                .containElements
+                    .info
+                        h3.secondaryTitle
+                            color: $whiteBase1
+                        .text
+                            color: $whiteBase1
+                &::before
+                    border-left: 7.5px solid $whiteBase1
+
+            &.yellowBackground_Style
                 .containElements
                     .info
                         h3.secondaryTitle
@@ -115,5 +125,14 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_TitleTextCta_T1
                         .text
                             color: $blackColor
 
+            &.primaryBackground_Style
+                .containElements
+                    .info
+                        h3.secondaryTitle
+                            color: $whiteBase1
+                        .text
+                            color: $whiteBase1
+
                 &::before
-                    border-left: 7.5px solid $blackColor
+                    border-left: 7.5px solid $turcGreen_color
+

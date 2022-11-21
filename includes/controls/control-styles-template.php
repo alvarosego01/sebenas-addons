@@ -113,6 +113,12 @@ if (!class_exists('sebenas_control_styles')) {
             if (isset($settings['component_styles']) && $settings['component_styles'] == 'primary_component_style') {
                 $pre_styleContainer = 'primaryBackground_Style';
             }
+            if (isset($settings['component_styles']) && $settings['component_styles'] == 'green_component_style') {
+                $pre_styleContainer = 'greenBackground_Style';
+            }
+            if (isset($settings['component_styles']) && $settings['component_styles'] == 'yellow_component_style') {
+                $pre_styleContainer = 'yellowBackground_Style';
+            }
 
             return $pre_styleContainer;
         }
