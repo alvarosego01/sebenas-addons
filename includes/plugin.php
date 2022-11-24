@@ -21,7 +21,7 @@ final class Plugin
      *
      * @var string The addon version.
      */
-    const VERSION = '1.200.315';
+    const VERSION = '1.200.320';
 
     /**
      * Minimum Elementor Version.
@@ -236,7 +236,7 @@ final class Plugin
 
     public function frontend_styles()
     {
-        wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+        // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
     }
 
     public function frontend_scripts()
@@ -257,17 +257,17 @@ final class Plugin
 
         // --------------------
 
-        wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL.'assets/dist/scripts/main.js', [
-            'jquery',
-        ], PLUGIN_VERSION, true);
+        // wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL.'assets/dist/scripts/main.js', [
+        //     'jquery',
+        // ], PLUGIN_VERSION, true);
 
-        wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL.'assets/dist/scripts/functions/popupsControl.js', [
-            'jquery',
-        ], PLUGIN_VERSION, true);
+        // wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL.'assets/dist/scripts/functions/popupsControl.js', [
+        //     'jquery',
+        // ], PLUGIN_VERSION, true);
 
-        wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL.'assets/dist/scripts/functions/checkout_functions.js', [
-            'jquery',
-        ], PLUGIN_VERSION, true);
+        // wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL.'assets/dist/scripts/functions/checkout_functions.js', [
+        //     'jquery',
+        // ], PLUGIN_VERSION, true);
     }
 
     protected function add_actions()

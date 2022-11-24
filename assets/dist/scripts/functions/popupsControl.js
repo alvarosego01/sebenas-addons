@@ -1,1 +1,1 @@
-jQuery(document).ready(function(){});
+console.log("popupsControl"),jQuery(document).ready(function(){});

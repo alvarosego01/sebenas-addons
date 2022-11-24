@@ -2,8 +2,8 @@
 
 jQuery.noConflict()
 
+console.log('main');
 
-console.log('pruebas');
 function lightboxes2_settings() {
 
     lightbox.option({

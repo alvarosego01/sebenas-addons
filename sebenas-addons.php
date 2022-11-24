@@ -3,7 +3,7 @@
  * Plugin Name: Sebenas Addons
  * Plugin URI: http://sebenas.com
  * Description: Extra elements for Elementor. Built for Sebenas stores.
- * Version: 1.200.315
+ * Version: 1.200.320
  * Author: Álvaro Segovia
  * Author URI: http://sebenas.com
  * License: GPL2+
@@ -22,11 +22,29 @@ if (!defined('SEBENAS_URL')) {
 }
 
 if (!defined('PLUGIN_VERSION')) {
-    define('PLUGIN_VERSION', '1.200.315');
+    define('PLUGIN_VERSION', '1.200.320');
 }
 function sebenas_init_loaded()
 {
     // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+
+    add_action('wp_enqueue_scripts', function(){
+
+        wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+
+        wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL.'assets/dist/scripts/main.js', [
+            'jquery',
+        ], PLUGIN_VERSION, true);
+
+        wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL.'assets/dist/scripts/functions/popupsControl.js', [
+            'jquery',
+        ], PLUGIN_VERSION, true);
+
+        wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL.'assets/dist/scripts/functions/checkout_functions.js', [
+            'jquery',
+        ], PLUGIN_VERSION, true);
+
+    });
 
     // Check if Elementor installed and activated
     if (!did_action('elementor/loaded')) {
