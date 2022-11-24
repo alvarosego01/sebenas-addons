@@ -1,5 +1,4 @@
 <?php
-
 namespace Sebenas_Addons;
 
 if (!defined('ABSPATH')) {
@@ -22,7 +21,7 @@ final class Plugin
      *
      * @var string The addon version.
      */
-    const VERSION = '1.200.310';
+    const VERSION = '1.200.312';
 
     /**
      * Minimum Elementor Version.
@@ -237,7 +236,7 @@ final class Plugin
 
     public function frontend_styles()
     {
-        // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+        wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
     }
 
     public function frontend_scripts()

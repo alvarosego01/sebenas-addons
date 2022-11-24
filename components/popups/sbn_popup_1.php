@@ -1,11 +1,7 @@
-
-
 <?php
-
 if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
 
     function sbn_popup_1_setup($parameters, $page_Id){
 

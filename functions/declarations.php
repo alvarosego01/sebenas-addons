@@ -2,25 +2,20 @@
     if (! defined('ABSPATH')) {
         exit; // Exit if accessed directly.
     }
+function setTypeUrl(){
 
-// function setTypeUrl(){
+    if($_SERVER['SERVER_NAME'] == 'localhost') {
 
-//     if($_SERVER['SERVER_NAME'] == 'localhost') {
+        return '/sebenasmart';
 
-//         return '/sebenasmart';
+    }else{
 
-//     }else{
+        return '';
 
-//         return '';
+    }
 
-//     }
+}
 
-// }
-
-// $x =  content_url();
-
-
-// echo $x;
 
 
 ?>

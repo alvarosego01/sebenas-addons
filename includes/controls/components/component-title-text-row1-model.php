@@ -1,11 +1,7 @@
-
-
 <?php
-
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
 use Elementor\Controls_Manager;
 
 if (!class_exists('sebenas_title_text_row1')) {

@@ -1,13 +1,7 @@
-
-
 <?php
-
     if (! defined('ABSPATH')) {
         exit; // Exit if accessed directly.
     }
-
-
-
     function sbn_footer() {
 
         // Set UI labels for Custom Post Type

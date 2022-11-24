@@ -3,7 +3,7 @@
  * Plugin Name: Sebenas Addons
  * Plugin URI: http://sebenas.com
  * Description: Extra elements for Elementor. Built for Sebenas stores.
- * Version: 1.200.310
+ * Version: 1.200.312
  * Author: Álvaro Segovia
  * Author URI: http://sebenas.com
  * License: GPL2+
@@ -22,12 +22,11 @@ if (!defined('SEBENAS_URL')) {
 }
 
 if (!defined('PLUGIN_VERSION')) {
-    define('PLUGIN_VERSION', '1.200.310');
+    define('PLUGIN_VERSION', '1.200.312');
 }
-
 function sebenas_init_loaded()
 {
-    wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
+    // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 
     // Check if Elementor installed and activated
     if (!did_action('elementor/loaded')) {
@@ -51,12 +50,10 @@ function sebenas_init_loaded()
     require_once SEBENAS_PATH.'includes/plugin.php';
 
     // importaciones
-    require_once SEBENAS_PATH.'functions/main.php';
+    // require_once SEBENAS_PATH.'functions/main.php';
 
     // Run the plugin
     \Sebenas_Addons\Plugin::instance();
 }
-
-wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
-
+// wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 add_action('plugins_loaded', 'sebenas_init_loaded');

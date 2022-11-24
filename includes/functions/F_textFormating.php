@@ -1,9 +1,7 @@
 <?php
-
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
 if (!class_exists('F_textFormating')) {
     class F_textFormating
     {
