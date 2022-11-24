@@ -3,7 +3,7 @@
  * Plugin Name: Sebenas Addons
  * Plugin URI: http://sebenas.com
  * Description: Extra elements for Elementor. Built for Sebenas stores.
- * Version: 1.200.312
+ * Version: 1.200.315
  * Author: Álvaro Segovia
  * Author URI: http://sebenas.com
  * License: GPL2+
@@ -22,7 +22,7 @@ if (!defined('SEBENAS_URL')) {
 }
 
 if (!defined('PLUGIN_VERSION')) {
-    define('PLUGIN_VERSION', '1.200.312');
+    define('PLUGIN_VERSION', '1.200.315');
 }
 function sebenas_init_loaded()
 {
@@ -50,7 +50,7 @@ function sebenas_init_loaded()
     require_once SEBENAS_PATH.'includes/plugin.php';
 
     // importaciones
-    // require_once SEBENAS_PATH.'functions/main.php';
+    require_once SEBENAS_PATH.'functions/main.php';
 
     // Run the plugin
     \Sebenas_Addons\Plugin::instance();
