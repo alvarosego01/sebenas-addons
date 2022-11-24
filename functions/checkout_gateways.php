@@ -1,14 +1,7 @@
-
-
 <?php
-
 if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
-
-
-
 if ( ! function_exists( 'preSelectors_gateway_payment' ) ) {
 
     function preSelectors_gateway_payment() {

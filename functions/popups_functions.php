@@ -3,7 +3,6 @@ if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-
 function sbn_popups() {
 
     // Set UI labels for Custom Post Type

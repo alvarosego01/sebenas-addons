@@ -1,11 +1,8 @@
-
-
 <?php
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
-
 <?php
 function sbn_footer_general1($parameters)
 {

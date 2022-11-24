@@ -1,9 +1,7 @@
 <?php
-
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
 use Elementor\Widget_Base;
 
 require_once SEBENAS_PATH.'includes/controls/controls_main.php';
