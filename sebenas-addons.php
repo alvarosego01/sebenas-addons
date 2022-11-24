@@ -50,7 +50,7 @@ function sebenas_init_loaded()
     require_once SEBENAS_PATH.'includes/plugin.php';
 
     // importaciones
-    // require_once SEBENAS_PATH.'functions/main.php';
+    require_once SEBENAS_PATH.'functions/main.php';
 
     // Run the plugin
     \Sebenas_Addons\Plugin::instance();
