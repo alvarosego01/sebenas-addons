@@ -1,4 +1,4 @@
-
+console.log('checkoutFunctions');
 
 function setActiveGateway(type) {
 
