@@ -3,9 +3,7 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
     box-shadow: $shadow2
     padding-bottom: 25px
     .section-row
-
         // section.innerSectionElement.sct1
-
         section.innerSectionElement.sct2
             .containElements
                 .cta
@@ -15,6 +13,13 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                     margin-top: 25px
                     padding-bottom: 25px
                 .imagesList.row
+                    @include responsivo(pcMedio)
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        align-content: center
+                        align-items: center
+                        flex-flow: wrap
                     @include responsivo(general)
                         display: flex
                         flex-flow: wrap
@@ -73,6 +78,9 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                                             height: 500px
 
                     .item.col-md-12.col-lg-6
+                        @include responsivo(pcMedio)
+                            width: 50%!important
+
                         .image
                             .containerImage
                                 a
@@ -91,6 +99,9 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                                         @include responsivo(resto)
                                             height: 475px
                     .item.col-md-12.col-lg-4
+                        @include responsivo(pcMedio)
+                            width: 50%!important
+
                         .image
                             .containerImage
                                 a
@@ -109,6 +120,9 @@ section.sbn_ComponentCustom.parentElement.elementorCustom.C_MultiplesImages_T1
                                         @include responsivo(resto)
                                             height: 350px
                     .item.col-md-12.col-lg-3
+                        @include responsivo(pcMedio)
+                            width: 50%!important
+
                         .image
                             .containerImage
                                 a

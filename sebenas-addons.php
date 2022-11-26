@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Sebenas Addons
  * Plugin URI: http://sebenas.com
@@ -24,26 +25,27 @@ if (!defined('SEBENAS_URL')) {
 if (!defined('PLUGIN_VERSION')) {
     define('PLUGIN_VERSION', '1.200.325');
 }
+
+
 function sebenas_init_loaded()
 {
     // wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL.'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 
-    add_action('wp_enqueue_scripts', function(){
+    add_action('wp_enqueue_scripts', function () {
 
         wp_enqueue_style('sb_addons_Main.Css', SEBENAS_URL . 'assets/dist/styles/main.css', false, PLUGIN_VERSION);
 
-        wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL.'assets/dist/scripts/main.js', [
+        wp_enqueue_script('sb_addons_Main.js', SEBENAS_URL . 'assets/dist/scripts/main.js', [
             'jquery',
         ], PLUGIN_VERSION, true);
 
-        wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL.'assets/dist/scripts/functions/popupsControl.js', [
+        wp_enqueue_script('sbn_popupsControl.js', SEBENAS_URL . 'assets/dist/scripts/functions/popupsControl.js', [
             'jquery',
         ], PLUGIN_VERSION, true);
 
-        wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL.'assets/dist/scripts/functions/checkout_functions.js', [
+        wp_enqueue_script('sbn_checkout_functions.js', SEBENAS_URL . 'assets/dist/scripts/functions/checkout_functions.js', [
             'jquery',
         ], PLUGIN_VERSION, true);
-
     });
 
     // Check if Elementor installed and activated
@@ -65,10 +67,10 @@ function sebenas_init_loaded()
     // include_once( SEBENAS_PATH . 'includes/controls-manager.php' );
 
     // Load plugin file
-    require_once SEBENAS_PATH.'includes/plugin.php';
+    require_once SEBENAS_PATH . 'includes/plugin.php';
 
     // importaciones
-    require_once SEBENAS_PATH.'functions/main.php';
+    require_once SEBENAS_PATH . 'functions/main.php';
 
     // Run the plugin
     \Sebenas_Addons\Plugin::instance();
