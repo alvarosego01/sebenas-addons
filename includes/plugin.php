@@ -21,7 +21,7 @@ final class Plugin
      *
      * @var string The addon version.
      */
-    const VERSION = '1.200.330';
+    const VERSION = '1.200.333';
 
     /**
      * Minimum Elementor Version.
