@@ -25,4 +25,25 @@ if (! defined('ABSPATH')) {
     	return $args;
     }
     add_filter( 'woocommerce_pagination_args' , 'tq73et_override_pagination_args' );
+
+    /* Exclude Multiple Content Types From Yoast SEO Sitemap */
+    add_filter( 'wpseo_sitemap_exclude_post_type', 'sitemap_exclude_post_type', 10, 2 );
+    function sitemap_exclude_post_type( $value, $post_type ) {
+
+        $post_type_to_exclude = array( 'sbn_popups','sbn_footer' );
+
+        if( in_array( $post_type, $post_type_to_exclude ) ) return true;
+
+    }
+
+    /* Exclude Multiple Taxonomies From Yoast SEO Sitemap */
+    add_filter( 'wpseo_sitemap_exclude_taxonomy', 'sitemap_exclude_taxonomy', 10, 2 );
+    function sitemap_exclude_taxonomy( $value, $taxonomy ) {
+
+        $taxonomy_to_exclude = array('popup-category-tax','sbn_footer-category-tax' );
+
+        if( in_array( $taxonomy, $taxonomy_to_exclude ) ) return true;
+
+    }
+
 ?>
